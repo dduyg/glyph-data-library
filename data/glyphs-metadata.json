@@ -1,0 +1,3455 @@
+{
+  "total": 150,
+  "glyphs": [
+    {
+      "id": "b9b3416f",
+      "filename": "797780_20251121_220529_b9b3416f.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/797780_20251121_220529_b9b3416f.png",
+      "color": {
+        "hex": "797780",
+        "name": "gray",
+        "rgb": [
+          121,
+          119,
+          128
+        ],
+        "lab": [
+          50.47,
+          2.61,
+          -4.64
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:29"
+      }
+    },
+    {
+      "id": "367ae4ea",
+      "filename": "3d51d8_20251121_220529_367ae4ea.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/3d51d8_20251121_220529_367ae4ea.png",
+      "color": {
+        "hex": "3d51d8",
+        "name": "blue",
+        "rgb": [
+          61,
+          81,
+          216
+        ],
+        "lab": [
+          40.95,
+          37.66,
+          -71.35
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:29"
+      }
+    },
+    {
+      "id": "110ee33f",
+      "filename": "787e85_20251121_220529_110ee33f.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/787e85_20251121_220529_110ee33f.png",
+      "color": {
+        "hex": "787e85",
+        "name": "gray",
+        "rgb": [
+          120,
+          126,
+          133
+        ],
+        "lab": [
+          52.52,
+          -0.75,
+          -4.56
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:29"
+      }
+    },
+    {
+      "id": "3fe53154",
+      "filename": "353b43_20251121_220529_3fe53154.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/353b43_20251121_220529_3fe53154.png",
+      "color": {
+        "hex": "353b43",
+        "name": "blue",
+        "rgb": [
+          53,
+          59,
+          67
+        ],
+        "lab": [
+          24.61,
+          -0.47,
+          -5.77
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:29"
+      }
+    },
+    {
+      "id": "e6afb80b",
+      "filename": "9e98a2_20251121_220529_e6afb80b.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/9e98a2_20251121_220529_e6afb80b.png",
+      "color": {
+        "hex": "9e98a2",
+        "name": "gray",
+        "rgb": [
+          158,
+          152,
+          162
+        ],
+        "lab": [
+          63.62,
+          4.11,
+          -4.45
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:29"
+      }
+    },
+    {
+      "id": "ee801d54",
+      "filename": "7d7f7a_20251121_220529_ee801d54.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/7d7f7a_20251121_220529_ee801d54.png",
+      "color": {
+        "hex": "7d7f7a",
+        "name": "gray",
+        "rgb": [
+          125,
+          127,
+          122
+        ],
+        "lab": [
+          52.89,
+          -1.74,
+          2.45
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:29"
+      }
+    },
+    {
+      "id": "3aede913",
+      "filename": "281122_20251121_220529_3aede913.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/281122_20251121_220529_3aede913.png",
+      "color": {
+        "hex": "281122",
+        "name": "pink",
+        "rgb": [
+          40,
+          17,
+          34
+        ],
+        "lab": [
+          8.72,
+          14.97,
+          -6.65
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:29"
+      }
+    },
+    {
+      "id": "0983a7eb",
+      "filename": "434444_20251121_220529_0983a7eb.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/434444_20251121_220529_0983a7eb.png",
+      "color": {
+        "hex": "434444",
+        "name": "gray",
+        "rgb": [
+          67,
+          68,
+          68
+        ],
+        "lab": [
+          28.76,
+          -0.42,
+          -0.15
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:29"
+      }
+    },
+    {
+      "id": "21c9a231",
+      "filename": "b38d02_20251121_220529_21c9a231.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/b38d02_20251121_220529_21c9a231.png",
+      "color": {
+        "hex": "b38d02",
+        "name": "yellow",
+        "rgb": [
+          179,
+          141,
+          2
+        ],
+        "lab": [
+          60.46,
+          3.62,
+          64.77
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:29"
+      }
+    },
+    {
+      "id": "a89a0760",
+      "filename": "6e777c_20251121_220529_a89a0760.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/6e777c_20251121_220529_a89a0760.png",
+      "color": {
+        "hex": "6e777c",
+        "name": "blue",
+        "rgb": [
+          110,
+          119,
+          124
+        ],
+        "lab": [
+          49.45,
+          -2.27,
+          -3.89
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:29"
+      }
+    },
+    {
+      "id": "4f0086ca",
+      "filename": "c9adfb_20251121_220530_4f0086ca.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/c9adfb_20251121_220530_4f0086ca.png",
+      "color": {
+        "hex": "c9adfb",
+        "name": "purple",
+        "rgb": [
+          201,
+          173,
+          251
+        ],
+        "lab": [
+          75.62,
+          25.35,
+          -35.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "8a502944",
+      "filename": "70032b_20251121_220530_8a502944.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/70032b_20251121_220530_8a502944.png",
+      "color": {
+        "hex": "70032b",
+        "name": "pink",
+        "rgb": [
+          112,
+          3,
+          43
+        ],
+        "lab": [
+          22.6,
+          44.69,
+          8.82
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "27db6b75",
+      "filename": "2d1b2e_20251121_220530_27db6b75.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/2d1b2e_20251121_220530_27db6b75.png",
+      "color": {
+        "hex": "2d1b2e",
+        "name": "pink",
+        "rgb": [
+          45,
+          27,
+          46
+        ],
+        "lab": [
+          12.85,
+          12.91,
+          -9.13
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "ff52601f",
+      "filename": "b0658d_20251121_220530_ff52601f.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/b0658d_20251121_220530_ff52601f.png",
+      "color": {
+        "hex": "b0658d",
+        "name": "pink",
+        "rgb": [
+          176,
+          101,
+          141
+        ],
+        "lab": [
+          52.36,
+          35.53,
+          -8.88
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "cc98d147",
+      "filename": "222b35_20251121_220530_cc98d147.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/222b35_20251121_220530_cc98d147.png",
+      "color": {
+        "hex": "222b35",
+        "name": "blue",
+        "rgb": [
+          34,
+          43,
+          53
+        ],
+        "lab": [
+          17.11,
+          -0.95,
+          -7.71
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "cfcb1556",
+      "filename": "9a9a9a_20251121_220530_cfcb1556.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/9a9a9a_20251121_220530_cfcb1556.png",
+      "color": {
+        "hex": "9a9a9a",
+        "name": "gray",
+        "rgb": [
+          154,
+          154,
+          154
+        ],
+        "lab": [
+          63.6,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "d9a93920",
+      "filename": "573a64_20251121_220530_d9a93920.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/573a64_20251121_220530_d9a93920.png",
+      "color": {
+        "hex": "573a64",
+        "name": "purple",
+        "rgb": [
+          87,
+          58,
+          100
+        ],
+        "lab": [
+          29.34,
+          21.31,
+          -19.79
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "245fd3f5",
+      "filename": "2d719e_20251121_220530_245fd3f5.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/2d719e_20251121_220530_245fd3f5.png",
+      "color": {
+        "hex": "2d719e",
+        "name": "blue",
+        "rgb": [
+          45,
+          113,
+          158
+        ],
+        "lab": [
+          45.41,
+          -6.04,
+          -30.49
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "5280451a",
+      "filename": "a1a1a1_20251121_220530_5280451a.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a1a1a1_20251121_220530_5280451a.png",
+      "color": {
+        "hex": "a1a1a1",
+        "name": "gray",
+        "rgb": [
+          161,
+          161,
+          161
+        ],
+        "lab": [
+          66.24,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "aad64080",
+      "filename": "6b7279_20251121_220530_aad64080.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/6b7279_20251121_220530_aad64080.png",
+      "color": {
+        "hex": "6b7279",
+        "name": "blue",
+        "rgb": [
+          107,
+          114,
+          121
+        ],
+        "lab": [
+          47.68,
+          -1.11,
+          -4.77
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "5da0f9c3",
+      "filename": "a97926_20251121_220530_5da0f9c3.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a97926_20251121_220530_5da0f9c3.png",
+      "color": {
+        "hex": "a97926",
+        "name": "orange",
+        "rgb": [
+          169,
+          121,
+          38
+        ],
+        "lab": [
+          54.29,
+          11.06,
+          50.11
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "9690ad6a",
+      "filename": "594361_20251121_220530_9690ad6a.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/594361_20251121_220530_9690ad6a.png",
+      "color": {
+        "hex": "594361",
+        "name": "purple",
+        "rgb": [
+          89,
+          67,
+          97
+        ],
+        "lab": [
+          31.81,
+          15.61,
+          -14.05
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "9baa8029",
+      "filename": "004d85_20251121_220530_9baa8029.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/004d85_20251121_220530_9baa8029.png",
+      "color": {
+        "hex": "004d85",
+        "name": "blue",
+        "rgb": [
+          0,
+          77,
+          133
+        ],
+        "lab": [
+          31.81,
+          2.37,
+          -36.98
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "141728b6",
+      "filename": "8b8479_20251121_220530_141728b6.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/8b8479_20251121_220530_141728b6.png",
+      "color": {
+        "hex": "8b8479",
+        "name": "orange",
+        "rgb": [
+          139,
+          132,
+          121
+        ],
+        "lab": [
+          55.45,
+          0.62,
+          6.88
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "10dbe968",
+      "filename": "c1c0bd_20251121_220530_10dbe968.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/c1c0bd_20251121_220530_10dbe968.png",
+      "color": {
+        "hex": "c1c0bd",
+        "name": "gray",
+        "rgb": [
+          193,
+          192,
+          189
+        ],
+        "lab": [
+          77.7,
+          -0.2,
+          1.63
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "a1f1709d",
+      "filename": "959499_20251121_220530_a1f1709d.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/959499_20251121_220530_a1f1709d.png",
+      "color": {
+        "hex": "959499",
+        "name": "gray",
+        "rgb": [
+          149,
+          148,
+          153
+        ],
+        "lab": [
+          61.54,
+          1.34,
+          -2.5
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:30"
+      }
+    },
+    {
+      "id": "ca3f3c49",
+      "filename": "3d2e4b_20251121_220531_ca3f3c49.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/3d2e4b_20251121_220531_ca3f3c49.png",
+      "color": {
+        "hex": "3d2e4b",
+        "name": "purple",
+        "rgb": [
+          61,
+          46,
+          75
+        ],
+        "lab": [
+          21.78,
+          13.53,
+          -15.37
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "4b9ad540",
+      "filename": "cdcbcd_20251121_220531_4b9ad540.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/cdcbcd_20251121_220531_4b9ad540.png",
+      "color": {
+        "hex": "cdcbcd",
+        "name": "white",
+        "rgb": [
+          205,
+          203,
+          205
+        ],
+        "lab": [
+          81.89,
+          1.05,
+          -0.75
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "28d98ffe",
+      "filename": "789692_20251121_220531_28d98ffe.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/789692_20251121_220531_28d98ffe.png",
+      "color": {
+        "hex": "789692",
+        "name": "blue",
+        "rgb": [
+          120,
+          150,
+          146
+        ],
+        "lab": [
+          59.78,
+          -11.32,
+          -1.36
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "4301bde2",
+      "filename": "778282_20251121_220531_4301bde2.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/778282_20251121_220531_4301bde2.png",
+      "color": {
+        "hex": "778282",
+        "name": "gray",
+        "rgb": [
+          119,
+          130,
+          130
+        ],
+        "lab": [
+          53.49,
+          -4.04,
+          -1.39
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "a2460885",
+      "filename": "047660_20251121_220531_a2460885.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/047660_20251121_220531_a2460885.png",
+      "color": {
+        "hex": "047660",
+        "name": "blue",
+        "rgb": [
+          4,
+          118,
+          96
+        ],
+        "lab": [
+          43.98,
+          -33.74,
+          4.24
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "daaf30ed",
+      "filename": "60717b_20251121_220531_daaf30ed.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/60717b_20251121_220531_daaf30ed.png",
+      "color": {
+        "hex": "60717b",
+        "name": "blue",
+        "rgb": [
+          96,
+          113,
+          123
+        ],
+        "lab": [
+          46.61,
+          -3.94,
+          -7.63
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "14f7db7f",
+      "filename": "acc1cb_20251121_220531_14f7db7f.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/acc1cb_20251121_220531_14f7db7f.png",
+      "color": {
+        "hex": "acc1cb",
+        "name": "blue",
+        "rgb": [
+          172,
+          193,
+          203
+        ],
+        "lab": [
+          76.81,
+          -5.06,
+          -7.43
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "a5da3826",
+      "filename": "58626f_20251121_220531_a5da3826.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/58626f_20251121_220531_a5da3826.png",
+      "color": {
+        "hex": "58626f",
+        "name": "blue",
+        "rgb": [
+          88,
+          98,
+          111
+        ],
+        "lab": [
+          41.15,
+          -0.76,
+          -8.63
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "40b0c035",
+      "filename": "47a28c_20251121_220531_40b0c035.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/47a28c_20251121_220531_40b0c035.png",
+      "color": {
+        "hex": "47a28c",
+        "name": "blue",
+        "rgb": [
+          71,
+          162,
+          140
+        ],
+        "lab": [
+          60.84,
+          -32.6,
+          3.3
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "475391a4",
+      "filename": "808b96_20251121_220531_475391a4.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/808b96_20251121_220531_475391a4.png",
+      "color": {
+        "hex": "808b96",
+        "name": "blue",
+        "rgb": [
+          128,
+          139,
+          150
+        ],
+        "lab": [
+          57.32,
+          -1.62,
+          -7.21
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "0e561a07",
+      "filename": "af9da2_20251121_220531_0e561a07.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/af9da2_20251121_220531_0e561a07.png",
+      "color": {
+        "hex": "af9da2",
+        "name": "pink",
+        "rgb": [
+          175,
+          157,
+          162
+        ],
+        "lab": [
+          66.4,
+          7.47,
+          -0.2
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "d9b00aaa",
+      "filename": "9e9e9e_20251121_220531_d9b00aaa.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/9e9e9e_20251121_220531_d9b00aaa.png",
+      "color": {
+        "hex": "9e9e9e",
+        "name": "gray",
+        "rgb": [
+          158,
+          158,
+          158
+        ],
+        "lab": [
+          65.11,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:31"
+      }
+    },
+    {
+      "id": "39a5c638",
+      "filename": "838383_20251121_220532_39a5c638.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/838383_20251121_220532_39a5c638.png",
+      "color": {
+        "hex": "838383",
+        "name": "gray",
+        "rgb": [
+          131,
+          131,
+          131
+        ],
+        "lab": [
+          54.76,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:32"
+      }
+    },
+    {
+      "id": "3e196893",
+      "filename": "9a666f_20251121_220532_3e196893.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/9a666f_20251121_220532_3e196893.png",
+      "color": {
+        "hex": "9a666f",
+        "name": "red",
+        "rgb": [
+          154,
+          102,
+          111
+        ],
+        "lab": [
+          48.91,
+          22.23,
+          3.56
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:32"
+      }
+    },
+    {
+      "id": "f4b87a26",
+      "filename": "d1d8e2_20251121_220532_f4b87a26.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/d1d8e2_20251121_220532_f4b87a26.png",
+      "color": {
+        "hex": "d1d8e2",
+        "name": "white",
+        "rgb": [
+          209,
+          216,
+          226
+        ],
+        "lab": [
+          86.09,
+          -0.47,
+          -5.72
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:32"
+      }
+    },
+    {
+      "id": "1c64a61f",
+      "filename": "9c9c9c_20251121_220532_1c64a61f.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/9c9c9c_20251121_220532_1c64a61f.png",
+      "color": {
+        "hex": "9c9c9c",
+        "name": "gray",
+        "rgb": [
+          156,
+          156,
+          156
+        ],
+        "lab": [
+          64.36,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:32"
+      }
+    },
+    {
+      "id": "503deb1e",
+      "filename": "a1a1a1_20251121_220532_503deb1e.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a1a1a1_20251121_220532_503deb1e.png",
+      "color": {
+        "hex": "a1a1a1",
+        "name": "gray",
+        "rgb": [
+          161,
+          161,
+          161
+        ],
+        "lab": [
+          66.24,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:32"
+      }
+    },
+    {
+      "id": "5fc91996",
+      "filename": "594362_20251121_220532_5fc91996.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/594362_20251121_220532_5fc91996.png",
+      "color": {
+        "hex": "594362",
+        "name": "purple",
+        "rgb": [
+          89,
+          67,
+          98
+        ],
+        "lab": [
+          31.85,
+          15.84,
+          -14.62
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:32"
+      }
+    },
+    {
+      "id": "13671f20",
+      "filename": "5f110b_20251121_220532_13671f20.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/5f110b_20251121_220532_13671f20.png",
+      "color": {
+        "hex": "5f110b",
+        "name": "red",
+        "rgb": [
+          95,
+          17,
+          11
+        ],
+        "lab": [
+          19.47,
+          34.22,
+          24.9
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:32"
+      }
+    },
+    {
+      "id": "de4c54f3",
+      "filename": "8a9493_20251121_220532_de4c54f3.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/8a9493_20251121_220532_de4c54f3.png",
+      "color": {
+        "hex": "8a9493",
+        "name": "gray",
+        "rgb": [
+          138,
+          148,
+          147
+        ],
+        "lab": [
+          60.51,
+          -3.8,
+          -0.71
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:32"
+      }
+    },
+    {
+      "id": "13ee6e06",
+      "filename": "88889e_20251121_220532_13ee6e06.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/88889e_20251121_220532_13ee6e06.png",
+      "color": {
+        "hex": "88889e",
+        "name": "blue",
+        "rgb": [
+          136,
+          136,
+          158
+        ],
+        "lab": [
+          57.38,
+          4.62,
+          -11.66
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:32"
+      }
+    },
+    {
+      "id": "5bc0749f",
+      "filename": "84298e_20251121_220532_5bc0749f.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/84298e_20251121_220532_5bc0749f.png",
+      "color": {
+        "hex": "84298e",
+        "name": "pink",
+        "rgb": [
+          132,
+          41,
+          142
+        ],
+        "lab": [
+          34.89,
+          51.97,
+          -36.99
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:32"
+      }
+    },
+    {
+      "id": "3fcbca9c",
+      "filename": "ded7d5_20251121_220533_3fcbca9c.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/ded7d5_20251121_220533_3fcbca9c.png",
+      "color": {
+        "hex": "ded7d5",
+        "name": "white",
+        "rgb": [
+          222,
+          215,
+          213
+        ],
+        "lab": [
+          86.47,
+          2.04,
+          1.84
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "c74c0978",
+      "filename": "a6a6a6_20251121_220533_c74c0978.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a6a6a6_20251121_220533_c74c0978.png",
+      "color": {
+        "hex": "a6a6a6",
+        "name": "gray",
+        "rgb": [
+          166,
+          166,
+          166
+        ],
+        "lab": [
+          68.12,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "a14693a0",
+      "filename": "e8e8e8_20251121_220533_a14693a0.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/e8e8e8_20251121_220533_a14693a0.png",
+      "color": {
+        "hex": "e8e8e8",
+        "name": "white",
+        "rgb": [
+          232,
+          232,
+          232
+        ],
+        "lab": [
+          92.0,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "93505316",
+      "filename": "30303a_20251121_220533_93505316.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/30303a_20251121_220533_93505316.png",
+      "color": {
+        "hex": "30303a",
+        "name": "blue",
+        "rgb": [
+          48,
+          48,
+          58
+        ],
+        "lab": [
+          20.23,
+          2.52,
+          -6.32
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "d7aa32d8",
+      "filename": "bfbdb5_20251121_220533_d7aa32d8.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/bfbdb5_20251121_220533_d7aa32d8.png",
+      "color": {
+        "hex": "bfbdb5",
+        "name": "gray",
+        "rgb": [
+          191,
+          189,
+          181
+        ],
+        "lab": [
+          76.56,
+          -0.74,
+          4.28
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "6a3de4f8",
+      "filename": "4e597a_20251121_220533_6a3de4f8.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/4e597a_20251121_220533_6a3de4f8.png",
+      "color": {
+        "hex": "4e597a",
+        "name": "blue",
+        "rgb": [
+          78,
+          89,
+          122
+        ],
+        "lab": [
+          38.14,
+          4.43,
+          -20.02
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "c14e1ced",
+      "filename": "878d8f_20251121_220533_c14e1ced.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/878d8f_20251121_220533_c14e1ced.png",
+      "color": {
+        "hex": "878d8f",
+        "name": "gray",
+        "rgb": [
+          135,
+          141,
+          143
+        ],
+        "lab": [
+          58.21,
+          -1.78,
+          -1.82
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "7f55b40e",
+      "filename": "e0ced9_20251121_220533_7f55b40e.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/e0ced9_20251121_220533_7f55b40e.png",
+      "color": {
+        "hex": "e0ced9",
+        "name": "white",
+        "rgb": [
+          224,
+          206,
+          217
+        ],
+        "lab": [
+          84.48,
+          8.15,
+          -3.17
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "786930a6",
+      "filename": "cdc4b6_20251121_220533_786930a6.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/cdc4b6_20251121_220533_786930a6.png",
+      "color": {
+        "hex": "cdc4b6",
+        "name": "orange",
+        "rgb": [
+          205,
+          196,
+          182
+        ],
+        "lab": [
+          79.52,
+          0.74,
+          8.15
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "19132b56",
+      "filename": "cad1d9_20251121_220533_19132b56.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/cad1d9_20251121_220533_19132b56.png",
+      "color": {
+        "hex": "cad1d9",
+        "name": "white",
+        "rgb": [
+          202,
+          209,
+          217
+        ],
+        "lab": [
+          83.53,
+          -0.86,
+          -4.77
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "415e9f1e",
+      "filename": "886184_20251121_220533_415e9f1e.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/886184_20251121_220533_415e9f1e.png",
+      "color": {
+        "hex": "886184",
+        "name": "pink",
+        "rgb": [
+          136,
+          97,
+          132
+        ],
+        "lab": [
+          46.24,
+          21.95,
+          -13.21
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "bf4ff3c1",
+      "filename": "d2e3d6_20251121_220533_bf4ff3c1.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/d2e3d6_20251121_220533_bf4ff3c1.png",
+      "color": {
+        "hex": "d2e3d6",
+        "name": "white",
+        "rgb": [
+          210,
+          227,
+          214
+        ],
+        "lab": [
+          88.68,
+          -8.05,
+          4.41
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:33"
+      }
+    },
+    {
+      "id": "ced97ef6",
+      "filename": "b1b1b1_20251121_220534_ced97ef6.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/b1b1b1_20251121_220534_ced97ef6.png",
+      "color": {
+        "hex": "b1b1b1",
+        "name": "gray",
+        "rgb": [
+          177,
+          177,
+          177
+        ],
+        "lab": [
+          72.21,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "8702b72f",
+      "filename": "b7cfb9_20251121_220534_8702b72f.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/b7cfb9_20251121_220534_8702b72f.png",
+      "color": {
+        "hex": "b7cfb9",
+        "name": "green",
+        "rgb": [
+          183,
+          207,
+          185
+        ],
+        "lab": [
+          80.85,
+          -12.22,
+          8.22
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "35a90e3c",
+      "filename": "6f6a57_20251121_220534_35a90e3c.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/6f6a57_20251121_220534_35a90e3c.png",
+      "color": {
+        "hex": "6f6a57",
+        "name": "yellow",
+        "rgb": [
+          111,
+          106,
+          87
+        ],
+        "lab": [
+          44.77,
+          -1.5,
+          11.39
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "313ec928",
+      "filename": "b0b1bf_20251121_220534_313ec928.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/b0b1bf_20251121_220534_313ec928.png",
+      "color": {
+        "hex": "b0b1bf",
+        "name": "gray",
+        "rgb": [
+          176,
+          177,
+          191
+        ],
+        "lab": [
+          72.52,
+          2.38,
+          -7.23
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "c4f0a596",
+      "filename": "1e1426_20251121_220534_c4f0a596.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/1e1426_20251121_220534_c4f0a596.png",
+      "color": {
+        "hex": "1e1426",
+        "name": "purple",
+        "rgb": [
+          30,
+          20,
+          38
+        ],
+        "lab": [
+          8.27,
+          9.67,
+          -10.48
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "cd4acd79",
+      "filename": "b099f5_20251121_220534_cd4acd79.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/b099f5_20251121_220534_cd4acd79.png",
+      "color": {
+        "hex": "b099f5",
+        "name": "purple",
+        "rgb": [
+          176,
+          153,
+          245
+        ],
+        "lab": [
+          68.46,
+          27.85,
+          -43.04
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "f3f73b45",
+      "filename": "b6957a_20251121_220534_f3f73b45.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/b6957a_20251121_220534_f3f73b45.png",
+      "color": {
+        "hex": "b6957a",
+        "name": "orange",
+        "rgb": [
+          182,
+          149,
+          122
+        ],
+        "lab": [
+          64.04,
+          8.39,
+          18.92
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "9d3f108f",
+      "filename": "2d1b2e_20251121_220534_9d3f108f.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/2d1b2e_20251121_220534_9d3f108f.png",
+      "color": {
+        "hex": "2d1b2e",
+        "name": "pink",
+        "rgb": [
+          45,
+          27,
+          46
+        ],
+        "lab": [
+          12.85,
+          12.91,
+          -9.13
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "17ff0c86",
+      "filename": "028b3b_20251121_220534_17ff0c86.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/028b3b_20251121_220534_17ff0c86.png",
+      "color": {
+        "hex": "028b3b",
+        "name": "green",
+        "rgb": [
+          2,
+          139,
+          59
+        ],
+        "lab": [
+          50.44,
+          -49.99,
+          33.55
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "1bbdc10d",
+      "filename": "c8c8c8_20251121_220534_1bbdc10d.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/c8c8c8_20251121_220534_1bbdc10d.png",
+      "color": {
+        "hex": "c8c8c8",
+        "name": "gray",
+        "rgb": [
+          200,
+          200,
+          200
+        ],
+        "lab": [
+          80.6,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "0bdb2a97",
+      "filename": "969d97_20251121_220534_0bdb2a97.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/969d97_20251121_220534_0bdb2a97.png",
+      "color": {
+        "hex": "969d97",
+        "name": "gray",
+        "rgb": [
+          150,
+          157,
+          151
+        ],
+        "lab": [
+          64.02,
+          -3.67,
+          2.26
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "17a11998",
+      "filename": "261c33_20251121_220534_17a11998.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/261c33_20251121_220534_17a11998.png",
+      "color": {
+        "hex": "261c33",
+        "name": "purple",
+        "rgb": [
+          38,
+          28,
+          51
+        ],
+        "lab": [
+          12.49,
+          10.77,
+          -13.37
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "4d67b5c6",
+      "filename": "c5cacc_20251121_220534_4d67b5c6.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/c5cacc_20251121_220534_4d67b5c6.png",
+      "color": {
+        "hex": "c5cacc",
+        "name": "gray",
+        "rgb": [
+          197,
+          202,
+          204
+        ],
+        "lab": [
+          81.0,
+          -1.34,
+          -1.59
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "d126cca1",
+      "filename": "454442_20251121_220534_d126cca1.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/454442_20251121_220534_d126cca1.png",
+      "color": {
+        "hex": "454442",
+        "name": "gray",
+        "rgb": [
+          69,
+          68,
+          66
+        ],
+        "lab": [
+          28.88,
+          -0.02,
+          1.36
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "e379f5d0",
+      "filename": "545351_20251121_220534_e379f5d0.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/545351_20251121_220534_e379f5d0.png",
+      "color": {
+        "hex": "545351",
+        "name": "gray",
+        "rgb": [
+          84,
+          83,
+          81
+        ],
+        "lab": [
+          35.33,
+          -0.02,
+          1.31
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:34"
+      }
+    },
+    {
+      "id": "595be7c0",
+      "filename": "c8c19d_20251121_220535_595be7c0.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/c8c19d_20251121_220535_595be7c0.png",
+      "color": {
+        "hex": "c8c19d",
+        "name": "yellow",
+        "rgb": [
+          200,
+          193,
+          157
+        ],
+        "lab": [
+          77.79,
+          -3.41,
+          19.05
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "ab2c5c94",
+      "filename": "bfb7c7_20251121_220535_ab2c5c94.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/bfb7c7_20251121_220535_ab2c5c94.png",
+      "color": {
+        "hex": "bfb7c7",
+        "name": "gray",
+        "rgb": [
+          191,
+          183,
+          199
+        ],
+        "lab": [
+          75.49,
+          5.8,
+          -7.06
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "b119e862",
+      "filename": "717881_20251121_220535_b119e862.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/717881_20251121_220535_b119e862.png",
+      "color": {
+        "hex": "717881",
+        "name": "blue",
+        "rgb": [
+          113,
+          120,
+          129
+        ],
+        "lab": [
+          50.13,
+          -0.66,
+          -5.81
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "346a2d72",
+      "filename": "a59cb0_20251121_220535_346a2d72.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a59cb0_20251121_220535_346a2d72.png",
+      "color": {
+        "hex": "a59cb0",
+        "name": "purple",
+        "rgb": [
+          165,
+          156,
+          176
+        ],
+        "lab": [
+          65.68,
+          7.14,
+          -9.19
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "16461e18",
+      "filename": "d1dcda_20251121_220535_16461e18.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/d1dcda_20251121_220535_16461e18.png",
+      "color": {
+        "hex": "d1dcda",
+        "name": "white",
+        "rgb": [
+          209,
+          220,
+          218
+        ],
+        "lab": [
+          86.9,
+          -4.06,
+          -0.3
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "428de4ff",
+      "filename": "251022_20251121_220535_428de4ff.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/251022_20251121_220535_428de4ff.png",
+      "color": {
+        "hex": "251022",
+        "name": "pink",
+        "rgb": [
+          37,
+          16,
+          34
+        ],
+        "lab": [
+          7.94,
+          14.4,
+          -7.88
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "ed128732",
+      "filename": "7e4758_20251121_220535_ed128732.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/7e4758_20251121_220535_ed128732.png",
+      "color": {
+        "hex": "7e4758",
+        "name": "pink",
+        "rgb": [
+          126,
+          71,
+          88
+        ],
+        "lab": [
+          37.2,
+          25.75,
+          0.22
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "5762b6cc",
+      "filename": "403732_20251121_220535_5762b6cc.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/403732_20251121_220535_5762b6cc.png",
+      "color": {
+        "hex": "403732",
+        "name": "orange",
+        "rgb": [
+          64,
+          55,
+          50
+        ],
+        "lab": [
+          23.85,
+          2.98,
+          4.59
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "e90678fa",
+      "filename": "373a3b_20251121_220535_e90678fa.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/373a3b_20251121_220535_e90678fa.png",
+      "color": {
+        "hex": "373a3b",
+        "name": "gray",
+        "rgb": [
+          55,
+          58,
+          59
+        ],
+        "lab": [
+          24.17,
+          -1.04,
+          -1.06
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "8c301e31",
+      "filename": "cfc68e_20251121_220535_8c301e31.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/cfc68e_20251121_220535_8c301e31.png",
+      "color": {
+        "hex": "cfc68e",
+        "name": "yellow",
+        "rgb": [
+          207,
+          198,
+          142
+        ],
+        "lab": [
+          79.39,
+          -5.37,
+          29.26
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "913d1f73",
+      "filename": "c7c7c7_20251121_220535_913d1f73.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/c7c7c7_20251121_220535_913d1f73.png",
+      "color": {
+        "hex": "c7c7c7",
+        "name": "gray",
+        "rgb": [
+          199,
+          199,
+          199
+        ],
+        "lab": [
+          80.24,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "68dd4220",
+      "filename": "1e242a_20251121_220535_68dd4220.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/1e242a_20251121_220535_68dd4220.png",
+      "color": {
+        "hex": "1e242a",
+        "name": "blue",
+        "rgb": [
+          30,
+          36,
+          42
+        ],
+        "lab": [
+          13.86,
+          -0.97,
+          -4.88
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "d5628209",
+      "filename": "9590a5_20251121_220535_d5628209.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/9590a5_20251121_220535_d5628209.png",
+      "color": {
+        "hex": "9590a5",
+        "name": "blue",
+        "rgb": [
+          149,
+          144,
+          165
+        ],
+        "lab": [
+          60.83,
+          6.06,
+          -10.37
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "58dbda3d",
+      "filename": "c5c6d3_20251121_220535_58dbda3d.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/c5c6d3_20251121_220535_58dbda3d.png",
+      "color": {
+        "hex": "c5c6d3",
+        "name": "white",
+        "rgb": [
+          197,
+          198,
+          211
+        ],
+        "lab": [
+          80.16,
+          2.12,
+          -6.59
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "3f2493ce",
+      "filename": "d5c7b7_20251121_220535_3f2493ce.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/d5c7b7_20251121_220535_3f2493ce.png",
+      "color": {
+        "hex": "d5c7b7",
+        "name": "orange",
+        "rgb": [
+          213,
+          199,
+          183
+        ],
+        "lab": [
+          80.97,
+          2.22,
+          9.77
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:35"
+      }
+    },
+    {
+      "id": "6af9b58b",
+      "filename": "9f9f9f_20251121_220536_6af9b58b.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/9f9f9f_20251121_220536_6af9b58b.png",
+      "color": {
+        "hex": "9f9f9f",
+        "name": "gray",
+        "rgb": [
+          159,
+          159,
+          159
+        ],
+        "lab": [
+          65.49,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "fcdf931a",
+      "filename": "747979_20251121_220536_fcdf931a.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/747979_20251121_220536_fcdf931a.png",
+      "color": {
+        "hex": "747979",
+        "name": "gray",
+        "rgb": [
+          116,
+          121,
+          121
+        ],
+        "lab": [
+          50.41,
+          -1.87,
+          -0.65
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "5aac5a07",
+      "filename": "32373a_20251121_220536_5aac5a07.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/32373a_20251121_220536_5aac5a07.png",
+      "color": {
+        "hex": "32373a",
+        "name": "blue",
+        "rgb": [
+          50,
+          55,
+          58
+        ],
+        "lab": [
+          22.71,
+          -1.38,
+          -2.6
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "d3b322df",
+      "filename": "473366_20251121_220536_d3b322df.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/473366_20251121_220536_d3b322df.png",
+      "color": {
+        "hex": "473366",
+        "name": "purple",
+        "rgb": [
+          71,
+          51,
+          102
+        ],
+        "lab": [
+          25.76,
+          21.05,
+          -26.84
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "c38f9ef3",
+      "filename": "7e8781_20251121_220536_c38f9ef3.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/7e8781_20251121_220536_c38f9ef3.png",
+      "color": {
+        "hex": "7e8781",
+        "name": "gray",
+        "rgb": [
+          126,
+          135,
+          129
+        ],
+        "lab": [
+          55.43,
+          -4.52,
+          2.09
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "53aea39b",
+      "filename": "a36ab0_20251121_220536_53aea39b.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a36ab0_20251121_220536_53aea39b.png",
+      "color": {
+        "hex": "a36ab0",
+        "name": "purple",
+        "rgb": [
+          163,
+          106,
+          176
+        ],
+        "lab": [
+          53.2,
+          34.79,
+          -28.2
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "1a6073b4",
+      "filename": "756b5f_20251121_220536_1a6073b4.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/756b5f_20251121_220536_1a6073b4.png",
+      "color": {
+        "hex": "756b5f",
+        "name": "orange",
+        "rgb": [
+          117,
+          107,
+          95
+        ],
+        "lab": [
+          45.8,
+          1.75,
+          8.15
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "cddc90e9",
+      "filename": "5f7499_20251121_220536_cddc90e9.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/5f7499_20251121_220536_cddc90e9.png",
+      "color": {
+        "hex": "5f7499",
+        "name": "blue",
+        "rgb": [
+          95,
+          116,
+          153
+        ],
+        "lab": [
+          48.54,
+          1.93,
+          -22.49
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "064827fe",
+      "filename": "b9b3c8_20251121_220536_064827fe.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/b9b3c8_20251121_220536_064827fe.png",
+      "color": {
+        "hex": "b9b3c8",
+        "name": "purple",
+        "rgb": [
+          185,
+          179,
+          200
+        ],
+        "lab": [
+          74.01,
+          6.14,
+          -9.86
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "9d7ada97",
+      "filename": "a189a6_20251121_220536_9d7ada97.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a189a6_20251121_220536_9d7ada97.png",
+      "color": {
+        "hex": "a189a6",
+        "name": "purple",
+        "rgb": [
+          161,
+          137,
+          166
+        ],
+        "lab": [
+          60.09,
+          14.44,
+          -11.94
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "64b3ca9e",
+      "filename": "606061_20251121_220536_64b3ca9e.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/606061_20251121_220536_64b3ca9e.png",
+      "color": {
+        "hex": "606061",
+        "name": "gray",
+        "rgb": [
+          96,
+          96,
+          97
+        ],
+        "lab": [
+          40.76,
+          0.21,
+          -0.57
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "aa0decb8",
+      "filename": "8aa7b7_20251121_220536_aa0decb8.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/8aa7b7_20251121_220536_aa0decb8.png",
+      "color": {
+        "hex": "8aa7b7",
+        "name": "blue",
+        "rgb": [
+          138,
+          167,
+          183
+        ],
+        "lab": [
+          66.87,
+          -6.32,
+          -11.52
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "b44f1d43",
+      "filename": "c2c2c2_20251121_220536_b44f1d43.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/c2c2c2_20251121_220536_b44f1d43.png",
+      "color": {
+        "hex": "c2c2c2",
+        "name": "gray",
+        "rgb": [
+          194,
+          194,
+          194
+        ],
+        "lab": [
+          78.43,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "f7e267de",
+      "filename": "817883_20251121_220536_f7e267de.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/817883_20251121_220536_f7e267de.png",
+      "color": {
+        "hex": "817883",
+        "name": "gray",
+        "rgb": [
+          129,
+          120,
+          131
+        ],
+        "lab": [
+          51.54,
+          5.6,
+          -4.75
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "91280588",
+      "filename": "777677_20251121_220536_91280588.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/777677_20251121_220536_91280588.png",
+      "color": {
+        "hex": "777677",
+        "name": "gray",
+        "rgb": [
+          119,
+          118,
+          119
+        ],
+        "lab": [
+          49.75,
+          0.58,
+          -0.41
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "cfe1f412",
+      "filename": "dbdcd6_20251121_220536_cfe1f412.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/dbdcd6_20251121_220536_cfe1f412.png",
+      "color": {
+        "hex": "dbdcd6",
+        "name": "white",
+        "rgb": [
+          219,
+          220,
+          214
+        ],
+        "lab": [
+          87.53,
+          -1.41,
+          2.82
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "335600c2",
+      "filename": "6e738a_20251121_220536_335600c2.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/6e738a_20251121_220536_335600c2.png",
+      "color": {
+        "hex": "6e738a",
+        "name": "blue",
+        "rgb": [
+          110,
+          115,
+          138
+        ],
+        "lab": [
+          48.77,
+          3.33,
+          -13.19
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "a085a136",
+      "filename": "a2a2a2_20251121_220536_a085a136.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a2a2a2_20251121_220536_a085a136.png",
+      "color": {
+        "hex": "a2a2a2",
+        "name": "gray",
+        "rgb": [
+          162,
+          162,
+          162
+        ],
+        "lab": [
+          66.62,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:36"
+      }
+    },
+    {
+      "id": "971a7226",
+      "filename": "545e5e_20251121_220537_971a7226.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/545e5e_20251121_220537_971a7226.png",
+      "color": {
+        "hex": "545e5e",
+        "name": "blue",
+        "rgb": [
+          84,
+          94,
+          94
+        ],
+        "lab": [
+          39.07,
+          -3.87,
+          -1.32
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "c524f1cd",
+      "filename": "444b4c_20251121_220537_c524f1cd.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/444b4c_20251121_220537_c524f1cd.png",
+      "color": {
+        "hex": "444b4c",
+        "name": "blue",
+        "rgb": [
+          68,
+          75,
+          76
+        ],
+        "lab": [
+          31.31,
+          -2.59,
+          -1.56
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "7189fbc0",
+      "filename": "d1d5e5_20251121_220537_7189fbc0.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/d1d5e5_20251121_220537_7189fbc0.png",
+      "color": {
+        "hex": "d1d5e5",
+        "name": "white",
+        "rgb": [
+          209,
+          213,
+          229
+        ],
+        "lab": [
+          85.4,
+          1.68,
+          -8.32
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "115e4c95",
+      "filename": "2f1e36_20251121_220537_115e4c95.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/2f1e36_20251121_220537_115e4c95.png",
+      "color": {
+        "hex": "2f1e36",
+        "name": "purple",
+        "rgb": [
+          47,
+          30,
+          54
+        ],
+        "lab": [
+          14.4,
+          13.65,
+          -12.46
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "9234a7ee",
+      "filename": "40271a_20251121_220537_9234a7ee.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/40271a_20251121_220537_9234a7ee.png",
+      "color": {
+        "hex": "40271a",
+        "name": "orange",
+        "rgb": [
+          64,
+          39,
+          26
+        ],
+        "lab": [
+          18.43,
+          10.05,
+          13.4
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "e3704956",
+      "filename": "dedad5_20251121_220537_e3704956.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/dedad5_20251121_220537_e3704956.png",
+      "color": {
+        "hex": "dedad5",
+        "name": "white",
+        "rgb": [
+          222,
+          218,
+          213
+        ],
+        "lab": [
+          87.23,
+          0.48,
+          2.94
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "3850327b",
+      "filename": "a18840_20251121_220537_3850327b.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a18840_20251121_220537_3850327b.png",
+      "color": {
+        "hex": "a18840",
+        "name": "orange",
+        "rgb": [
+          161,
+          136,
+          64
+        ],
+        "lab": [
+          57.61,
+          0.6,
+          41.46
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "58690234",
+      "filename": "312b3b_20251121_220537_58690234.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/312b3b_20251121_220537_58690234.png",
+      "color": {
+        "hex": "312b3b",
+        "name": "purple",
+        "rgb": [
+          49,
+          43,
+          59
+        ],
+        "lab": [
+          18.78,
+          6.66,
+          -9.19
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "96192e30",
+      "filename": "9fa6b5_20251121_220537_96192e30.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/9fa6b5_20251121_220537_96192e30.png",
+      "color": {
+        "hex": "9fa6b5",
+        "name": "blue",
+        "rgb": [
+          159,
+          166,
+          181
+        ],
+        "lab": [
+          68.01,
+          0.58,
+          -8.56
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "14935c39",
+      "filename": "d1d5dd_20251121_220537_14935c39.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/d1d5dd_20251121_220537_14935c39.png",
+      "color": {
+        "hex": "d1d5dd",
+        "name": "white",
+        "rgb": [
+          209,
+          213,
+          221
+        ],
+        "lab": [
+          85.18,
+          0.14,
+          -4.41
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "3fb9c3c9",
+      "filename": "919191_20251121_220537_3fb9c3c9.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/919191_20251121_220537_3fb9c3c9.png",
+      "color": {
+        "hex": "919191",
+        "name": "gray",
+        "rgb": [
+          145,
+          145,
+          145
+        ],
+        "lab": [
+          60.17,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "7aeffe44",
+      "filename": "a15782_20251121_220537_7aeffe44.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a15782_20251121_220537_7aeffe44.png",
+      "color": {
+        "hex": "a15782",
+        "name": "pink",
+        "rgb": [
+          161,
+          87,
+          130
+        ],
+        "lab": [
+          46.98,
+          36.15,
+          -10.59
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "20480bfa",
+      "filename": "959595_20251121_220537_20480bfa.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/959595_20251121_220537_20480bfa.png",
+      "color": {
+        "hex": "959595",
+        "name": "gray",
+        "rgb": [
+          149,
+          149,
+          149
+        ],
+        "lab": [
+          61.7,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "20cd03c8",
+      "filename": "3b705c_20251121_220537_20cd03c8.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/3b705c_20251121_220537_20cd03c8.png",
+      "color": {
+        "hex": "3b705c",
+        "name": "green",
+        "rgb": [
+          59,
+          112,
+          92
+        ],
+        "lab": [
+          43.2,
+          -22.89,
+          5.68
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "20a17e33",
+      "filename": "a18dac_20251121_220537_20a17e33.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a18dac_20251121_220537_20a17e33.png",
+      "color": {
+        "hex": "a18dac",
+        "name": "purple",
+        "rgb": [
+          161,
+          141,
+          172
+        ],
+        "lab": [
+          61.31,
+          13.38,
+          -13.51
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:37"
+      }
+    },
+    {
+      "id": "4ab739dd",
+      "filename": "a0a0a0_20251121_220538_4ab739dd.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a0a0a0_20251121_220538_4ab739dd.png",
+      "color": {
+        "hex": "a0a0a0",
+        "name": "gray",
+        "rgb": [
+          160,
+          160,
+          160
+        ],
+        "lab": [
+          65.87,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "a72a6c0b",
+      "filename": "d7d7d7_20251121_220538_a72a6c0b.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/d7d7d7_20251121_220538_a72a6c0b.png",
+      "color": {
+        "hex": "d7d7d7",
+        "name": "white",
+        "rgb": [
+          215,
+          215,
+          215
+        ],
+        "lab": [
+          85.98,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "517265c1",
+      "filename": "71726d_20251121_220538_517265c1.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/71726d_20251121_220538_517265c1.png",
+      "color": {
+        "hex": "71726d",
+        "name": "gray",
+        "rgb": [
+          113,
+          114,
+          109
+        ],
+        "lab": [
+          47.82,
+          -1.38,
+          2.63
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "a400ed69",
+      "filename": "a1a1a1_20251121_220538_a400ed69.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a1a1a1_20251121_220538_a400ed69.png",
+      "color": {
+        "hex": "a1a1a1",
+        "name": "gray",
+        "rgb": [
+          161,
+          161,
+          161
+        ],
+        "lab": [
+          66.24,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "ccc0a5cb",
+      "filename": "7e7774_20251121_220538_ccc0a5cb.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/7e7774_20251121_220538_ccc0a5cb.png",
+      "color": {
+        "hex": "7e7774",
+        "name": "gray",
+        "rgb": [
+          126,
+          119,
+          116
+        ],
+        "lab": [
+          50.56,
+          2.11,
+          2.61
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "b8c91e6c",
+      "filename": "81888a_20251121_220538_b8c91e6c.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/81888a_20251121_220538_b8c91e6c.png",
+      "color": {
+        "hex": "81888a",
+        "name": "gray",
+        "rgb": [
+          129,
+          136,
+          138
+        ],
+        "lab": [
+          56.2,
+          -2.15,
+          -1.96
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "dd739107",
+      "filename": "55a0a9_20251121_220538_dd739107.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/55a0a9_20251121_220538_dd739107.png",
+      "color": {
+        "hex": "55a0a9",
+        "name": "blue",
+        "rgb": [
+          85,
+          160,
+          169
+        ],
+        "lab": [
+          61.6,
+          -20.76,
+          -11.88
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "6aa9c484",
+      "filename": "442428_20251121_220538_6aa9c484.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/442428_20251121_220538_6aa9c484.png",
+      "color": {
+        "hex": "442428",
+        "name": "red",
+        "rgb": [
+          68,
+          36,
+          40
+        ],
+        "lab": [
+          18.56,
+          15.75,
+          3.99
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "d3ba2cf4",
+      "filename": "966776_20251121_220538_d3ba2cf4.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/966776_20251121_220538_d3ba2cf4.png",
+      "color": {
+        "hex": "966776",
+        "name": "pink",
+        "rgb": [
+          150,
+          103,
+          118
+        ],
+        "lab": [
+          48.88,
+          21.18,
+          -0.73
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "0efefe94",
+      "filename": "728799_20251121_220538_0efefe94.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/728799_20251121_220538_0efefe94.png",
+      "color": {
+        "hex": "728799",
+        "name": "blue",
+        "rgb": [
+          114,
+          135,
+          153
+        ],
+        "lab": [
+          55.28,
+          -3.3,
+          -12.1
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "fb6e5fdd",
+      "filename": "dcdce3_20251121_220538_fb6e5fdd.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/dcdce3_20251121_220538_fb6e5fdd.png",
+      "color": {
+        "hex": "dcdce3",
+        "name": "white",
+        "rgb": [
+          220,
+          220,
+          227
+        ],
+        "lab": [
+          87.94,
+          1.28,
+          -3.42
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "05c73a24",
+      "filename": "bebebf_20251121_220538_05c73a24.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/bebebf_20251121_220538_05c73a24.png",
+      "color": {
+        "hex": "bebebf",
+        "name": "gray",
+        "rgb": [
+          190,
+          190,
+          191
+        ],
+        "lab": [
+          77.0,
+          0.19,
+          -0.5
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "ca2da30e",
+      "filename": "c2c1c3_20251121_220538_ca2da30e.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/c2c1c3_20251121_220538_ca2da30e.png",
+      "color": {
+        "hex": "c2c1c3",
+        "name": "gray",
+        "rgb": [
+          194,
+          193,
+          195
+        ],
+        "lab": [
+          78.2,
+          0.72,
+          -0.88
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "6a0b864c",
+      "filename": "93b5a0_20251121_220538_6a0b864c.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/93b5a0_20251121_220538_6a0b864c.png",
+      "color": {
+        "hex": "93b5a0",
+        "name": "green",
+        "rgb": [
+          147,
+          181,
+          160
+        ],
+        "lab": [
+          70.72,
+          -15.77,
+          6.91
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "eb6f6e08",
+      "filename": "8491a1_20251121_220538_eb6f6e08.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/8491a1_20251121_220538_eb6f6e08.png",
+      "color": {
+        "hex": "8491a1",
+        "name": "blue",
+        "rgb": [
+          132,
+          145,
+          161
+        ],
+        "lab": [
+          59.64,
+          -1.17,
+          -10.01
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "da63046f",
+      "filename": "a59786_20251121_220538_da63046f.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/a59786_20251121_220538_da63046f.png",
+      "color": {
+        "hex": "a59786",
+        "name": "orange",
+        "rgb": [
+          165,
+          151,
+          134
+        ],
+        "lab": [
+          63.22,
+          2.28,
+          10.83
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:38"
+      }
+    },
+    {
+      "id": "a19f7f8b",
+      "filename": "313737_20251121_220539_a19f7f8b.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/313737_20251121_220539_a19f7f8b.png",
+      "color": {
+        "hex": "313737",
+        "name": "blue",
+        "rgb": [
+          49,
+          55,
+          55
+        ],
+        "lab": [
+          22.52,
+          -2.54,
+          -0.87
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    },
+    {
+      "id": "a1e07dec",
+      "filename": "7fa98c_20251121_220539_a1e07dec.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/7fa98c_20251121_220539_a1e07dec.png",
+      "color": {
+        "hex": "7fa98c",
+        "name": "green",
+        "rgb": [
+          127,
+          169,
+          140
+        ],
+        "lab": [
+          65.58,
+          -20.24,
+          10.42
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    },
+    {
+      "id": "7323898a",
+      "filename": "202246_20251121_220539_7323898a.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/202246_20251121_220539_7323898a.png",
+      "color": {
+        "hex": "202246",
+        "name": "blue",
+        "rgb": [
+          32,
+          34,
+          70
+        ],
+        "lab": [
+          14.92,
+          10.79,
+          -22.97
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    },
+    {
+      "id": "b6193fb7",
+      "filename": "3e484e_20251121_220539_b6193fb7.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/3e484e_20251121_220539_b6193fb7.png",
+      "color": {
+        "hex": "3e484e",
+        "name": "blue",
+        "rgb": [
+          62,
+          72,
+          78
+        ],
+        "lab": [
+          29.93,
+          -2.52,
+          -4.94
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    },
+    {
+      "id": "1a1042c1",
+      "filename": "7e8278_20251121_220539_1a1042c1.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/7e8278_20251121_220539_1a1042c1.png",
+      "color": {
+        "hex": "7e8278",
+        "name": "gray",
+        "rgb": [
+          126,
+          130,
+          120
+        ],
+        "lab": [
+          53.77,
+          -3.45,
+          4.9
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    },
+    {
+      "id": "904d1499",
+      "filename": "969696_20251121_220539_904d1499.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/969696_20251121_220539_904d1499.png",
+      "color": {
+        "hex": "969696",
+        "name": "gray",
+        "rgb": [
+          150,
+          150,
+          150
+        ],
+        "lab": [
+          62.08,
+          -0.0,
+          0.0
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    },
+    {
+      "id": "dc6f3fb4",
+      "filename": "bea3e8_20251121_220539_dc6f3fb4.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/bea3e8_20251121_220539_dc6f3fb4.png",
+      "color": {
+        "hex": "bea3e8",
+        "name": "purple",
+        "rgb": [
+          190,
+          163,
+          232
+        ],
+        "lab": [
+          71.53,
+          23.33,
+          -31.08
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    },
+    {
+      "id": "e93e2df5",
+      "filename": "8b879e_20251121_220539_e93e2df5.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/8b879e_20251121_220539_e93e2df5.png",
+      "color": {
+        "hex": "8b879e",
+        "name": "blue",
+        "rgb": [
+          139,
+          135,
+          158
+        ],
+        "lab": [
+          57.35,
+          6.23,
+          -11.67
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    },
+    {
+      "id": "5e673f4c",
+      "filename": "c1c0c2_20251121_220539_5e673f4c.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/c1c0c2_20251121_220539_5e673f4c.png",
+      "color": {
+        "hex": "c1c0c2",
+        "name": "gray",
+        "rgb": [
+          193,
+          192,
+          194
+        ],
+        "lab": [
+          77.83,
+          0.72,
+          -0.88
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    },
+    {
+      "id": "645c3985",
+      "filename": "8a8296_20251121_220539_645c3985.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/8a8296_20251121_220539_645c3985.png",
+      "color": {
+        "hex": "8a8296",
+        "name": "purple",
+        "rgb": [
+          138,
+          130,
+          150
+        ],
+        "lab": [
+          55.66,
+          7.03,
+          -9.62
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    },
+    {
+      "id": "f2c2ee37",
+      "filename": "d4c7c2_20251121_220539_f2c2ee37.png",
+      "glyph_url": "https://raw.githubusercontent.com/dduyg/glyph-data-library/main/glyphs/d4c7c2_20251121_220539_f2c2ee37.png",
+      "color": {
+        "hex": "d4c7c2",
+        "name": "white",
+        "rgb": [
+          212,
+          199,
+          194
+        ],
+        "lab": [
+          81.15,
+          3.67,
+          4.13
+        ]
+      },
+      "timestamp": {
+        "date": "2025-11-21",
+        "time": "22:05:39"
+      }
+    }
+  ]
+}
