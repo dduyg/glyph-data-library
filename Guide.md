@@ -1,22 +1,5 @@
 # 📋 Setup Guide
 
-### 🎨 Color Search
-- **Color Picker**: Click to choose color visually
-- **Hex Input**: Type exact hex code (e.g., `#B27D74`)
-- **Tolerance Slider**: 
-  - `5-15`: Nearly identical colors
-  - `20-35`: Similar shades (recommended)
-  - `40-60`: Same color family
-  - `70+`: Broad matches
-
-### 🔍 Search Results
-- Automatically sorted by color similarity
-- Shows **Similarity Δ** value (lower = more similar)
-- Color badge and hex code displayed
-- Color family name tag
-
-### 📦 Selection & Export
-
 **Single Click** (no modifier key):
 - Instantly copies glyph URL to clipboard
 - Toast notification confirms copy
@@ -92,47 +75,6 @@ Your script generates filenames like:
 - ✅ Hex color visible in filename
 - ✅ No overwrites (re-running creates new files)
 
----
-
-## 🚀 Quick Commands
-
-### Initial Setup
-```bash
-# Clone your repo
-git clone https://github.com/your-username/glyph-library.git
-cd glyph-library
-
-# Create folders (if not using auto-upload)
-mkdir -p glyphs data
-
-# Add files and push
-git add .
-git commit -m "Initial glyph library"
-git push origin main
-```
-
-### Adding New Glyphs
-```bash
-# If using script Option 2 - it handles everything automatically!
-# Just re-run the Colab script with new images
-
-# If manual:
-# Add new processed images
-cp ~/Downloads/output_glyphs/*.png glyphs/
-
-# Replace metadata file
-cp ~/Downloads/output_glyphs/glyphs-metadata.json data/
-
-# Commit
-git add glyphs/ data/
-git commit -m "Add 20 new glyphs"
-git push origin main
-
-# Refresh your gallery page - new glyphs appear!
-```
-
----
-
 ## 🐛 Troubleshooting
 
 ### Images not loading?
@@ -157,8 +99,6 @@ git push origin main
 - ✅ Check browser console (F12) for fetch errors
 - ✅ Ensure file path is correct relative to index.html
 
----
-
 ## 📦 What the Script Generates
 
 ### From `glyph_processor.py`:
@@ -170,69 +110,9 @@ git push origin main
 
 ### Gallery Features:
 - ✅ Perceptual color similarity search (LAB)
-- ✅ Adjustable tolerance slider
-- ✅ Single-click URL copy
-- ✅ Multi-select with Shift/Ctrl
-- ✅ Export as JSON dataset
-- ✅ Responsive grid layout
-- ✅ Beautiful animations
-- ✅ Empty state handling
-
----
-
-## 🌐 Live URLs
-
-After setup, your URLs will be:
-
-**Gallery Page**:
-```
-https://your-username.github.io/glyph-library/
-```
-
-**Direct Image Access** (for code):
-```
-https://raw.githubusercontent.com/your-username/glyph-library/main/glyphs/667eea_20241121_120000_a1b2c3d4.png
-```
-
-**Metadata**:
-```
-https://raw.githubusercontent.com/your-username/glyph-library/main/data/glyphs-metadata.json
-```
-
----
-
-## 💡 Pro Tips
-
-### Color Tolerance Guide
-- Use **20-30** for finding similar colors to your search
-- Use **40-60** for broader color family searches
-- Use **5-15** for nearly exact color matches
-
-### Selecting Multiple Glyphs
-- **Shift + Click**: Add to selection
-- **Ctrl/Cmd + Click**: Toggle individual items
-- Select, then export to get subset of glyphs
-
-### K-means Color Detection
-- Script uses **3 clusters** by default
-- Finds dominant color by largest surface area
-- Ignores transparent and near-white pixels
-- More accurate than simple average
-
-### Organizing by Date
-- Filenames include timestamp
-- Easy to track when glyphs were added
-- Can filter by date in custom code
-
----
-
-## 🎉 You're Ready!
-
-Your glyph library now has:
 - ✅ Color-based similarity search
 - ✅ Unique timestamped filenames
 - ✅ LAB color space accuracy
 - ✅ Auto-upload to GitHub option
 - ✅ Beautiful interactive gallery
 - ✅ Easy dataset export
-- ✅ One-click URL copying
