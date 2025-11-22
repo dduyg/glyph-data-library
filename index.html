@@ -12,24 +12,11 @@
             min-height: 100vh;
             padding-top: 80px;
         }
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(2px);
-            z-index: -1;
-        }
 
         .header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(20, 20, 30, 0.85);
-            backdrop-filter: blur(20px);
+            top: 0; left: 0; right: 0;
             padding: 15px 30px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
             z-index: 100;
             display: flex;
             justify-content: space-between;
@@ -38,8 +25,7 @@
         }
 
         .header h1 {
-            color: #fff;
-            font-size: 1.5em;
+            font-size: 1.2em;
             margin: 0;
             text-shadow: 0 2px 10px rgba(0,0,0,0.5);
             flex-shrink: 0;
@@ -59,7 +45,7 @@
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
             transition: all 0.3s;
             backdrop-filter: blur(10px);
@@ -95,12 +81,6 @@
         .color-group-select:focus, .sort-select:focus {
             outline: none;
             border-color: rgba(102, 126, 234, 0.8);
-        }
-
-        .container {
-            max-width: 1800px;
-            margin: 0 auto;
-            padding: 20px;
         }
 
         .search-panel {
@@ -327,11 +307,10 @@
         }
 
         .glyph-card {
-            background: rgba(40, 40, 60, 0.7);
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            padding: 8px;
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
@@ -505,25 +484,7 @@
             flex: 1;
         }
 
-        @media (max-width: 1200px) {
-            .gallery {
-                grid-template-columns: repeat(8, 1fr);
-            }
-        }
-
-        @media (max-width: 900px) {
-            .gallery {
-                grid-template-columns: repeat(6, 1fr);
-            }
-            .header h1 {
-                font-size: 1.2em;
-            }
-        }
-
         @media (max-width: 600px) {
-            .gallery {
-                grid-template-columns: repeat(4, 1fr);
-            }
             .header-controls {
                 gap: 5px;
             }
