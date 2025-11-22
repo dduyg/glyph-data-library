@@ -1,7 +1,6 @@
 # glyph-data-library
 Interactive 3D glyph library ready for use.
 
-
 ### 🔗 Integration
 Works with: D3.js, Plotly, Chart.js, Three.js, React, Vue, Observable
 
@@ -12,50 +11,7 @@ Works with: D3.js, Plotly, Chart.js, Three.js, React, Vue, Observable
 2. **💾 Download JSON**: Downloads as file
 3. **✕ Clear**: Deselects all
 
----
-
-## 🎯 Usage Examples
-
-### In Data Visualization (D3.js)
-```javascript
-// Search for red glyphs
-const redGlyphs = GLYPH_DATA.filter(g => g.colorName === 'red');
-
-// Use in D3
-d3.select('svg')
-  .selectAll('image')
-  .data(redGlyphs)
-  .enter()
-  .append('image')
-  .attr('href', d => d.glyph_url)
-  .attr('x', (d, i) => i * 50)
-  .attr('width', 40);
-```
-
-### In React
-```jsx
-function GlyphMarker({ color }) {
-  const glyph = GLYPH_DATA.find(g => g.hex === color);
-  return <img src={glyph.glyph_url} alt={glyph.colorName} />;
-}
-```
-
-### In Plotly
-```javascript
-const trace = {
-  x: [1, 2, 3],
-  y: [10, 15, 13],
-  mode: 'markers',
-  marker: {
-    size: 50,
-    symbol: GLYPH_DATA.map(g => g.glyph_url)
-  }
-};
-```
-
----
-
-## 🔧 File Naming Convention
+## 🎯 File Naming Convention
 
 Your script generates filenames like:
 ```
@@ -109,3 +65,34 @@ Your script generates filenames like:
 - ✅ Auto-upload to GitHub option
 - ✅ Beautiful interactive gallery
 - ✅ Easy dataset export
+
+
+# Automatic Data Loading
+
+### 🔄 Adding New Glyphs
+
+#### 📊 Data Flow
+```
+Python Script
+    ↓
+Generates: glyphs-data.json
+    ↓
+Auto-load to repo/data/
+    ↓
+index.html fetches from: data/glyphs-data.json
+    ↓
+Gallery displays glyphs ✨
+```
+
+## 🐛 Common Issues
+
+### Validate JSON
+Before uploading, validate your JSON:
+- Use https://jsonlint.com/
+- Or run: `python -m json.tool data/glyphs-metadata.json`
+
+### Version Control
+Keep `glyphs.js` as backup:
+- Python script generates both files
+- `glyphs-data.json` = used by gallery
+- `glyphs.js` = backup/reference
