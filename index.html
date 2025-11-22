@@ -45,7 +45,7 @@
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 8px;
-            font-size: 15px;
+            font-size: 16px;
             cursor: pointer;
             transition: all 0.3s;
             backdrop-filter: blur(10px);
@@ -58,7 +58,13 @@
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
         }
 
-        .color-group-select, .sort-select {
+        .custom-select {
+            position: relative;
+            min-width: 140px;
+            max-width: 160px;
+        }
+
+        .select-trigger {
             padding: 10px 14px;
             background: rgba(60, 60, 80, 0.8);
             color: #fff;
@@ -69,18 +75,108 @@
             cursor: pointer;
             transition: all 0.3s;
             backdrop-filter: blur(10px);
-            min-width: 140px;
-            max-width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            user-select: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .color-group-select:hover, .sort-select:hover {
+        .select-trigger:hover {
             border-color: rgba(102, 126, 234, 0.6);
             background: rgba(70, 70, 90, 0.9);
         }
 
-        .color-group-select:focus, .sort-select:focus {
-            outline: none;
+        .select-trigger.active {
             border-color: rgba(102, 126, 234, 0.8);
+            background: rgba(70, 70, 90, 0.9);
+        }
+
+        .select-arrow {
+            font-size: 10px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .select-trigger.active .select-arrow {
+            transform: rotate(180deg);
+        }
+
+        .select-dropdown {
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0; right: 0;
+            background: rgba(30, 30, 45, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .select-dropdown.visible {
+            display: block;
+            animation: dropdownSlide 0.2s ease-out;
+        }
+
+        @keyframes dropdownSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .select-option {
+            padding: 12px 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        .select-option:hover {
+            background: rgba(102, 126, 234, 0.3);
+            color: #fff;
+        }
+
+        .select-option.selected {
+            background: rgba(102, 126, 234, 0.5);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .select-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .select-dropdown::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+
+        .select-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(102, 126, 234, 0.5);
+            border-radius: 3px;
+        }
+
+        .select-dropdown::-webkit-scrollbar-thumb:hover {
+            background: rgba(102, 126, 234, 0.7);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .search-panel {
@@ -307,10 +403,11 @@
         }
 
         .glyph-card {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(40, 40, 60, 0.7);
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
+            padding: 8px;
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
@@ -484,15 +581,36 @@
             flex: 1;
         }
 
+        @media (max-width: 1200px) {
+            .gallery {
+                grid-template-columns: repeat(8, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
         @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(4, 1fr);
+            }
             .header-controls {
                 gap: 5px;
             }
-            .color-group-select, .sort-select {
+            .custom-select {
                 min-width: 100px;
                 max-width: 120px;
+            }
+            .select-trigger {
                 font-size: 12px;
                 padding: 8px 10px;
+            }
+            .select-option {
+                font-size: 12px;
+                padding: 10px 12px;
             }
         }
     </style>
@@ -501,15 +619,25 @@
     <div class="header">
         <h1>🎨 Glyph Library</h1>
         <div class="header-controls">
-            <select class="sort-select" id="sortSelect" onchange="handleSortChange()">
-                <option value="">🎛 Sort</option>
-                <option value="newest">Newest First</option>
-                <option value="oldest">Oldest First</option>
-            </select>
+            <div class="custom-select" id="sortDropdown">
+                <div class="select-trigger" onclick="toggleDropdown('sort')">
+                    <span id="sortLabel">🎛 Sort</span>
+                    <span class="select-arrow">▼</span>
+                </div>
+                <div class="select-dropdown" id="sortOptions">
+                    <div class="select-option" data-value="" onclick="selectOption('sort', '', '🎛 Sort')">Default</div>
+                    <div class="select-option" data-value="newest" onclick="selectOption('sort', 'newest', 'Newest First')">Newest First</div>
+                    <div class="select-option" data-value="oldest" onclick="selectOption('sort', 'oldest', 'Oldest First')">Oldest First</div>
+                </div>
+            </div>
             <button class="icon-btn" onclick="toggleSearchPanel()">🔍</button>
-            <select class="color-group-select" id="colorGroupSelect" onchange="handleColorGroupChange()">
-                <option value="">Color Group</option>
-            </select>
+            <div class="custom-select" id="colorGroupDropdown">
+                <div class="select-trigger" onclick="toggleDropdown('colorGroup')">
+                    <span id="colorGroupLabel">Color Group</span>
+                    <span class="select-arrow">▼</span>
+                </div>
+                <div class="select-dropdown" id="colorGroupOptions"></div>
+            </div>
         </div>
     </div>
 
@@ -578,6 +706,105 @@
         let activeColorGroup = null;
         let currentSort = '';
 
+        // Custom dropdown functionality
+        function toggleDropdown(type) {
+            const sortDropdown = document.getElementById('sortOptions');
+            const colorDropdown = document.getElementById('colorGroupOptions');
+            const sortTrigger = document.querySelector('#sortDropdown .select-trigger');
+            const colorTrigger = document.querySelector('#colorGroupDropdown .select-trigger');
+            
+            if (type === 'sort') {
+                const isVisible = sortDropdown.classList.contains('visible');
+                colorDropdown.classList.remove('visible');
+                colorTrigger.classList.remove('active');
+                
+                sortDropdown.classList.toggle('visible');
+                sortTrigger.classList.toggle('active');
+                
+                if (!isVisible) {
+                    document.addEventListener('click', closeSortOnClickOutside);
+                } else {
+                    document.removeEventListener('click', closeSortOnClickOutside);
+                }
+            } else if (type === 'colorGroup') {
+                const isVisible = colorDropdown.classList.contains('visible');
+                sortDropdown.classList.remove('visible');
+                sortTrigger.classList.remove('active');
+                
+                colorDropdown.classList.toggle('visible');
+                colorTrigger.classList.toggle('active');
+                
+                if (!isVisible) {
+                    document.addEventListener('click', closeColorOnClickOutside);
+                } else {
+                    document.removeEventListener('click', closeColorOnClickOutside);
+                }
+            }
+        }
+
+        function closeSortOnClickOutside(e) {
+            const dropdown = document.getElementById('sortDropdown');
+            if (!dropdown.contains(e.target)) {
+                document.getElementById('sortOptions').classList.remove('visible');
+                document.querySelector('#sortDropdown .select-trigger').classList.remove('active');
+                document.removeEventListener('click', closeSortOnClickOutside);
+            }
+        }
+
+        function closeColorOnClickOutside(e) {
+            const dropdown = document.getElementById('colorGroupDropdown');
+            if (!dropdown.contains(e.target)) {
+                document.getElementById('colorGroupOptions').classList.remove('visible');
+                document.querySelector('#colorGroupDropdown .select-trigger').classList.remove('active');
+                document.removeEventListener('click', closeColorOnClickOutside);
+            }
+        }
+
+        function selectOption(type, value, label) {
+            if (type === 'sort') {
+                currentSort = value;
+                document.getElementById('sortLabel').textContent = label;
+                document.getElementById('sortOptions').classList.remove('visible');
+                document.querySelector('#sortDropdown .select-trigger').classList.remove('active');
+                document.removeEventListener('click', closeSortOnClickOutside);
+                
+                // Update selected state
+                document.querySelectorAll('#sortOptions .select-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                    if (opt.dataset.value === value) {
+                        opt.classList.add('selected');
+                    }
+                });
+                
+                applySorting();
+                renderGallery(filteredGlyphs);
+            } else if (type === 'colorGroup') {
+                activeColorGroup = value || null;
+                document.getElementById('colorGroupLabel').textContent = label;
+                document.getElementById('colorGroupOptions').classList.remove('visible');
+                document.querySelector('#colorGroupDropdown .select-trigger').classList.remove('active');
+                document.removeEventListener('click', closeColorOnClickOutside);
+                
+                // Update selected state
+                document.querySelectorAll('#colorGroupOptions .select-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                    if (opt.dataset.value === value) {
+                        opt.classList.add('selected');
+                    }
+                });
+                
+                if (!value) {
+                    filteredGlyphs = [...allGlyphs];
+                } else {
+                    filteredGlyphs = allGlyphs.filter(g => g.color.name === value);
+                }
+                
+                applySorting();
+                renderGallery(filteredGlyphs);
+                updateStats();
+            }
+        }
+
         async function loadGlyphData() {
             try {
                 const response = await fetch('https://raw.githubusercontent.com/dduyg/glyph-data-library/main/data/glyphs-metadata.json');
@@ -606,36 +833,34 @@
 
         function setupColorGroupDropdown() {
             const colorNames = [...new Set(allGlyphs.map(g => g.color.name))].sort();
-            const select = document.getElementById('colorGroupSelect');
+            const container = document.getElementById('colorGroupOptions');
             
+            // Add default option
+            const defaultOption = document.createElement('div');
+            defaultOption.className = 'select-option selected';
+            defaultOption.dataset.value = '';
+            defaultOption.textContent = 'All Colors';
+            defaultOption.onclick = () => selectOption('colorGroup', '', 'Color Group');
+            container.appendChild(defaultOption);
+            
+            // Add color options
             colorNames.forEach(colorName => {
-                const option = document.createElement('option');
-                option.value = colorName;
-                option.textContent = colorName.charAt(0).toUpperCase() + colorName.slice(1);
-                select.appendChild(option);
+                const option = document.createElement('div');
+                option.className = 'select-option';
+                option.dataset.value = colorName;
+                const displayName = colorName.charAt(0).toUpperCase() + colorName.slice(1);
+                option.textContent = displayName;
+                option.onclick = () => selectOption('colorGroup', colorName, displayName);
+                container.appendChild(option);
             });
         }
 
         function handleColorGroupChange() {
-            const colorName = document.getElementById('colorGroupSelect').value;
-            
-            if (!colorName) {
-                activeColorGroup = null;
-                filteredGlyphs = [...allGlyphs];
-            } else {
-                activeColorGroup = colorName;
-                filteredGlyphs = allGlyphs.filter(g => g.color.name === colorName);
-            }
-            
-            applySorting();
-            renderGallery(filteredGlyphs);
-            updateStats();
+            // This function is now handled by selectOption
         }
 
         function handleSortChange() {
-            currentSort = document.getElementById('sortSelect').value;
-            applySorting();
-            renderGallery(filteredGlyphs);
+            // This function is now handled by selectOption
         }
 
         function applySorting() {
@@ -826,8 +1051,13 @@
             
             const tolerance = 35;
             
+            // Reset dropdowns
             activeColorGroup = null;
-            document.getElementById('colorGroupSelect').value = '';
+            document.getElementById('colorGroupLabel').textContent = 'Color Group';
+            document.querySelectorAll('#colorGroupOptions .select-option').forEach(opt => {
+                opt.classList.remove('selected');
+                if (opt.dataset.value === '') opt.classList.add('selected');
+            });
 
             filteredGlyphs = allGlyphs.map(glyph => {
                 const distance = colorDistance(targetColor, '#' + glyph.color.hex);
@@ -843,8 +1073,21 @@
         function resetFilters() {
             activeColorGroup = null;
             currentSort = '';
-            document.getElementById('colorGroupSelect').value = '';
-            document.getElementById('sortSelect').value = '';
+            
+            // Reset sort dropdown
+            document.getElementById('sortLabel').textContent = '🎛 Sort';
+            document.querySelectorAll('#sortOptions .select-option').forEach(opt => {
+                opt.classList.remove('selected');
+                if (opt.dataset.value === '') opt.classList.add('selected');
+            });
+            
+            // Reset color group dropdown
+            document.getElementById('colorGroupLabel').textContent = 'Color Group';
+            document.querySelectorAll('#colorGroupOptions .select-option').forEach(opt => {
+                opt.classList.remove('selected');
+                if (opt.dataset.value === '') opt.classList.add('selected');
+            });
+            
             filteredGlyphs = [...allGlyphs];
             filteredGlyphs.forEach(g => delete g.colorDistance);
             renderGallery(filteredGlyphs);
