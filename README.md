@@ -1,7 +1,7 @@
 # glyph-data-library
 Interactive 3D glyph library ready for use.
 
-### 🔗 Integration
+#### Integration
 Works with: D3.js, Plotly, Chart.js, Three.js, React, Vue, Observable
 
 # 📋 Guide
@@ -24,54 +24,9 @@ Your script generates filenames like:
 - `2ecc71_20241121_150000_i9j0k1l2.png`
 
 
-## 🐛 Troubleshooting
-
-### Images not loading?
-- ✅ Repository must be **PUBLIC**
-- ✅ Check image URLs in GLYPH_DATA match GitHub structure
-- ✅ Files must be in `glyphs/` folder
-- ✅ Use `raw.githubusercontent.com` URLs (not `github.com`)
-
-### Color search not working?
-- ✅ Ensure LAB values are in data
-- ✅ Check browser console (F12) for errors
-- ✅ Verify hex codes start with `#`
-
-### Script upload fails (Option 2)?
-- ✅ Token needs **repo** permissions
-- ✅ Generate token at: https://github.com/settings/tokens
-- ✅ Use **Fine-grained tokens** or **Classic** with full repo access
-
-### Gallery is empty?
-- ✅ Check that `data/glyphs-metadata.json` exists
-- ✅ Verify JSON file is valid (use JSONLint.com)
-- ✅ Check browser console (F12) for fetch errors
-- ✅ Ensure file path is correct relative to index.html
-
-## 📦 What the Script Generates
-
-### From `glyph_processor.py`:
-- ✅ Renamed PNG files with unique IDs
-- ✅ `glyphs-metadata.json` (complete metadata)
-- ✅ `glyph-data.js` (ready-to-paste JavaScript)
-- ✅ Color extraction using K-means clustering
-- ✅ LAB color space values for accurate search
-
-### Gallery Features:
-- ✅ Perceptual color similarity search (LAB)
-- ✅ Color-based similarity search
-- ✅ Unique timestamped filenames
-- ✅ LAB color space accuracy
-- ✅ Auto-upload to GitHub option
-- ✅ Beautiful interactive gallery
-- ✅ Easy dataset export
-
-
 # Automatic Data Loading
 
-### 🔄 Adding New Glyphs
-
-#### 📊 Data Flow
+### 🔄 Data Flow
 ```
 Python Script
     ↓
@@ -84,14 +39,17 @@ index.html fetches from: data/glyphs-data.json
 Gallery displays glyphs ✨
 ```
 
-## 🐛 Common Issues
+## 🐛 Troubleshooting
 
-### Validate JSON
+- Gallery is empty?: `data/glyphs-data.json` exists
+- Check browser console (F12) for fetch errors
+
+#### Validate JSON
 Before uploading, validate your JSON:
 - Use https://jsonlint.com/
 - Or run: `python -m json.tool data/glyphs-metadata.json`
 
-### Version Control
+#### Version Control
 Keep `glyphs.js` as backup:
 - Python script generates both files
 - `glyphs-data.json` = used by gallery
