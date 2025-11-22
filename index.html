@@ -174,7 +174,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1800px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -625,7 +625,6 @@
                     <span class="select-arrow">▼</span>
                 </div>
                 <div class="select-dropdown" id="sortOptions">
-                    <div class="select-option" data-value="" onclick="selectOption('sort', '', '🎛 Sort')">Default</div>
                     <div class="select-option" data-value="newest" onclick="selectOption('sort', 'newest', 'Newest First')">Newest First</div>
                     <div class="select-option" data-value="oldest" onclick="selectOption('sort', 'oldest', 'Oldest First')">Oldest First</div>
                 </div>
@@ -633,7 +632,7 @@
             <button class="icon-btn" onclick="toggleSearchPanel()">🔍</button>
             <div class="custom-select" id="colorGroupDropdown">
                 <div class="select-trigger" onclick="toggleDropdown('colorGroup')">
-                    <span id="colorGroupLabel">Color Group</span>
+                    <span id="colorGroupLabel">Color Name</span>
                     <span class="select-arrow">▼</span>
                 </div>
                 <div class="select-dropdown" id="colorGroupOptions"></div>
@@ -835,15 +834,7 @@
             const colorNames = [...new Set(allGlyphs.map(g => g.color.name))].sort();
             const container = document.getElementById('colorGroupOptions');
             
-            // Add default option
-            const defaultOption = document.createElement('div');
-            defaultOption.className = 'select-option selected';
-            defaultOption.dataset.value = '';
-            defaultOption.textContent = 'All Colors';
-            defaultOption.onclick = () => selectOption('colorGroup', '', 'Color Group');
-            container.appendChild(defaultOption);
-            
-            // Add color options
+            // Add color options only (no "All Colors" default)
             colorNames.forEach(colorName => {
                 const option = document.createElement('div');
                 option.className = 'select-option';
@@ -1051,12 +1042,11 @@
             
             const tolerance = 35;
             
-            // Reset dropdowns
+            // Reset color name dropdown
             activeColorGroup = null;
-            document.getElementById('colorGroupLabel').textContent = 'Color Group';
+            document.getElementById('colorGroupLabel').textContent = 'Color Name';
             document.querySelectorAll('#colorGroupOptions .select-option').forEach(opt => {
                 opt.classList.remove('selected');
-                if (opt.dataset.value === '') opt.classList.add('selected');
             });
 
             filteredGlyphs = allGlyphs.map(glyph => {
@@ -1078,14 +1068,12 @@
             document.getElementById('sortLabel').textContent = '🎛 Sort';
             document.querySelectorAll('#sortOptions .select-option').forEach(opt => {
                 opt.classList.remove('selected');
-                if (opt.dataset.value === '') opt.classList.add('selected');
             });
             
-            // Reset color group dropdown
-            document.getElementById('colorGroupLabel').textContent = 'Color Group';
+            // Reset color name dropdown
+            document.getElementById('colorGroupLabel').textContent = 'Color Name';
             document.querySelectorAll('#colorGroupOptions .select-option').forEach(opt => {
                 opt.classList.remove('selected');
-                if (opt.dataset.value === '') opt.classList.add('selected');
             });
             
             filteredGlyphs = [...allGlyphs];
