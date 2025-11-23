@@ -1,6 +1,6 @@
 <div align="center">
     <h1>glyph-data-library</h1>
-    <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/BLOBs/blob-36.png" width="882" />
+    <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/BLOBs/blob-36.png" height="250" />
     <p align="center">
         Interactive 3D glyph library ready for use..
     </p>
