@@ -1,84 +1,4 @@
-# 🔱 GLYPH PROCESSOR  
-**Automated Glyph Image Analysis → Renaming → Color Extraction → Metadata Generation → GitHub Publishing**
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.9%2B-blue?logo=python" />
-  <img src="https://img.shields.io/badge/Google%20Colab-Compatible-orange?logo=googlecolab" />
-  <img src="https://img.shields.io/badge/GitHub-Auto%20Uploader-black?logo=github" />
-  <img src="https://img.shields.io/badge/License-MIT-green" />
-  <img src="https://img.shields.io/badge/Status-Stable-success" />
-</p>
-
-## 📌 Overview
-
-**Glyph Processor** is a complete automation pipeline for transforming glyph-like PNG images into fully tagged and searchable metadata objects.  
-It extracts color information, visual metrics, shapes, and aesthetic "moods," then renames images with a unique hash and exports everything to:
-
-- A **local ZIP**, or  
-- A **GitHub repository**, organized as:
-  ```
-  glyphs/ → images  
-  data/   → metadata (JSON + JS)
-  ```
-
-This makes it perfect for:
-- Procedural graphics datasets  
-- Generative art archives  
-- Glyph/icon catalogs  
-- Machine learning image labeling  
-- Automated asset libraries  
-
----
-
-## ✨ Features
-
-### 🎨 Color Analysis
-- Dominant color detection (K-Means)
-- Secondary color extraction
-- HEX, RGB, LAB → computed for each glyph
-- Color naming (categorical)
-- Color harmony classification (analogous / complementary / none)
-
-### 🧠 Image Metrics
-- Edge density
-- Shannon entropy
-- Texture complexity (LBP)
-- Contrast normalization
-- Shape metrics (circularity + aspect ratio)
-- Edge orientation
-
-### 🌀 Mood Classification (rule-based)
-Examples:
-- **minimalistic**
-- **serene**
-- **chaotic**
-- **mysterious**
-- **playful**
-- **dramatic**
-…and more.
-
-### 🔧 File Handling
-- Automatically generates unique names:
-  ```
-  <hex>_<timestamp>_<uuid>.png
-  ```
-- Creates:
-  - `glyphs-data.json`
-  - `glyphs.js` (JavaScript-ready dataset)
-
-### 🛠 GitHub Automation
-- Uploads images → `glyphs/`  
-- Uploads metadata → `data/`  
-- Creates repo automatically if missing  
-- Updates existing files incrementally  
-
-### 💼 Deployment
-- Works 100% inside **Google Colab**  
-- No local environment needed  
-
----
-
-# 🚀 Quick Start (Google Colab)
+# 📋 Guide
 
 ### 1. Open a new Colab Notebook  
 Paste the entire script into a cell and run it.
@@ -148,10 +68,7 @@ Paste into the Colab prompt:
 🔑 GitHub Personal Access Token:
 ```
 
----
-
-# 📁 Output Structure (GitHub)
-
+## 📁 Output Structure (GitHub)
 ```
 📂 glyph-library/
  ├── 📂 glyphs/
@@ -164,9 +81,7 @@ Paste into the Colab prompt:
  └── README.md
 ```
 
----
-
-# 🧠 Example Metadata (`glyphs-data.json`)
+## 🧠 Example Metadata (`glyphs-data.json`)
 
 ```json
 {
@@ -194,8 +109,18 @@ Paste into the Colab prompt:
 }
 ```
 
----
+## 🐛 Troubleshooting
 
-# 📄 License
-MIT License.
+- Gallery is empty?: `data/glyphs-data.json` exists
+- Check browser console (F12) for fetch errors
 
+#### Validate JSON
+Before uploading, validate your JSON:
+- Use https://jsonlint.com/
+- Or run: `python -m json.tool data/glyphs-metadata.json`
+
+#### Version Control
+Keep `glyphs.js` as backup:
+- Python script generates both files
+- `glyphs-data.json` = used by gallery
+- `glyphs.js` = backup/reference
