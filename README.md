@@ -1,8 +1,8 @@
 <div align="center">
     <h1>Glyph data library</h1>
-    <a href="obsergallery.io">
-    <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/BLOBs/blob-36.png" height="250">
+    <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/BLOBs/blob-36.png" height="250" />
        <p align="center">
+        <a href="obsergallery.github.io">
             <img src="https://img.shields.io/badge/View%20Dynamic%20Gallery-D9D0D7?style=for-the-badge&logo=eight&logoColor=white"></a>
     </p>
     <samp align="center">
