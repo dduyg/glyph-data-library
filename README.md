@@ -36,8 +36,6 @@ The script assigns one of nine moods (serene, calm, energetic, chaotic, mysterio
 | Dramatic | High contrast, moderate to high entropy (5–7), bold warm colors |
 | Playful | Medium entropy (4–6), bright colors, irregular or whimsical shapes |
 
-> Each metric is weighted according to visual importance, combining color, shape, and complexity for robust assignment.
-
 ## 🏛 Output Structure
 - `glyphs.catalog.json`:
 
