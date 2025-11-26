@@ -202,18 +202,89 @@ def compute_mood(dom_rgb, entropy, edge, tex, contrast, circ, aspect, angle, har
     r, g, b = dom_rgb
     h = compute_hue(dom_rgb)
     sat = (max(dom_rgb) - min(dom_rgb)) / (max(dom_rgb) + 1e-6)
-
-    if entropy < 4 and edge < 0.05 and sat < 0.25:
-        return "minimalistic"
-    if h > 200 and brightness > 170 and sat < 0.25:
-        return "futuristic"
-    if brightness < 80 and h > 180:
-        return "mysterious"
-    if sat > 0.5 and entropy < 6:
+    
+    # Determine if color is warm (red/orange/yellow) or cool (blue/purple)
+    is_warm = (h <= 60) or (h >= 330)  # Red, orange, yellow
+    is_cool = (165 <= h <= 295)  # Blue, purple
+    
+    # Score each mood based on how well it matches (0-1 scale)
+    scores = {}
+    
+    # Minimalistic: Low entropy (<3.5), very low edge density (<0.03)
+    scores['minimalistic'] = 0
+    if entropy < 3.5:
+        scores['minimalistic'] += (3.5 - entropy) / 3.5
+    if edge < 0.03:
+        scores['minimalistic'] += (0.03 - edge) / 0.03
+    
+    # Chaotic: High entropy (>6), high edge density (>0.15)
+    scores['chaotic'] = 0
+    if entropy > 6:
+        scores['chaotic'] += min((entropy - 6) / 2, 1)
+    if edge > 0.15:
+        scores['chaotic'] += min((edge - 0.15) / 0.35, 1)
+    
+    # Mysterious: Dark brightness (<90), cool colors, medium entropy (4–6)
+    scores['mysterious'] = 0
+    if brightness < 90 and is_cool:
+        scores['mysterious'] += (90 - brightness) / 90
+        if 4 <= entropy <= 6:
+            scores['mysterious'] += 0.5
+    
+    # Futuristic: Bright (>150), cool hue, low to moderate saturation (<0.35)
+    scores['futuristic'] = 0
+    if brightness > 150 and is_cool and sat < 0.35:
+        scores['futuristic'] += min((brightness - 150) / 100, 1)
+        scores['futuristic'] += (0.35 - sat) / 0.35
+    
+    # Dramatic: High contrast (>0.5), moderate to high entropy (5–7), bold warm colors
+    scores['dramatic'] = 0
+    if contrast > 0.5 and is_warm:
+        scores['dramatic'] += (contrast - 0.5) / 0.5
+        if 5 <= entropy <= 7:
+            scores['dramatic'] += 0.5
+    
+    # Energetic: High saturation (>0.45), warm colors, moderate complexity (4–6)
+    scores['energetic'] = 0
+    if sat > 0.45 and is_warm:
+        scores['energetic'] += min((sat - 0.45) / 0.55, 1)
+        if 4 <= entropy <= 6:
+            scores['energetic'] += 0.5
+    
+    # Playful: Medium entropy (4–6), bright colors, irregular shapes
+    scores['playful'] = 0
+    if 4 <= entropy <= 6 and brightness > 120:
+        scores['playful'] += 0.5
+        if circ < 0.6:
+            scores['playful'] += (0.6 - circ) / 0.6
+    
+    # Serene: Low entropy (<4), low edge density (<0.05), soft colors, low saturation
+    scores['serene'] = 0
+    if entropy < 4:
+        scores['serene'] += (4 - entropy) / 4
+    if edge < 0.05:
+        scores['serene'] += (0.05 - edge) / 0.05
+    if sat < 0.4:
+        scores['serene'] += (0.4 - sat) / 0.4
+    
+    # Calm: Low entropy (<5), moderate edge density (<0.08), pastel or cool
+    scores['calm'] = 0
+    if entropy < 5:
+        scores['calm'] += (5 - entropy) / 5
+    if edge < 0.08:
+        scores['calm'] += (0.08 - edge) / 0.08
+    
+    # Return mood with highest score
+    if max(scores.values()) > 0:
+        return max(scores, key=scores.get)
+    
+    # If all scores are 0 (shouldn't happen), return based on basic characteristics
+    if entropy < 4:
+        return "serene"
+    elif sat > 0.5:
         return "energetic"
-    if tex > 1.6 and entropy > 6:
-        return "organic"
-    return "serene"
+    else:
+        return "calm"
 
 def process_glyphs(input_folder, output_folder, github_user, github_repo, branch="main"):
     os.makedirs(output_folder, exist_ok=True)
