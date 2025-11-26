@@ -87,13 +87,18 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 
 ### metrics.edge_density
 - **Type:** float
-- **Description:** Proportion of strong edges inside the non-transparent regions. Canny edge detection with thresholds (80, 160)
-
+- **Range**: 0.0–1.0
+- **Example**: `0.1823`
+- **Interpretation**: High values → many edges/complex shapes. Low values → smooth or minimal shapes.
+- **Description:** Canny edge detection measuring structural complexity
+ 
 ---
 
 ### metrics.entropy
-- **Type:** float  
-- **Description:** Shannon entropy grayscale pixel distribution (texture randomness).
+- **Type:** float
+- **Example**: `5.2341`
+- **Interpretation**: High entropy → textured, detailed. Low entropy → simple, uniform.
+- **Description:** Measures informational complexity (*how "busy" the image is*) with Shannon entropy grayscale pixel distribution
 
 ---
 
@@ -156,9 +161,4 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 
 
 # ---🔍🔍🔍🔍---
-
-| 🔍 |  |
-|---|---|
-| *Edge Density*: Measures structural complexity. | High values → many edges/complex shapes.<br>Low values → smooth or minimal shapes. |
-| *Entropy*: Measures informational complexity (how "busy" the image is). | High entropy → textured, detailed.<br>Low entropy → simple, uniform. |
-| *Color Harmony*: Detects if colors follow complementary, analogous, or triadic schemes. |  |
+- *Color Harmony*: Detects if colors follow complementary, analogous, or triadic schemes.
