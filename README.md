@@ -11,11 +11,8 @@
 </div><br><br>
 
 ### 🔍Features:
-#### Color analysis
 - Dominant color extraction using K-means
 - Perceptual color similarity search (LAB) color conversion & semantic color grouping
-
-#### Quantitative Metrics
 - Edge density, entropy, texture complexity (LBP) 
 - Shape circularity, aspect ratio  
 - Edge orientation & contrast  
