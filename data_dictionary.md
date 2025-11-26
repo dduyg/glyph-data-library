@@ -126,7 +126,7 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 
 ### metrics.circularity
 - **Type:** float 
-- **Description:** Shape compactness; 1 = perfect circle.
+- **Description:** Shape roundness, where 1.0 = perfect circular. Low values = irregular shapes.
 
 ---
 
