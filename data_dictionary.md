@@ -144,21 +144,20 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 
 ## 🌀 mood
 - **Type:** string (categorical)  
-- **Values:**  
-`minimalistic`, `futuristic`, `mysterious`, `energetic`, `organic`, `serene`  
+- **Values:** `"serene"`, `"calm"`, `"energetic"`, `"chaotic"`, `"mysterious"`, `"futuristic"`, `"minimalistic"`, `"dramatic"`, `"playful"`  
 - **Description:** Mood classification based on a few decision rules:
 
-| Mood | Rule |
-|---|---|
-| Serene | Low entropy (<4), low edge density (<0.05), soft colors, low saturation |
-| Calm | Low entropy (<5), moderate edge density (<0.08), pastel or cool hues |
-| Energetic | High saturation (>0.45), warm colors, moderate complexity (entropy 4–6) |
-| Chaotic | High entropy (>6), high edge density (>0.15), irregular shapes |
-| Mysterious | Dark brightness (<90), cool colors (blue/purple), medium entropy (4–6) |
-| Futuristic | Bright (>150), cool hue (blue/purple), low to moderate saturation (<0.35) |
-| Minimalistic | Low entropy (<3.5), very low edge density (<0.03), simple shapes |
-| Dramatic | High contrast, moderate to high entropy (5–7), bold warm colors |
-| Playful | Medium entropy (4–6), bright colors, irregular or whimsical shapes |
+| Mood | Classification Criteria | Scoring Factors |
+|------|-----------------|-----------------|
+| **Serene** | Low complexity, soft appearance | Entropy <4, edge density <0.05, saturation <0.4. Scores higher as values decrease. |
+| **Calm** | Gentle, understated | Entropy <5, edge density <0.08, pastel or cool hues. Balanced, relaxed aesthetic. |
+| **Energetic** | Vibrant, dynamic | Saturation >0.45, warm colors (red/orange/yellow), entropy 4–6. High saturation scores highest. |
+| **Chaotic** | High complexity, irregular | Entropy >6, edge density >0.15. Scores increase with complexity. |
+| **Mysterious** | Dark, enigmatic | Brightness <90, cool colors (blue/purple hues 165°-295°), entropy 4–6. Darker = higher score. |
+| **Futuristic** | Sleek, tech-inspired | Brightness >150, cool hue (blue/purple), saturation <0.35. Bright desaturated cool tones. |
+| **Minimalistic** | Simple, clean | Entropy <3.5, edge density <0.03. Extremely low complexity required. |
+| **Dramatic** | Bold, high-impact | Contrast >0.5, entropy 5–7, warm colors. High contrast with moderate complexity. |
+| **Playful** | Whimsical, fun | Entropy 4–6, brightness >120, circularity <0.6 (irregular shapes). Medium complexity with organic forms. |
 
 ---
 
