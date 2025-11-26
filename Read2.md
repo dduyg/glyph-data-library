@@ -1,39 +1,4 @@
-## 📊 **Visual Metrics**
-- **Edge Density**: Measures detail and complexity (0.0–1.0)
-- **Entropy**: Quantifies visual variation (0.0–8.0)
-- **Texture Complexity**: Analyzes surface patterns via Local Binary Patterns
-- **Contrast**: Michelson contrast formula for luminance range (0.0–1.0)
-- **Circularity**: Shape roundness (0.0–1.0, where 1.0 = perfect circle)
-- **Aspect Ratio**: Width-to-height proportion
-- **Edge Angle**: Dominant orientation of edges (0–180°)
-
----
-
-## Getting a GitHub Personal Access Token
-
-### Step 1: Navigate to Token Settings
-1. Go to [github.com](https://github.com) and sign in
-2. Click your profile picture (top-right) → **Settings**
-3. Scroll down to **Developer settings** (bottom-left sidebar)
-4. Click **Personal access tokens** → **Tokens (classic)**
-
-### Step 2: Generate New Token
-1. Click **Generate new token** → **Generate new token (classic)**
-2. Add a note: `Glyph Processor Upload`
-3. Set expiration: Choose duration (recommend 30-90 days)
-4. Select scopes:
-   - ✅ **repo** (all sub-options)
-   - ✅ **workflow** (if using GitHub Actions)
-
-### Step 3: Generate and Copy
-1. Click **Generate token** at the bottom
-2. **⚠️ COPY THE TOKEN IMMEDIATELY** (you won't see it again)
-3. Store securely (password manager recommended)
-
-### Step 4: Use in Script
-When the script prompts for "GitHub token", paste your token (input will be hidden).
-
----
+-
 
 ## Use Cases
 
