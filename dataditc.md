@@ -1,48 +1,3 @@
-### `glyph_url`
-- **Type**: URL String
-- **Example**: `"https://cdn.jsdelivr.net/gh/user/repo@main/glyphs/ff5733_20241125_143022_a3f7c21b.png"`
-- **Description**: Direct CDN link to the glyph image via jsDelivr
-
----
-
-## Color Analysis
-
-### `color.hex`
-- **Type**: String (6-character hex)
-- **Range**: `"000000"` to `"ffffff"`
-- **Example**: `"ff5733"`
-- **Description**: Hexadecimal representation of the dominant color (without `#` prefix)
-
-### `color.group`
-- **Type**: String (categorical)
-- **Possible Values**: 
-  - `"red"`, `"orange"`, `"yellow"`, `"green"`, `"blue"`, `"purple"`, `"pink"`
-  - `"brown"`, `"gold"`, `"silver"`
-  - `"black"`, `"white"`, `"gray"`
-- **Example**: `"orange"`
-- **Description**: Semantic color category based on HSV analysis and brightness thresholds
-- **Use Cases**: Filtering by color family, building color-based navigation
-
-### `color.rgb`
-- **Type**: Array of integers `[R, G, B]`
-- **Range**: Each value 0–255
-- **Example**: `[255, 87, 51]`
-- **Description**: RGB representation of dominant color extracted via K-means clustering
-
-### `color.lab`
-- **Type**: Array of floats `[L, a, b]`
-- **Range**: 
-  - `L`: 0–100 (lightness)
-  - `a`: -128 to +127 (green to red)
-  - `b`: -128 to +127 (blue to yellow)
-- **Example**: `[58.23, 52.14, 48.76]`
-- **Description**: Perceptually uniform color space for accurate color distance calculations
-- **Use Cases**: Finding visually similar colors, perceptual color sorting
-
----
-
-## Visual Metrics
-
 ### `metrics.edge_density`
 - **Type**: Float
 - **Range**: 0.0–1.0
@@ -216,14 +171,6 @@
 }
 ```
 
-### CSV Structure
-Flattened format with nested fields expanded:
-- `color.rgb` → `"[255, 87, 51]"` (string representation)
-- `color.lab` → `"[58.23, 52.14, 48.76]"` (string representation)
-- All other fields directly mapped
-
----
-
 ## Common Use Cases
 
 ### 1. **Color-Based Search**
@@ -264,9 +211,3 @@ All numeric metrics can serve as feature vectors for:
 - **Texture**: Local Binary Pattern with uniform patterns (scikit-image)
 - **Color Space**: sRGB → CIE LAB (D65 illuminant, 2° observer)
 - **Shape Analysis**: Contour analysis (OpenCV)
-
----
-
-## Version History
-
-- **v1.0** (2024-11-25): Initial data dictionary with all metrics documented
