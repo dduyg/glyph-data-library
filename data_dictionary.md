@@ -84,9 +84,11 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 ---
 
 ### color_harmony
-- **Type:** categorical  
-- **Values:**  
-`analogous`, `complementary`, `none`  
+- **Type:** string (categorical) 
+- **Interpretation**:
+  - `analogous`: Dominant and secondary colors are within 30° on color wheel (harmonious)
+  - `complementary`: Colors are ~180° apart on color wheel (high contrast)
+  - `none`: No clear harmonic relationship  
 - **Description:** Relationship between dominant and secondary colors.
 
 ---
