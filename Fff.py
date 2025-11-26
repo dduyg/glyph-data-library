@@ -464,8 +464,8 @@ with open(csv_path, "w", newline="", encoding="utf-8") as f:
         ])
 
 print("\n🗄️ Where to save results?")
-print("1 - Save locally as ZIP archive")
-print("2 - Commit directly to GitHub")
+print("1️⃣—Save locally as ZIP archive")
+print("2️⃣—Commit directly to GitHub")
 choice = input("🎚 Choose 1 or 2: ").strip()
 
 if choice == "1":
