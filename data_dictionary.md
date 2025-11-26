@@ -35,9 +35,10 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 ---
 
 ### filename
-- **Type:** string  
-- **Example:** `"e3b45c_20250121_133402_af39dc12.png"`  
-- **Description:** The output filename created based on dominant color + timestamp + unique ID.
+- **Type:** string
+- **Format**: {hex_color}_{YYYYMMDD_HHMMSS}_{id}.png
+- **Example**: `"e3b45c_20250121_133402_af39dc12.png" `
+- **Description:** The output filename created based on dominant color + timestamp + unique ID for easy sorting.
 
 ---
 
