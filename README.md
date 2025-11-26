@@ -16,21 +16,7 @@
 - Edge density, entropy, texture complexity (LBP) 
 - Shape circularity, aspect ratio  
 - Edge orientation & contrast  
-
-#### 🌀 Mood classification
-The script assigns one of nine moods (serene, calm, energetic, chaotic, mysterious, futuristic, minimalistic, dramatic, playful) based on a few decision rules:
-
-| Mood | Rule |
-|---|---|
-| Serene | Low entropy (<4), low edge density (<0.05), soft colors, low saturation |
-| Calm | Low entropy (<5), moderate edge density (<0.08), pastel or cool hues |
-| Energetic | High saturation (>0.45), warm colors, moderate complexity (entropy 4–6) |
-| Chaotic | High entropy (>6), high edge density (>0.15), irregular shapes |
-| Mysterious | Dark brightness (<90), cool colors (blue/purple), medium entropy (4–6) |
-| Futuristic | Bright (>150), cool hue (blue/purple), low to moderate saturation (<0.35) |
-| Minimalistic | Low entropy (<3.5), very low edge density (<0.03), simple shapes |
-| Dramatic | High contrast, moderate to high entropy (5–7), bold warm colors |
-| Playful | Medium entropy (4–6), bright colors, irregular or whimsical shapes |
+- Mo..
 
 ## 🏛 Output Structure
 - `glyphs.catalog.json`:
