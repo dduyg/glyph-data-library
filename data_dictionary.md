@@ -83,6 +83,14 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 
 ---
 
+### color_harmony
+- **Type:** categorical  
+- **Values:**  
+`analogous`, `complementary`, `none`  
+- **Description:** Relationship between dominant and secondary colors.
+
+---
+
 ## 📊 Metrics
 
 ### metrics.edge_density
@@ -133,21 +141,23 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 
 ---
 
-## 🌀 Semantics+Mood
-
-### color_harmony
-- **Type:** categorical  
-- **Values:**  
-`analogous`, `complementary`, `none`  
-- **Description:** Relationship between dominant and secondary colors.
-
----
-
-### mood
+## 🌀 mood
 - **Type:** categorical  
 - **Values:**  
 `minimalistic`, `futuristic`, `mysterious`, `energetic`, `organic`, `serene`  
-- **Description:** High‑level classification based on combined metrics.
+- **Description:** Mood classification based on a few decision rules:
+
+| Mood | Rule |
+|---|---|
+| Serene | Low entropy (<4), low edge density (<0.05), soft colors, low saturation |
+| Calm | Low entropy (<5), moderate edge density (<0.08), pastel or cool hues |
+| Energetic | High saturation (>0.45), warm colors, moderate complexity (entropy 4–6) |
+| Chaotic | High entropy (>6), high edge density (>0.15), irregular shapes |
+| Mysterious | Dark brightness (<90), cool colors (blue/purple), medium entropy (4–6) |
+| Futuristic | Bright (>150), cool hue (blue/purple), low to moderate saturation (<0.35) |
+| Minimalistic | Low entropy (<3.5), very low edge density (<0.03), simple shapes |
+| Dramatic | High contrast, moderate to high entropy (5–7), bold warm colors |
+| Playful | Medium entropy (4–6), bright colors, irregular or whimsical shapes |
 
 ---
 
@@ -158,7 +168,3 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 
 ### created_at.time
 - **Type:** string (HH:MM:SS)
-
-
-# ---🔍🔍🔍🔍---
-- *Color Harmony*: Detects if colors follow complementary, analogous, or triadic schemes.
