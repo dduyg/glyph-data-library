@@ -43,7 +43,7 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 
 ### glyph_url
 - **Type:** string  
-- **Description:** CDN URL pointing to the stored glyph image in GitHub via jsDelivr.
+- **Description:** Direct CDN url pointing to the stored glyph image.
 
 ---
 
@@ -52,7 +52,7 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 ### color.hex
 - **Type:** hex string  
 - **Example:** `"a1c2f3"`  
-- **Description:** Dominant color of the glyph in hexadecimal form.
+- **Description:** Dominant color of the glyph in hexadecimal representation (without `#` prefix)
 
 ---
 
@@ -62,7 +62,7 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 `black`, `white`, `gray`, `gold`, `silver`,  
 `brown`, `red`, `orange`, `yellow`,  
 `green`, `blue`, `purple`, `pink`  
-- **Description:** A semantic color group assigned based on HSV and luminance.
+- **Description:** Semantic color group assigned based on HSV and luminance.
 
 ---
 
@@ -75,21 +75,21 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 
 ### color.lab
 - **Type:** list of 3 floats  
-- **Description:** Color converted to CIE‑LAB space for perceptual uniformity.
+- **Description:** Perceptually uniform color space for accurate color distance calculations
 
 ---
 
 ## 📊 Metrics
 
 ### metrics.edge_density
-- **Type:** float  
-- **Description:** Proportion of strong edges inside the non-transparent regions.
+- **Type:** float
+- **Description:** Proportion of strong edges inside the non-transparent regions. Canny edge detection with thresholds (80, 160)
 
 ---
 
 ### metrics.entropy
 - **Type:** float  
-- **Description:** Shannon entropy computed on grayscale masked area (texture randomness).
+- **Description:** Shannon entropy grayscale pixel distribution (texture randomness).
 
 ---
 
