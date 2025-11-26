@@ -58,24 +58,27 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 ---
 
 ### color.group
-- **Type:** categorical  
+- **Type:** categorical string
 - **Possible values:**  
 `black`, `white`, `gray`, `gold`, `silver`,  
 `brown`, `red`, `orange`, `yellow`,  
 `green`, `blue`, `purple`, `pink`  
 - **Description:** Semantic color group assigned based on HSV and luminance.
 
----
-
 ### color.rgb
-- **Type:** list of 3 integers  
+- **Type:** array of 3 integers  
 - **Example:** `[120, 180, 240]`  
 - **Description:** Dominant color extracted using K-means clustering.
 
 ---
 
 ### color.lab
-- **Type:** list of 3 floats  
+- **Type:** array of 3 floats `[L, a, b]`
+- **Range**: 
+  - `L`: 0–100 (lightness)
+  - `a`: -128 to +127 (green to red)
+  - `b`: -128 to +127 (blue to yellow)
+- **Example**: `[58.23, 52.14, 48.76]`
 - **Description:** Perceptually uniform color space for accurate color distance calculations
 
 ---
