@@ -1,13 +1,3 @@
-### `color_harmony`
-- **Type**: String (categorical)
-- **Possible Values**: `"analogous"`, `"complementary"`, `"none"`
-- **Example**: `"analogous"`
-- **Description**:
-  - **analogous**: Dominant and secondary colors are within 30° on color wheel (harmonious)
-  - **complementary**: Colors are ~180° apart on color wheel (high contrast)
-  - **none**: No clear harmonic relationship
-- **Use Cases**: Color palette generation, aesthetic filtering
-
 ### `mood`
 - **Type**: String (categorical)
 - **Possible Values**: `"minimalistic"`, `"futuristic"`, `"mysterious"`, `"energetic"`, `"organic"`, `"serene"`
@@ -35,29 +25,6 @@
 - **Format**: `HH:MM:SS`
 - **Example**: `"14:30:22"`
 - **Description**: UTC time when glyph was processed
-
-## Common Use Cases
-
-### 1. **Color-Based Search**
-- Filter by `color.group` for semantic matching
-- Use `color.lab` for perceptual distance calculations
-- Sort by `color.hex` for hue-based organization
-
-### 2. **Complexity Filtering**
-- Combine `edge_density`, `entropy`, and `texture` to find simple vs. complex glyphs
-- Low values = minimalist, high values = intricate
-
-### 3. **Visual Style Matching**
-- Use `mood` for quick aesthetic categorization
-- Combine `contrast` + `circularity` for style archetypes (e.g., bold circles vs. soft shapes)
-
-### 4. **Layout Optimization**
-- Use `aspect_ratio` to select portrait/landscape/square glyphs
-- Filter by `circularity` to find glyphs that fit circular frames
-
-### 5. **Accessibility**
-- Filter by `contrast` to ensure sufficient visual distinction
-- Avoid low-contrast glyphs for small sizes or backgrounds
 
 ### 6. **Machine Learning Features**
 All numeric metrics can serve as feature vectors for:
