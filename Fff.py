@@ -50,7 +50,7 @@ def masked_pixels(rgb, mask):
 
 # ---------------------- COLOR DETECTION ----------------------
 
-def compute_dominant_color(rgb, mask, k=3):
+def compute_dominant_color(rgb, mask, k=5):
     """Extract dominant color using saturation-weighted K-means"""
     pts = masked_pixels(rgb, mask)
     if len(pts) < k:
@@ -70,7 +70,7 @@ def compute_dominant_color(rgb, mask, k=3):
     labels, counts = np.unique(kmeans.labels_, return_counts=True)
     return tuple(int(x) for x in centers[np.argmax(counts)])
 
-def compute_secondary_color(rgb, mask, k=3):
+def compute_secondary_color(rgb, mask, k=5):
     """Extract secondary color using saturation-weighted K-means"""
     pts = masked_pixels(rgb, mask)
     if len(pts) < k:
