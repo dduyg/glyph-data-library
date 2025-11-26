@@ -143,7 +143,7 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 ---
 
 ## 🌀 mood
-- **Type:** categorical  
+- **Type:** string (categorical)  
 - **Values:**  
 `minimalistic`, `futuristic`, `mysterious`, `energetic`, `organic`, `serene`  
 - **Description:** Mood classification based on a few decision rules:
