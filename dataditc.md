@@ -1,29 +1,3 @@
-### `metrics.contrast`
-- **Type**: Float
-- **Range**: 0.0–1.0
-- **Example**: `0.6234`
-- **Interpretation**:
-  - **0.0–0.15**: Very low (solid colors, no shading)
-  - **0.15–0.35**: Low (subtle gradients, soft lighting)
-  - **0.35–0.65**: Moderate (visible detail, some shadows)
-  - **0.65–0.90**: High (strong edges, clear shadows)
-  - **0.90–1.0**: Extreme (black + white, stark silhouettes)
-- **Formula**: Michelson contrast `(I_max - I_min) / (I_max + I_min)`
-- **Use Cases**: Finding high-contrast icons, accessibility checks, visual impact sorting
-
-### `metrics.circularity`
-- **Type**: Float
-- **Range**: 0.0–1.0
-- **Example**: `0.7845`
-- **Interpretation**:
-  - **0.0–0.3**: Very irregular (complex shapes, jagged edges)
-  - **0.3–0.5**: Somewhat irregular (stars, polygons)
-  - **0.5–0.7**: Moderately round (rounded squares, ovals)
-  - **0.7–0.9**: Highly circular (near-perfect circles)
-  - **0.9–1.0**: Perfect circle
-- **Formula**: `4π × area / perimeter²`
-- **Use Cases**: Shape-based filtering, finding circular vs. angular designs
-
 ### `metrics.aspect_ratio`
 - **Type**: Float
 - **Range**: 0.0+ (typical 0.5–2.0)
@@ -50,10 +24,6 @@
 - **Algorithm**: Median angle of strongest edges (top 25% by gradient magnitude)
 - **Use Cases**: Finding glyphs with specific orientations, directional matching
 
----
-
-## Aesthetic Properties
-
 ### `color_harmony`
 - **Type**: String (categorical)
 - **Possible Values**: `"analogous"`, `"complementary"`, `"none"`
@@ -78,8 +48,6 @@
   - **serene**: Default fallback
 - **Use Cases**: Mood-based browsing, thematic collections, emotional design matching
 
----
-
 ## Timestamps
 
 ### `created_at.date`
@@ -93,45 +61,6 @@
 - **Format**: `HH:MM:SS`
 - **Example**: `"14:30:22"`
 - **Description**: UTC time when glyph was processed
-
----
-
-## Data Formats
-
-### JSON Structure
-```json
-{
-  "total": 150,
-  "glyphs": [
-    {
-      "id": "a3f7c21b",
-      "filename": "ff5733_20241125_143022_a3f7c21b.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/user/repo@main/glyphs/...",
-      "color": {
-        "hex": "ff5733",
-        "group": "orange",
-        "rgb": [255, 87, 51],
-        "lab": [58.23, 52.14, 48.76]
-      },
-      "metrics": {
-        "edge_density": 0.1823,
-        "entropy": 5.2341,
-        "texture": 1.4523,
-        "contrast": 0.6234,
-        "circularity": 0.7845,
-        "aspect_ratio": 1.3456,
-        "edge_angle": 45.23
-      },
-      "color_harmony": "analogous",
-      "mood": "energetic",
-      "created_at": {
-        "date": "2024-11-25",
-        "time": "14:30:22"
-      }
-    }
-  ]
-}
-```
 
 ## Common Use Cases
 
@@ -161,15 +90,4 @@ All numeric metrics can serve as feature vectors for:
 - Similarity search
 - Clustering
 - Style classification
-- Recommendation systems
-
----
-
-## Algorithm References
-
-- **Color Clustering**: K-means (k=3, scikit-learn)
-- **Edge Detection**: Canny edge detector (OpenCV, thresholds: 80, 160)
-- **Entropy**: Shannon entropy (scikit-image)
-- **Texture**: Local Binary Pattern with uniform patterns (scikit-image)
-- **Color Space**: sRGB → CIE LAB (D65 illuminant, 2° observer)
-- **Shape Analysis**: Contour analysis (OpenCV)
+- Recommendation system
