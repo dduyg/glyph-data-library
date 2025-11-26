@@ -93,7 +93,7 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 
 ---
 
-## 📊 Metrics
+## 📐 Metrics
 
 ### metrics.edge_density
 - **Type:** float
