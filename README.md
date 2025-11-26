@@ -10,18 +10,17 @@
     </samp>
 </div><br><br>
 
-### 🔍 Features
-
-#### Color analysis:
+### 🔍Features:
+#### Color analysis
 - Dominant color extraction using K-means
 - Perceptual color similarity search (LAB) color conversion & semantic color grouping
 
-#### Visual Metrics:
+#### Quantitative Metrics
 - Edge density, entropy, texture complexity (LBP) 
 - Shape circularity, aspect ratio  
 - Edge orientation & contrast  
 
-#### 🌀 Mood classification:
+#### 🌀 Mood classification
 The script assigns one of nine moods (serene, calm, energetic, chaotic, mysterious, futuristic, minimalistic, dramatic, playful) based on a few decision rules:
 
 | Mood | Rule |
