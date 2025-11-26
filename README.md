@@ -4,7 +4,10 @@
     <samp align="center">
         A fully automated pipeline that extracts quantitative and semantic visual features from glyph images and transforms them into tagged, searchable metadata objects for storage and retrieval.
     </samp>
-    <p align="center">View Dynamic Gallery</p>
+    <p align="center">
+        <a href="obsergallery.github.io">
+            <img src="https://img.shields.io/badge/View%20Dynamic%20Gallery-9B59B6?style=for-the-badge&logo=Google%20Photos&logoColor=white"></a>
+    </p>
 </div>
 
 ## 🔍 Features
