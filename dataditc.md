@@ -1,16 +1,3 @@
-### `metrics.texture`
-- **Type**: Float
-- **Range**: 0.0–3.5 (typical 0.5–2.5)
-- **Example**: `1.4523`
-- **Interpretation**:
-  - **0.0–0.8**: Smooth surface (flat colors, clean vectors)
-  - **0.8–1.5**: Slight texture (subtle gradients, soft shading)
-  - **1.5–2.0**: Moderate texture (visible patterns, clear surface detail)
-  - **2.0–2.5**: High texture (rough surfaces, intricate patterns)
-  - **2.5+**: Very high texture (organic materials, complex surfaces)
-- **Algorithm**: Local Binary Pattern (LBP) entropy with 8 neighbors, radius 1
-- **Use Cases**: Distinguishing smooth vs. textured glyphs, material classification
-
 ### `metrics.contrast`
 - **Type**: Float
 - **Range**: 0.0–1.0
