@@ -8,7 +8,7 @@
     <samp align="center">
         A fully automated pipeline that extracts quantitative and semantic visual features from glyph images and transforms them into tagged, searchable metadata objects for storage and retrieval.
     </samp>
-</div>
+</div><br><br>
 
 ## 🔍 Features
 
