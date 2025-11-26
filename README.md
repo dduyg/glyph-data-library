@@ -10,7 +10,7 @@
     </samp>
 </div><br><br>
 
-## 🔍 Features
+### 🔍 Features
 
 #### Color analysis:
 - Dominant color extraction using K-means
@@ -21,20 +21,9 @@
 - Shape circularity, aspect ratio  
 - Edge orientation & contrast  
 
-#### Mood classification:
-The script assigns one of nine moods (serene, calm, energetic, chaotic, mysterious, futuristic, minimalistic, dramatic, playful) based on a few decision rules.
+#### 🌀 Mood classification:
+The script assigns one of nine moods (serene, calm, energetic, chaotic, mysterious, futuristic, minimalistic, dramatic, playful) based on a few decision rules:
 
-| Metrics |  |
-|---|---|
-| *Edge Density*: Measures structural complexity. | High values → many edges/complex shapes.<br>Low values → smooth or minimal shapes. |
-| *Entropy*: Measures informational complexity (how "busy" the image is). | High entropy → textured, detailed.<br>Low entropy → simple, uniform. |
-| *Brightness*: Average RGB brightness. | Low brightness → dark, moody.<br>High brightness → vibrant, energetic. |
-| *Saturation*: Intensity of dominant color. | High saturation → vivid, bold.<br>Low saturation → soft, calm. |
-| *Dominant Color Hue*: Helps detect color temperature and style. | Warm colors (reds, oranges) → energetic, dramatic.<br>Cool colors (blues, purples) → calm, futuristic. |
-| *Color Harmony*: Detects if colors follow complementary, analogous, or triadic schemes. |  |
-| *Shape Metrics*: circularity, aspect ratio, edge angles can refine mood. |  |
-
-#### Mood Assignment Rules
 | Mood | Rule |
 |---|---|
 | Serene | Low entropy (<4), low edge density (<0.05), soft colors, low saturation |
