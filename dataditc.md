@@ -1,17 +1,3 @@
-### `mood`
-- **Type**: String (categorical)
-- **Possible Values**: `"minimalistic"`, `"futuristic"`, `"mysterious"`, `"energetic"`, `"organic"`, `"serene"`
-- **Example**: `"energetic"`
-- **Description**: Aesthetic mood computed from color, entropy, edge density, and texture
-- **Classification Rules**:
-  - **minimalistic**: Low entropy (<4), low edges (<0.05), low saturation (<0.25)
-  - **futuristic**: Blue hue (>200°), bright (>170), low saturation (<0.25)
-  - **mysterious**: Dark (<80), cool hues (>180°)
-  - **energetic**: High saturation (>0.5), moderate entropy (<6)
-  - **organic**: High texture (>1.6), high entropy (>6)
-  - **serene**: Default fallback
-- **Use Cases**: Mood-based browsing, thematic collections, emotional design matching
-
 ## Timestamps
 
 ### `created_at.date`
