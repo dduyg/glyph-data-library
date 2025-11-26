@@ -6,7 +6,7 @@
     </samp>
     <p align="center">
         <a href="obsergallery.github.io">
-            <img src="https://img.shields.io/badge/View%20Dynamic%20Gallery-9B59B6?style=for-the-badge&logo=Google%20Photos&logoColor=white"></a>
+            <img src="https://img.shields.io/badge/View%20Dynamic%20Gallery-9B59B6?style=for-the-badge&logo=eight&logoColor=white"></a>
     </p>
 </div>
 
