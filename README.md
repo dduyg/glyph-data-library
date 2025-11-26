@@ -101,14 +101,8 @@ This makes it perfect for web projects, galleries, or ML datasets.
  
 - Machine learning feature datasets
 - Visual search systems    
-- Generative AI training datasets
-- building large glyph/icon libraries  
+- Generative AI training datasets 
 - color–based classification  
 - texture/shape analysis  
-- automated repository-based asset libraries  
+- automated asset libraries  
 - generating structured datasets for ML/AI research
-
-## 🐛 Troubleshooting
-- Gallery is empty?: `data/glyphs-data.json` exists
-- Check browser console (F12) for fetch errors
-- Before uploading, validate your JSON. Use https://jsonlint.com/ or run: `python -m json.tool data/glyphs-data.json`
