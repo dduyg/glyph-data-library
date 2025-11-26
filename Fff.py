@@ -204,8 +204,8 @@ def compute_mood(dom_rgb, entropy, edge, tex, contrast, circ, aspect, angle, har
     sat = (max(dom_rgb) - min(dom_rgb)) / (max(dom_rgb) + 1e-6)
     
     # Determine if color is warm (red/orange/yellow) or cool (blue/purple)
-    is_warm = (h <= 60) or (h >= 330)  # Red, orange, yellow
-    is_cool = (165 <= h <= 295)  # Blue, purple
+    is_warm = (h <= 60) or (h >= 330)
+    is_cool = (165 <= h <= 295)
     
     # Score each mood based on how well it matches (0-1 scale)
     scores = {}
@@ -278,7 +278,7 @@ def compute_mood(dom_rgb, entropy, edge, tex, contrast, circ, aspect, angle, har
     if max(scores.values()) > 0:
         return max(scores, key=scores.get)
     
-    # If all scores are 0 (shouldn't happen), return based on basic characteristics
+    # Safety fallback (rare edge case)
     if entropy < 4:
         return "serene"
     elif sat > 0.5:
