@@ -117,14 +117,13 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 ---
 
 ### metrics.contrast
-- **Type:** float (0–1)  
+- **Type:** float 
 - **Description:** Michelson contrast on masked luminance values.
 
 ---
 
 ### metrics.circularity
-- **Type:** float  
-- **Range:** 0–1  
+- **Type:** float 
 - **Description:** Shape compactness; 1 = perfect circle.
 
 ---
@@ -136,7 +135,7 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 ---
 
 ### metrics.edge_angle
-- **Type:** float (degrees)  
+- **Type:** float 
 - **Description:** Median orientation of strong edges (0–180°).
 
 ---
