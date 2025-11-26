@@ -16,7 +16,7 @@
 - Edge density, entropy, texture complexity (LBP) 
 - Shape circularity, aspect ratio  
 - Edge orientation & contrast  
-- Mo..
+- Mood classification based on decision rules
 
 ## 🏛 Output Structure
 - `glyphs.catalog.json`:
