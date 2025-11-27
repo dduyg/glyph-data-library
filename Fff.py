@@ -111,38 +111,44 @@ def rgb_to_lab(rgb):
     return (L, a, b)
 
 def compute_color_group(rgb):
+    """Classify color into semantic groups based on HSV analysis"""
     r, g, b = rgb
     r_f, g_f, b_f = r/255, g/255, b/255
     h, s, v = colorsys.rgb_to_hsv(r_f, g_f, b_f)
     h *= 360
-    brightness = 0.2126*r + 0.7152*g + 0.0722*b
+    brightness = v * 255
     sat = s
-
-    if brightness < 40:
-        return "black"
-    if brightness > 230 and sat < 0.20:
-        return "white"
-    if sat < 0.12 and 40 <= brightness <= 230:
-        return "gray"
-    if 35 < h < 65 and 120 < brightness < 220 and 0.20 < sat < 0.55:
-        return "gold"
-    if brightness > 180 and sat < 0.18:
-        return "silver"
-    if brightness < 140 and sat > 0.25 and 15 < h < 65:
-        return "brown"
-    if h <= 20 or h >= 345:
+    
+    if sat < 0.10:
+        if brightness < 50:
+            return "black"
+        elif brightness > 220:
+            return "white"
+        else:
+            return "gray"
+    if 0.10 <= sat < 0.25:
+        if 35 < h < 65 and 120 < brightness < 220:
+            return "gold"
+        if brightness > 200 and sat < 0.15 and (h < 30 or h > 330 or 150 < h < 250):
+            pass
+    
+    if h < 20 or h >= 345:
         return "red"
-    if 20 < h <= 45:
+    if 20 <= h < 45:
+        if brightness < 120 and sat > 0.25:
+            return "brown"
         return "orange"
-    if 45 < h <= 75:
+    if 45 <= h < 75:
+        if brightness < 100 and sat > 0.25:
+            return "brown"
         return "yellow"
-    if 75 < h <= 165:
+    if 75 <= h < 165:
         return "green"
-    if 165 < h <= 250:
+    if 165 <= h < 250:
         return "blue"
-    if 250 < h <= 295:
+    if 250 <= h < 295:
         return "purple"
-    if 295 < h <= 345:
+    if 295 <= h < 345:
         return "pink"
     return "gray"
 
