@@ -368,7 +368,7 @@ except:
 new_glyphs = process_glyphs(input_dir, output_dir, github_user, github_repo, branch)
 all_glyphs = existing.get("glyphs", []) + new_glyphs
 
-print(f"📡 {len(new_glyphs)} glyphs processed successfully")
+print(f"\n📡 {len(new_glyphs)} glyphs processed successfully\n")
 
 metadata = {"total": len(all_glyphs), "glyphs": all_glyphs}
 with open(json_path, "w") as f:
@@ -409,8 +409,8 @@ with open(csv_path, "w", newline="", encoding="utf-8") as f:
 
 print("\n🗄️ Where to save results?")
 print("1️⃣ — Save locally as ZIP archive")
-print("2️⃣ — Commit directly to GitHub")
-choice = input("🎚 Choose 1 or 2: ").strip()
+print("2️⃣ — Commit directly to GitHub\n")
+choice = input("\n🎚 Choose 1 or 2: \n").strip()
 
 if choice == "1":
     zip_path = Path("/content/glyphs_processed.zip")
