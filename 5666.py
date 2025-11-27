@@ -190,46 +190,72 @@ def compute_mood(dom_rgb, entropy, edge, tex, contrast, circ, aspect, angle, har
     r, g, b = dom_rgb
     brightness = 0.2126*r + 0.7152*g + 0.0722*b
     h = compute_hue(dom_rgb)
-    sat = (max(dom_rgb) - min(dom_rgb))/(max(dom_rgb)+1e-6)
+    sat = (max(dom_rgb) - min(dom_rgb)) / (max(dom_rgb) + 1e-6)
+
     is_warm = (h <= 60) or (h >= 330)
     is_cool = (165 <= h <= 295)
-    scores = {"serene":0,"calm":0,"playful":0,"energetic":0,"futuristic":0,"mysterious":0,"chaotic":0,"dramatic":0}
 
-    # Entropy scoring
-    if entropy<2.2: scores["serene"] += (2.2-entropy)/2.2
-    elif 2.2<=entropy<=3.1: scores["calm"] += (entropy-2.2)/(3.1-2.2)
-    elif 3.1<entropy<=4.1: scores["playful"] += (entropy-3.1)/(4.1-3.1)
-    elif 4.1<entropy<=5.3: scores["energetic"] += (entropy-4.1)/(5.3-4.1)
-    else: scores["chaotic"] += min((entropy-5.3)/1.5,1)
+    scores = {
+        "serene": 0,
+        "calm": 0,
+        "playful": 0,
+        "energetic": 0,
+        "futuristic": 0,
+        "mysterious": 0,
+        "dramatic": 0,
+        "chaotic": 0
+    }
 
-    # Edge density
-    if edge<0.01: scores["serene"] += 0.3
-    elif 0.01<=edge<0.03: scores["calm"] += 0.3
-    elif 0.03<=edge<0.06: scores["playful"] += 0.3
-    elif 0.06<=edge<0.10: scores["energetic"] += 0.3
-    else: scores["chaotic"] += 0.3
+    if entropy < 2.2:
+        scores["serene"] += (2.2 - entropy)/2.2
+    elif entropy <= 3.1:
+        scores["calm"] += (entropy - 2.2)/(3.1 - 2.2)
+    elif entropy <= 4.1:
+        scores["playful"] += (entropy - 3.1)/(4.1 - 3.1)
+    elif entropy <= 5.3:
+        scores["energetic"] += (entropy - 4.1)/(5.3 - 4.1)
+    else:
+        chaos_strength = min((entropy - 5.3)/2.5, 1) * 0.4  
+        scores["chaotic"] += chaos_strength
 
-    # Brightness / contrast
-    if brightness>180: scores["playful"] +=0.5
-    if brightness<80: scores["mysterious"] +=0.6
-    if contrast>0.5: scores["dramatic"] += (contrast-0.5)/0.5
+    if edge < 0.01:
+        scores["serene"] += 0.3
+    elif edge < 0.03:
+        scores["calm"] += 0.3
+    elif edge < 0.06:
+        scores["playful"] += 0.3
+    elif edge < 0.10:
+        scores["energetic"] += 0.3
+    else:
+        scores["chaotic"] += 0.15
 
-    # Saturation
-    if sat>0.6: scores["energetic"] +=0.7
-    if sat<0.2: scores["calm"] +=0.3
+    if brightness > 180:
+        scores["playful"] += 0.5
+    if brightness < 80:
+        scores["mysterious"] += 0.6
+    if contrast > 0.5:
+        scores["dramatic"] += (contrast - 0.5)/0.5 * 0.8
+    if sat > 0.6:
+        scores["energetic"] += 0.6
+    if sat < 0.2:
+        scores["calm"] += 0.4
+    if harmony == "analogous":
+        scores["calm"] += 0.4
+    elif harmony == "complementary":
+        scores["energetic"] += 0.3
+    if circ > 0.8:
+        scores["serene"] += 0.4
+    if circ < 0.55:
+        scores["playful"] += 0.4
+    if 0.4 < aspect < 0.7 or 1.3 < aspect < 1.6:
+        scores["futuristic"] += 0.6
 
-    # Harmony
-    if harmony=="analogous": scores["calm"] +=0.4
-    elif harmony=="complementary": scores["energetic"] +=0.3
-
-    # Shape
-    if circ>0.8: scores["serene"] +=0.3
-    if 0.4<aspect<0.7 or 1.3<aspect<1.6: scores["futuristic"] +=0.5
-    if circ<0.55: scores["playful"] +=0.5
-
-    # Hue adjustments
-    if is_warm and sat>0.45: scores["energetic"] +=0.3; scores["playful"] +=0.2
-    if is_cool and brightness<120: scores["mysterious"] +=0.3; scores["calm"] +=0.2
+    if is_warm and sat > 0.45:
+        scores["energetic"] += 0.3
+        scores["playful"] += 0.2
+    if is_cool and brightness < 120:
+        scores["mysterious"] += 0.3
+        scores["calm"] += 0.2
 
     return max(scores, key=scores.get)
 
