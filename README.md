@@ -41,7 +41,7 @@
 
 ## 📋 Getting Started
 
-1️⃣ Run the script, and it will prompt you to select images for processing
+1️⃣ Run the script `glyph_feature_pipeline.py`, and it will prompt you to select images for processing
 
 <br>
 
