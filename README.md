@@ -18,6 +18,8 @@
 - Edge orientation & contrast  
 - Mood classification based on decision rules
 
+<br>
+
 ## 🏛 Output Structure
 - `glyphs.catalog.json`:
 
@@ -34,6 +36,8 @@
 - <samp>data/</samp>
 
   Metadata files stored for versioning.
+
+<br>
 
 ## 📋 Getting Started
 
@@ -56,6 +60,8 @@
 1 - Save locally as ZIP archive
 2 - Commit directly to GitHub
 ```
+
+<br>
 
 ## 🌀 Committing to GitHub
 ```
@@ -93,16 +99,12 @@ The pipeline intelligently handles incremental updates:
 🎊 ALL DONE! Library successfully expanded to 227 glyphs in total.
 ```
 
+<br>
+
 ## 🔠 Data Dictionary
 For detailed metric explanations and fields, see [data_dictionary.md](data_dictionary.md).
 
+<br>
+
 ## 🧪 Integration
-This makes it perfect for web projects, galleries, or ML datasets.
- 
-- Machine learning feature datasets
-- Visual search systems    
-- Generative AI training datasets 
-- color–based classification  
-- texture/shape analysis  
-- automated asset libraries  
-- generating structured datasets for ML/AI research
+This makes it perfect for data projects, web projects, automated asset galleries, ML datasets, or visual search systems.
