@@ -208,26 +208,26 @@ def compute_mood(dom_rgb, entropy, edge, tex, contrast, circ, aspect, angle, har
 
     if entropy < 2.2:
         scores["serene"] += (2.2 - entropy)/2.2
-    elif entropy <= 3.1:
-        scores["calm"] += (entropy - 2.2)/(3.1 - 2.2)
-    elif entropy <= 4.1:
-        scores["playful"] += (entropy - 3.1)/(4.1 - 3.1)
+    elif entropy <= 2.8:
+        scores["calm"] += (entropy - 2.2)/(2.8 - 2.2)
+    elif entropy <= 3.8:
+        scores["playful"] += (entropy - 2.8)/(3.8 - 2.8)
     elif entropy <= 5.3:
-        scores["energetic"] += (entropy - 4.1)/(5.3 - 4.1)
+        scores["energetic"] += (entropy - 3.8)/(5.3 - 3.8)
     else:
-        chaos_strength = min((entropy - 5.3)/2.5, 1) * 0.4  
+        chaos_strength = min((entropy - 5.3)/2.5, 1) * 0.4
         scores["chaotic"] += chaos_strength
 
     if edge < 0.01:
         scores["serene"] += 0.3
     elif edge < 0.03:
-        scores["calm"] += 0.3
+        scores["calm"] += 0.15
     elif edge < 0.06:
         scores["playful"] += 0.3
     elif edge < 0.10:
         scores["energetic"] += 0.3
     else:
-        scores["chaotic"] += 0.15
+        scores["chaotic"] += 0.1
 
     if brightness > 180:
         scores["playful"] += 0.5
@@ -238,9 +238,9 @@ def compute_mood(dom_rgb, entropy, edge, tex, contrast, circ, aspect, angle, har
     if sat > 0.6:
         scores["energetic"] += 0.6
     if sat < 0.2:
-        scores["calm"] += 0.4
+        scores["calm"] += 0.2
     if harmony == "analogous":
-        scores["calm"] += 0.4
+        scores["calm"] += 0.2
     elif harmony == "complementary":
         scores["energetic"] += 0.3
     if circ > 0.8:
@@ -255,7 +255,11 @@ def compute_mood(dom_rgb, entropy, edge, tex, contrast, circ, aspect, angle, har
         scores["playful"] += 0.2
     if is_cool and brightness < 120:
         scores["mysterious"] += 0.3
-        scores["calm"] += 0.2
+        scores["calm"] += 0.1
+    if 2.8 < entropy <= 3.8:
+        scores["playful"] += 0.3
+    if sat > 0.5 and brightness > 120:
+        scores["energetic"] += 0.3
 
     return max(scores, key=scores.get)
 
