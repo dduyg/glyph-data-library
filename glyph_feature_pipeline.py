@@ -415,7 +415,7 @@ def batch_upload_to_github(repo, output_dir, branch="main"):
     except GithubException as e:
         print(f"🤷 Oops! Batch commit failed, try again: GitHub Error {e}")
 
-print("\n🔱 Select images to process:\n")
+print("\n📤 Select images to process:\n")
 uploaded = files.upload()
 
 input_dir = Path("/content/input_glyphs"); input_dir.mkdir(exist_ok=True)
