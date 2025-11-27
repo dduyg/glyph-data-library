@@ -410,7 +410,7 @@ with open(csv_path, "w", newline="", encoding="utf-8") as f:
 print("\n🗄️ Where to save results?")
 print("1️⃣ — Save locally as ZIP archive")
 print("2️⃣ — Commit directly to GitHub\n")
-choice = input("\n🎚 Choose 1 or 2: \n").strip()
+choice = input("\n🎚 Choose 1 or 2: ").strip()
 
 if choice == "1":
     zip_path = Path("/content/glyphs_processed.zip")
