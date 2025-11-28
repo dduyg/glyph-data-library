@@ -45,7 +45,8 @@
         }
 
         .control-btn {
-            width: 35px; height: 35px;
+            width: 35px; 
+            height: 35px;
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
@@ -64,7 +65,8 @@
 
         .dropdown {
             position: absolute;
-            top: 55px; right: 0;
+            top: 45px; 
+            right: 0;
             background: white;
             border-radius: 16px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -74,10 +76,12 @@
             display: none;
             z-index: 2000;
         }
+        
         .dropdown.active {
             display: block;
             animation: dropdownSlide 0.3s ease;
         }
+        
         @keyframes dropdownSlide {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -153,7 +157,6 @@
         }
 
         .lab-input:focus {
-            outline: none;
             border-color: #667eea;
         }
 
@@ -186,40 +189,53 @@
             margin-bottom: 8px;
         }
 
+        .stats {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        .stats-item {
+            font-size: 1em;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-item strong {
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
         .gallery {
-            padding: 40px;
-            grid-template-columns: repeat(10, 1fr);
+            padding: 20px 40px 40px 40px;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
             gap: 15px;
-            margin-bottom: 30px;
         }
 
         .glyph-card {
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 5px;
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
+            aspect-ratio: 1;
             border: 3px solid transparent;
         }
-
         .glyph-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.05);
         }
-
         .glyph-card.selected {
             border-color: #667eea;
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.5);
         }
 
         .glyph-card.selected::after {
             content: '✓';
             position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 35px;
-            height: 35px;
+            top: -12px;  right: -12px;
+            width: 30px; height: 30px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-radius: 50%;
@@ -227,104 +243,23 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1.2em;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-size: 1.1em;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .glyph-image {
             width: 100%;
-            height: 150px;
+            height: 100%;
             object-fit: contain;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
-            z-index: 3000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .modal-header {
-            font-size: 1.5em;
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: #333;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .modal-btn {
-            flex: 1;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1em;
-        }
-
-        .modal-btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .modal-btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .modal-btn-secondary {
-            background: #f5f5f5;
-            color: #333;
-        }
-
-        .modal-btn-secondary:hover {
-            background: #e0e0e0;
-        }
-
-        .export-info {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f0f4ff;
-            border-radius: 10px;
-            font-size: 0.9em;
-            color: #333;
-        }
-
-        .loading {
+        .loading, .empty-state {
+            grid-column: 1 / -1;
             text-align: center;
             padding: 100px 40px;
             color: white;
             font-size: 1.5em;
             font-weight: 600;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 100px 40px;
-            color: white;
         }
 
         .empty-state svg {
@@ -336,14 +271,49 @@
         }
 
         @media (max-width: 768px) {
-            header { padding: 0 20px; }
-            .logo { font-size: 1.4em; }
+            header { 
+                padding: 10px 20px; 
+            }
+            
+            .logo { 
+                font-size: 1.3em; 
+            }
+            
+            .controls {
+                gap: 10px;
+            }
+            
+            .control-btn {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .dropdown {
+                position: fixed;
+                top: auto;
+                bottom: 20px;
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+                max-width: calc(100vw - 40px);
+                min-width: calc(100vw - 40px);
+            }
+            
+            .stats {
+                padding: 10px 20px;
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-end;
+            }
+            
+            .stats-item {
+                font-size: 0.9em;
+            }
+            
             .gallery {
                 grid-template-columns: repeat(4, 1fr);
-                padding: 20px;
-            }
-            .dropdown {
-                min-width: 260px;
+                padding: 15px 20px 30px 20px;
+                gap: 12px;
             }
         }
     </style>
@@ -406,7 +376,7 @@
             </div>
 
             <div class="control-btn" id="exportControl" style="display: none;">
-                <span style="font-size: 1.2em; font-weight: bold;">📦</span>
+                <span style="font-size: 1.4em;">📦</span>
                 <div class="dropdown" id="exportDropdown">
                     <div class="dropdown-title">Export <span id="exportCount">0</span> Selected</div>
                     <div class="dropdown-option" id="downloadJSON">Download JSON</div>
@@ -416,6 +386,18 @@
             </div>
         </div>
     </header>
+
+    <div class="stats">
+        <div class="stats-item">
+            Total: <strong id="totalCount">0</strong>
+        </div>
+        <div class="stats-item">
+            Showing: <strong id="showingCount">0</strong>
+        </div>
+        <div class="stats-item" id="selectionStats" style="display: none;">
+            Selected: <strong id="selectedStats">0</strong>
+        </div>
+    </div>
 
     <div class="gallery" id="gallery">
         <div class="loading">Loading glyphs...</div>
@@ -436,13 +418,11 @@
             harmony: null
         };
 
-        // Initialize
         const colorGroups = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'gold', 'silver', 'black', 'white', 'gray'];
         const moods = ['serene', 'calm', 'playful', 'energetic', 'futuristic', 'mysterious', 'dramatic', 'chaotic'];
         const shapes = ['circular', 'angular', 'square', 'wide', 'tall'];
         const harmonies = ['analogous', 'complementary'];
 
-        // Populate filter tags
         const colorTagsEl = document.getElementById('colorTags');
         colorGroups.forEach(color => {
             const tag = document.createElement('div');
@@ -479,7 +459,6 @@
             harmonyTagsEl.appendChild(tag);
         });
 
-        // Dropdown toggles
         document.getElementById('colorControl').onclick = (e) => {
             e.stopPropagation();
             toggleDropdown('colorDropdown');
@@ -519,7 +498,6 @@
             dropdown.onclick = (e) => e.stopPropagation();
         });
 
-        // Clear filters
         document.getElementById('clearControl').onclick = () => {
             filters = {
                 colorGroup: null,
@@ -537,7 +515,6 @@
             applyFilters();
         };
 
-        // Filter functions
         function toggleColorTag(color, element) {
             document.querySelectorAll('#colorTags .color-tag').forEach(tag => tag.classList.remove('active'));
             if (filters.colorGroup === color) {
@@ -562,7 +539,6 @@
             applyFilters();
         }
 
-        // Sort options
         document.querySelectorAll('[data-sort]').forEach(option => {
             option.onclick = () => {
                 const sortValue = option.dataset.sort;
@@ -573,7 +549,6 @@
             };
         });
 
-        // Hex picker
         document.getElementById('hexPicker').oninput = (e) => {
             filters.hexColor = e.target.value;
             filters.colorGroup = null;
@@ -581,19 +556,18 @@
             applyFilters();
         };
 
-        // LAB input
         document.getElementById('labInput').oninput = (e) => {
             filters.labColor = e.target.value;
             applyFilters();
         };
 
-        // Load glyphs
         async function loadGlyphs() {
             try {
                 const response = await fetch(DATA_URL);
                 const data = await response.json();
                 allGlyphs = data.glyphs;
                 filteredGlyphs = [...allGlyphs];
+                document.getElementById('totalCount').textContent = allGlyphs.length;
                 applyFilters();
             } catch (error) {
                 document.getElementById('gallery').innerHTML = `
@@ -610,7 +584,6 @@
             }
         }
 
-        // LAB distance
         function labDistance(lab1, lab2) {
             const dL = lab1[0] - lab2[0];
             const da = lab1[1] - lab2[1];
@@ -618,7 +591,6 @@
             return Math.sqrt(dL * dL + da * da + db * db);
         }
 
-        // Hex to LAB
         function hexToLAB(hex) {
             const r = parseInt(hex.substr(1, 2), 16) / 255;
             const g = parseInt(hex.substr(3, 2), 16) / 255;
@@ -639,7 +611,6 @@
             return [116 * y - 16, 500 * (x - y), 200 * (y - z)];
         }
 
-        // Apply filters
         function applyFilters() {
             filteredGlyphs = allGlyphs.filter(glyph => {
                 if (filters.colorGroup && glyph.color.group !== filters.colorGroup) return false;
@@ -660,7 +631,6 @@
                 return true;
             });
 
-            // Hex color similarity
             if (filters.hexColor && filters.hexColor !== '#667eea') {
                 const targetLAB = hexToLAB(filters.hexColor);
                 filteredGlyphs = filteredGlyphs
@@ -672,7 +642,6 @@
                     .slice(0, 50);
             }
 
-            // LAB color similarity
             if (filters.labColor) {
                 const parts = filters.labColor.split(',').map(p => parseFloat(p.trim()));
                 if (parts.length === 3 && parts.every(p => !isNaN(p))) {
@@ -686,7 +655,6 @@
                 }
             }
 
-            // Sort
             filteredGlyphs.sort((a, b) => {
                 switch(filters.sort) {
                     case 'newest':
@@ -707,9 +675,9 @@
             renderGallery();
         }
 
-        // Render gallery
         function renderGallery() {
             const gallery = document.getElementById('gallery');
+            document.getElementById('showingCount').textContent = filteredGlyphs.length;
 
             if (filteredGlyphs.length === 0) {
                 gallery.innerHTML = `
@@ -732,13 +700,11 @@
                 </div>
             `).join('');
 
-            // Add click handlers for selection
             document.querySelectorAll('.glyph-card').forEach(card => {
                 card.onclick = () => toggleSelection(card.dataset.id, card);
             });
         }
 
-        // Toggle selection
         function toggleSelection(id, card) {
             if (selectedGlyphs.has(id)) {
                 selectedGlyphs.delete(id);
@@ -751,20 +717,23 @@
             updateExportButton();
         }
 
-        // Update export button
         function updateExportButton() {
             const exportBtn = document.getElementById('exportControl');
             const exportCount = document.getElementById('exportCount');
+            const selectionStats = document.getElementById('selectionStats');
+            const selectedStatsCount = document.getElementById('selectedStats');
             
             if (selectedGlyphs.size > 0) {
                 exportBtn.style.display = 'flex';
                 exportCount.textContent = selectedGlyphs.size;
+                selectionStats.style.display = 'block';
+                selectedStatsCount.textContent = selectedGlyphs.size;
             } else {
                 exportBtn.style.display = 'none';
+                selectionStats.style.display = 'none';
             }
         }
 
-        // Export functions
         document.getElementById('downloadJSON').onclick = () => {
             const selected = allGlyphs.filter(g => selectedGlyphs.has(g.id));
             const json = JSON.stringify(selected, null, 2);
@@ -809,7 +778,6 @@
             URL.revokeObjectURL(url);
         }
 
-        // Initialize
         loadGlyphs();
     </script>
 </body>
