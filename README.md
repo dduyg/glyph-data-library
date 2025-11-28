@@ -1,8 +1,8 @@
 <div align="center">
     <h1>Glyph data library</h1>
-    <a href="#🔍"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/BLOBs/blob-36.png" height="250"></a>
+    <a href="https://dduyg.github.io/glyph-data-library"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/BLOBs/blob-36.png" height="250"></a>
        <p align="center">
-        <a href="#🔍">
+        <a href="https://dduyg.github.io/glyph-data-library">
             <img src="https://img.shields.io/badge/View%20Dynamic%20Gallery-D9D0D7?style=for-the-badge&logo=eight&logoColor=white"></a>
     </p>
     <samp align="center">
