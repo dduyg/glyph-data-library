@@ -1,0 +1,617 @@
+{
+  "total": 18,
+  "glyphs": [
+    {
+      "id": "6a2402db",
+      "filename": "313144_20251128_192230_6a2402db.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/313144_20251128_192230_6a2402db.png",
+      "color": {
+        "hex": "313144",
+        "group": "blue",
+        "rgb": [
+          49,
+          49,
+          68
+        ],
+        "lab": [
+          21.08,
+          5.04,
+          -11.83
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.1285,
+        "entropy": 16.0565,
+        "texture": 2.1497,
+        "contrast": 1.0,
+        "circularity": 0.0494,
+        "aspect_ratio": 1.0995,
+        "edge_angle": 1.6748
+      },
+      "color_harmony": "analogous",
+      "mood": "mysterious",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:30"
+      }
+    },
+    {
+      "id": "d78ccfa2",
+      "filename": "523236_20251128_192230_d78ccfa2.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/523236_20251128_192230_d78ccfa2.png",
+      "color": {
+        "hex": "523236",
+        "group": "red",
+        "rgb": [
+          82,
+          50,
+          54
+        ],
+        "lab": [
+          24.77,
+          15.12,
+          3.53
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.1237,
+        "entropy": 12.4467,
+        "texture": 3.002,
+        "contrast": 0.9934,
+        "circularity": 0.4303,
+        "aspect_ratio": 0.6143,
+        "edge_angle": 0.0
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:30"
+      }
+    },
+    {
+      "id": "182772f4",
+      "filename": "8e8692_20251128_192231_182772f4.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/8e8692_20251128_192231_182772f4.png",
+      "color": {
+        "hex": "8e8692",
+        "group": "gray",
+        "rgb": [
+          142,
+          134,
+          146
+        ],
+        "lab": [
+          56.95,
+          5.34,
+          -5.34
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.1187,
+        "entropy": 16.4607,
+        "texture": 2.5509,
+        "contrast": 1.0,
+        "circularity": 0.2167,
+        "aspect_ratio": 0.909,
+        "edge_angle": 1.9749
+      },
+      "color_harmony": "none",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:31"
+      }
+    },
+    {
+      "id": "369b75ce",
+      "filename": "81ae95_20251128_192233_369b75ce.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/81ae95_20251128_192233_369b75ce.png",
+      "color": {
+        "hex": "81ae95",
+        "group": "green",
+        "rgb": [
+          129,
+          174,
+          149
+        ],
+        "lab": [
+          67.36,
+          -20.34,
+          7.99
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0006,
+        "entropy": 11.7062,
+        "texture": 2.2552,
+        "contrast": 0.349,
+        "circularity": 0.8929,
+        "aspect_ratio": 0.9974,
+        "edge_angle": 0.0
+      },
+      "color_harmony": "analogous",
+      "mood": "serene",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:33"
+      }
+    },
+    {
+      "id": "205f268b",
+      "filename": "f0f0f0_20251128_192234_205f268b.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/f0f0f0_20251128_192234_205f268b.png",
+      "color": {
+        "hex": "f0f0f0",
+        "group": "white",
+        "rgb": [
+          240,
+          240,
+          240
+        ],
+        "lab": [
+          94.8,
+          0.01,
+          -0.01
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.1243,
+        "entropy": 7.4975,
+        "texture": 2.5829,
+        "contrast": 0.9844,
+        "circularity": 0.1925,
+        "aspect_ratio": 0.9917,
+        "edge_angle": 0.337
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:34"
+      }
+    },
+    {
+      "id": "a4f24680",
+      "filename": "48a18c_20251128_192235_a4f24680.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/48a18c_20251128_192235_a4f24680.png",
+      "color": {
+        "hex": "48a18c",
+        "group": "blue",
+        "rgb": [
+          72,
+          161,
+          140
+        ],
+        "lab": [
+          60.57,
+          -31.9,
+          2.9
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.004,
+        "entropy": 12.6532,
+        "texture": 2.5158,
+        "contrast": 0.9717,
+        "circularity": 0.5763,
+        "aspect_ratio": 1.2194,
+        "edge_angle": 0.0
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:35"
+      }
+    },
+    {
+      "id": "3d293189",
+      "filename": "7d1717_20251128_192236_3d293189.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/7d1717_20251128_192236_3d293189.png",
+      "color": {
+        "hex": "7d1717",
+        "group": "red",
+        "rgb": [
+          125,
+          23,
+          23
+        ],
+        "lab": [
+          26.83,
+          42.58,
+          27.99
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0724,
+        "entropy": 16.159,
+        "texture": 2.2744,
+        "contrast": 0.8217,
+        "circularity": 0.6061,
+        "aspect_ratio": 1.1923,
+        "edge_angle": 3.0128
+      },
+      "color_harmony": "analogous",
+      "mood": "energetic",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:36"
+      }
+    },
+    {
+      "id": "69ddee4c",
+      "filename": "d8e0db_20251128_192237_69ddee4c.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/d8e0db_20251128_192237_69ddee4c.png",
+      "color": {
+        "hex": "d8e0db",
+        "group": "gray",
+        "rgb": [
+          216,
+          224,
+          219
+        ],
+        "lab": [
+          88.46,
+          -3.59,
+          1.5
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0319,
+        "entropy": 16.8363,
+        "texture": 2.5783,
+        "contrast": 0.8695,
+        "circularity": 0.2742,
+        "aspect_ratio": 0.9677,
+        "edge_angle": 4.7636
+      },
+      "color_harmony": "none",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:37"
+      }
+    },
+    {
+      "id": "15aec7fa",
+      "filename": "8170bd_20251128_192239_15aec7fa.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/8170bd_20251128_192239_15aec7fa.png",
+      "color": {
+        "hex": "8170bd",
+        "group": "purple",
+        "rgb": [
+          129,
+          112,
+          189
+        ],
+        "lab": [
+          51.76,
+          24.11,
+          -38.22
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0082,
+        "entropy": 16.577,
+        "texture": 2.6269,
+        "contrast": 0.9622,
+        "circularity": 0.4133,
+        "aspect_ratio": 1.027,
+        "edge_angle": 12.2648
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:39"
+      }
+    },
+    {
+      "id": "2a231fc5",
+      "filename": "7d8d8b_20251128_192240_2a231fc5.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/7d8d8b_20251128_192240_2a231fc5.png",
+      "color": {
+        "hex": "7d8d8b",
+        "group": "gray",
+        "rgb": [
+          125,
+          141,
+          139
+        ],
+        "lab": [
+          57.34,
+          -6.17,
+          -0.9
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0073,
+        "entropy": 13.4102,
+        "texture": 2.66,
+        "contrast": 1.0,
+        "circularity": 0.8453,
+        "aspect_ratio": 0.9794,
+        "edge_angle": 5.1944
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:40"
+      }
+    },
+    {
+      "id": "c773d89b",
+      "filename": "5109a1_20251128_192241_c773d89b.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/5109a1_20251128_192241_c773d89b.png",
+      "color": {
+        "hex": "5109a1",
+        "group": "black",
+        "rgb": [
+          81,
+          9,
+          161
+        ],
+        "lab": [
+          25.31,
+          57.36,
+          -64.54
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0223,
+        "entropy": 14.5762,
+        "texture": 2.7296,
+        "contrast": 1.0,
+        "circularity": 0.6793,
+        "aspect_ratio": 0.9724,
+        "edge_angle": 5.7679
+      },
+      "color_harmony": "analogous",
+      "mood": "mysterious",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:41"
+      }
+    },
+    {
+      "id": "abdba3a3",
+      "filename": "a29470_20251128_192242_abdba3a3.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/a29470_20251128_192242_abdba3a3.png",
+      "color": {
+        "hex": "a29470",
+        "group": "gold",
+        "rgb": [
+          162,
+          148,
+          112
+        ],
+        "lab": [
+          61.68,
+          -0.5,
+          20.95
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0084,
+        "entropy": 15.7994,
+        "texture": 2.6708,
+        "contrast": 0.7354,
+        "circularity": 0.8045,
+        "aspect_ratio": 0.9396,
+        "edge_angle": 10.8403
+      },
+      "color_harmony": "analogous",
+      "mood": "serene",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:42"
+      }
+    },
+    {
+      "id": "ec54a629",
+      "filename": "3e2519_20251128_192243_ec54a629.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/3e2519_20251128_192243_ec54a629.png",
+      "color": {
+        "hex": "3e2519",
+        "group": "brown",
+        "rgb": [
+          62,
+          37,
+          25
+        ],
+        "lab": [
+          17.54,
+          10.28,
+          12.86
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0364,
+        "entropy": 15.4281,
+        "texture": 2.7732,
+        "contrast": 1.0,
+        "circularity": 0.8098,
+        "aspect_ratio": 0.9404,
+        "edge_angle": 4.8039
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:43"
+      }
+    },
+    {
+      "id": "c22ea86f",
+      "filename": "c383e9_20251128_192244_c22ea86f.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/c383e9_20251128_192244_c22ea86f.png",
+      "color": {
+        "hex": "c383e9",
+        "group": "purple",
+        "rgb": [
+          195,
+          131,
+          233
+        ],
+        "lab": [
+          64.74,
+          42.64,
+          -42.17
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0171,
+        "entropy": 15.601,
+        "texture": 2.632,
+        "contrast": 1.0,
+        "circularity": 0.2593,
+        "aspect_ratio": 1.0145,
+        "edge_angle": 66.4477
+      },
+      "color_harmony": "none",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:44"
+      }
+    },
+    {
+      "id": "73c663d7",
+      "filename": "161223_20251128_192245_73c663d7.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/161223_20251128_192245_73c663d7.png",
+      "color": {
+        "hex": "161223",
+        "group": "black",
+        "rgb": [
+          22,
+          18,
+          35
+        ],
+        "lab": [
+          6.54,
+          6.63,
+          -10.97
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0684,
+        "entropy": 16.9996,
+        "texture": 2.5084,
+        "contrast": 1.0,
+        "circularity": 0.5618,
+        "aspect_ratio": 0.9892,
+        "edge_angle": 2.6425
+      },
+      "color_harmony": "none",
+      "mood": "mysterious",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:45"
+      }
+    },
+    {
+      "id": "a27c0128",
+      "filename": "bdd6f6_20251128_192246_a27c0128.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/bdd6f6_20251128_192246_a27c0128.png",
+      "color": {
+        "hex": "bdd6f6",
+        "group": "blue",
+        "rgb": [
+          189,
+          214,
+          246
+        ],
+        "lab": [
+          84.77,
+          -1.52,
+          -18.42
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.014,
+        "entropy": 14.4686,
+        "texture": 2.7218,
+        "contrast": 1.0,
+        "circularity": 0.7816,
+        "aspect_ratio": 0.9748,
+        "edge_angle": 1.1691
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:46"
+      }
+    },
+    {
+      "id": "0c3ec058",
+      "filename": "b09a91_20251128_192250_0c3ec058.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/b09a91_20251128_192250_0c3ec058.png",
+      "color": {
+        "hex": "b09a91",
+        "group": "red",
+        "rgb": [
+          176,
+          154,
+          145
+        ],
+        "lab": [
+          65.27,
+          6.62,
+          7.7
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0088,
+        "entropy": 16.2365,
+        "texture": 2.5333,
+        "contrast": 0.3458,
+        "circularity": 0.5856,
+        "aspect_ratio": 1.0798,
+        "edge_angle": 6.094
+      },
+      "color_harmony": "complementary",
+      "mood": "chaotic",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:50"
+      }
+    },
+    {
+      "id": "3b538714",
+      "filename": "d4dff2_20251128_192251_3b538714.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/d4dff2_20251128_192251_3b538714.png",
+      "color": {
+        "hex": "d4dff2",
+        "group": "silver",
+        "rgb": [
+          212,
+          223,
+          242
+        ],
+        "lab": [
+          88.54,
+          0.02,
+          -10.52
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0009,
+        "entropy": 9.7949,
+        "texture": 2.0376,
+        "contrast": 0.4992,
+        "circularity": 0.8219,
+        "aspect_ratio": 1.1344,
+        "edge_angle": 37.4054
+      },
+      "color_harmony": "analogous",
+      "mood": "serene",
+      "created_at": {
+        "date": "2025-11-28",
+        "time": "19:22:51"
+      }
+    }
+  ]
+}
