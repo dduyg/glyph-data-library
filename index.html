@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glyph Library Browser</title>
+    <title>Glyph Library</title>
     <style>
         * {
             margin: 0;
@@ -12,252 +12,275 @@
         }
 
         body {
-            font-family: Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2000') center/cover fixed;
             min-height: 100vh;
-            padding: 20px;
+            padding-top: 80px;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+            z-index: -1;
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .header p {
-            opacity: 0.9;
-            font-size: 1.1em;
-        }
-
-        .controls {
-            padding: 30px;
-            background: #f8f9fa;
-            border-bottom: 2px solid #e9ecef;
-        }
-
-        .control-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .control-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .control-group label {
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #495057;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        select, input {
-            padding: 12px;
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: all 0.3s;
-            background: white;
-        }
-
-        select:focus, input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .button-row {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: #5a6268;
-        }
-
-        .btn-success {
-            background: #28a745;
-            color: white;
-        }
-
-        .btn-success:hover {
-            background: #218838;
-        }
-
-        .btn-active {
-            background: #ff6b6b;
-        }
-
-        .btn-active:hover {
-            background: #ee5a52;
-        }
-
-        .stats {
-            padding: 20px 30px;
-            background: #e7f3ff;
-            border-bottom: 2px solid #bee5eb;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
+            padding: 0 40px;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .stats-item {
-            font-size: 1.1em;
-            color: #004085;
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .stats-item strong {
-            color: #667eea;
-            font-size: 1.3em;
-        }
-
-        .gallery {
-            padding: 30px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 20px;
-            min-height: 400px;
-        }
-
-        .glyph-card {
-            background: white;
-            border: 3px solid #e9ecef;
-            border-radius: 12px;
-            padding: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
+        .controls {
             display: flex;
-            flex-direction: column;
+            gap: 15px;
             align-items: center;
         }
 
-        .glyph-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .control-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             border-color: #667eea;
         }
 
-        .glyph-card.selected {
-            border-color: #28a745;
-            background: #d4edda;
-            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+        .control-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #333;
         }
 
-        .glyph-card.selecting {
+        .control-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+        }
+
+        .control-btn.active svg {
+            fill: white;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 55px;
+            right: 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            min-width: 280px;
+            max-width: 320px;
+            display: none;
+            z-index: 2000;
+        }
+
+        .dropdown.active {
+            display: block;
+            animation: dropdownSlide 0.3s ease;
+        }
+
+        @keyframes dropdownSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .dropdown-section {
+            margin-bottom: 20px;
+        }
+
+        .dropdown-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .dropdown-label {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .color-picker-input {
+            width: 100%;
+            height: 50px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
             cursor: pointer;
+            margin-bottom: 15px;
         }
 
-        .glyph-card.selecting:hover {
-            border-color: #ffc107;
+        .color-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .color-tag {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .color-tag:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .color-tag.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        .lab-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 0.95em;
+        }
+
+        .lab-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .dropdown-option {
+            padding: 12px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .dropdown-option:hover {
+            background: #f5f5f5;
+        }
+
+        .dropdown-option.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .filter-group {
+            margin-bottom: 15px;
+        }
+
+        .filter-group-title {
+            font-weight: 600;
+            font-size: 0.9em;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .gallery {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 30px;
+        }
+
+        .glyph-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 3px solid transparent;
+        }
+
+        .glyph-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .glyph-card.selected {
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.3);
+        }
+
+        .glyph-card.selected::after {
+            content: '✓';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .glyph-image {
             width: 100%;
-            height: 120px;
+            height: 180px;
             object-fit: contain;
-            margin-bottom: 10px;
-        }
-
-        .glyph-info {
-            text-align: center;
-            width: 100%;
-        }
-
-        .glyph-color {
-            width: 100%;
-            height: 30px;
-            border-radius: 6px;
-            margin-bottom: 8px;
-            border: 2px solid #dee2e6;
-        }
-
-        .glyph-meta {
-            font-size: 0.75em;
-            color: #6c757d;
-            margin-top: 5px;
-        }
-
-        .glyph-badge {
-            display: inline-block;
-            padding: 3px 8px;
-            background: #667eea;
-            color: white;
-            border-radius: 4px;
-            font-size: 0.7em;
-            margin: 2px;
-            text-transform: uppercase;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 60px;
-            font-size: 1.5em;
-            color: #6c757d;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 60px;
-            color: #6c757d;
-        }
-
-        .empty-state svg {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 20px;
-            opacity: 0.3;
         }
 
         .modal {
@@ -267,8 +290,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 3000;
             align-items: center;
             justify-content: center;
         }
@@ -279,218 +303,354 @@
 
         .modal-content {
             background: white;
-            padding: 30px;
-            border-radius: 16px;
-            max-width: 600px;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
             width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .modal-header {
             font-size: 1.5em;
             font-weight: 700;
-            margin-bottom: 20px;
-            color: #212529;
+            margin-bottom: 25px;
+            color: #333;
         }
 
         .modal-buttons {
             display: flex;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        textarea {
-            width: 100%;
-            min-height: 200px;
-            padding: 15px;
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.9em;
-            resize: vertical;
-        }
-
-        .color-picker-wrapper {
-            position: relative;
-        }
-
-        .color-preview {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            border-radius: 6px;
-            border: 2px solid #dee2e6;
-            vertical-align: middle;
-            margin-left: 10px;
+        .modal-btn {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .modal-btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .modal-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .modal-btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .modal-btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .export-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f4ff;
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 100px 40px;
+            color: white;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 100px 40px;
+            color: white;
+        }
+
+        .empty-state svg {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            opacity: 0.7;
+            fill: white;
         }
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8em;
+            .header {
+                padding: 0 20px;
             }
-            
-            .control-row {
-                grid-template-columns: 1fr;
+
+            .logo {
+                font-size: 1.4em;
             }
-            
+
             .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                gap: 15px;
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .dropdown {
+                min-width: 260px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Glyph Library</h1>
-            <p>Explore, filter, and discover your visual assets</p>
-        </div>
-
+    <div class="header">
+        <div class="logo">Glyph Library</div>
         <div class="controls">
-            <div class="control-row">
-                <div class="control-group">
-                    <label>🎨 Color Search</label>
-                    <select id="colorSearch">
-                        <option value="">All Colors</option>
-                        <option value="red">Red</option>
-                        <option value="orange">Orange</option>
-                        <option value="yellow">Yellow</option>
-                        <option value="green">Green</option>
-                        <option value="blue">Blue</option>
-                        <option value="purple">Purple</option>
-                        <option value="pink">Pink</option>
-                        <option value="brown">Brown</option>
-                        <option value="gold">Gold</option>
-                        <option value="silver">Silver</option>
-                        <option value="black">Black</option>
-                        <option value="white">White</option>
-                        <option value="gray">Gray</option>
-                    </select>
-                </div>
-
-                <div class="control-group">
-                    <label>🎭 Filter By</label>
-                    <select id="filterBy">
-                        <option value="">No Filter</option>
-                        <optgroup label="Mood">
-                            <option value="mood:serene">Serene</option>
-                            <option value="mood:calm">Calm</option>
-                            <option value="mood:playful">Playful</option>
-                            <option value="mood:energetic">Energetic</option>
-                            <option value="mood:futuristic">Futuristic</option>
-                            <option value="mood:mysterious">Mysterious</option>
-                            <option value="mood:dramatic">Dramatic</option>
-                            <option value="mood:chaotic">Chaotic</option>
-                        </optgroup>
-                        <optgroup label="Contrast">
-                            <option value="contrast:low">Low Contrast (0.0-0.35)</option>
-                            <option value="contrast:medium">Medium Contrast (0.35-0.65)</option>
-                            <option value="contrast:high">High Contrast (0.65-1.0)</option>
-                        </optgroup>
-                        <optgroup label="Detail">
-                            <option value="detail:minimal">Minimal Detail (edge < 0.3)</option>
-                            <option value="detail:moderate">Moderate Detail (edge 0.3-0.5)</option>
-                            <option value="detail:high">High Detail (edge > 0.5)</option>
-                        </optgroup>
-                        <optgroup label="Shape">
-                            <option value="shape:circular">Circular (circularity > 0.7)</option>
-                            <option value="shape:angular">Angular (circularity < 0.5)</option>
-                            <option value="shape:square">Square (aspect 0.9-1.1)</option>
-                            <option value="shape:wide">Wide (aspect > 1.5)</option>
-                            <option value="shape:tall">Tall (aspect < 0.7)</option>
-                        </optgroup>
-                        <optgroup label="Texture">
-                            <option value="texture:smooth">Smooth (texture < 1.0)</option>
-                            <option value="texture:textured">Textured (texture > 1.5)</option>
-                        </optgroup>
-                        <optgroup label="Harmony">
-                            <option value="harmony:analogous">Analogous Harmony</option>
-                            <option value="harmony:complementary">Complementary Harmony</option>
-                        </optgroup>
-                    </select>
-                </div>
-
-                <div class="control-group">
-                    <label>📊 Sort By</label>
-                    <select id="sortBy">
-                        <option value="newest">Newest First</option>
-                        <option value="oldest">Oldest First</option>
-                        <option value="contrast-high">Highest Contrast</option>
-                        <option value="contrast-low">Lowest Contrast</option>
-                        <option value="detail-high">Most Detailed</option>
-                        <option value="detail-low">Least Detailed</option>
-                        <option value="circular">Most Circular</option>
-                        <option value="angular">Most Angular</option>
-                        <option value="color-hue">Color Hue (Rainbow)</option>
-                    </select>
-                </div>
-
-                <div class="control-group color-picker-wrapper">
-                    <label>🔍 Similar Colors (LAB)</label>
-                    <div style="display: flex; align-items: center;">
-                        <input type="color" id="colorPicker" value="#667eea">
-                        <span id="colorPreview" class="color-preview" style="background: #667eea;"></span>
+            <div class="control-btn" id="colorControl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g transform="translate(0,300) scale(0.05,-0.05)"><path d="M2944 5976 c-16 -16 -24 -96 -24 -229 l0 -205 -75 -12 c-1231 -190 -1567 -1755 -513 -2387 l138 -83 -1218 -5 c-1135 -5 -1219 -7 -1240 -40 -53 -85 0 -105 302 -111 l279 -5 23 -125 c195 -1060 1729 -1287 2224 -329 l70 134 10 -1272 c9 -1184 12 -1274 45 -1295 83 -52 105 2 111 275 5 243 7 253 50 261 24 5 103 20 174 34 1009 196 1343 1595 535 2238 l-100 80 1115 5 c1038 5 1117 7 1138 40 53 84 -1 105 -294 111 l-272 5 -12 95 c-164 1210 -1716 1514 -2273 444 l-47 -90 -5 1218 c-4 859 -12 1226 -28 1245 -27 33 -81 35 -113 3z m-24 -1728 l0 -1132 -85 15 c-777 129 -1196 933 -851 1633 154 312 571 593 911 614 20 2 25 -237 25 -1130z m599 -1411 c679 -339 826 -1245 291 -1789 -186 -189 -501 -343 -715 -348 -8 0 -15 495 -15 1100 l0 1100 157 0 c135 0 174 -8 282 -63z"/></g></svg>
+                <div class="dropdown" id="colorDropdown">
+                    <div class="dropdown-title">Color Search</div>
+                    <div class="dropdown-section">
+                        <div class="dropdown-label">Hex Color Picker</div>
+                        <input type="color" class="color-picker-input" id="hexPicker" value="#667eea">
+                    </div>
+                    <div class="dropdown-section">
+                        <div class="dropdown-label">or Color Groups</div>
+                        <div class="color-tags" id="colorTags"></div>
+                    </div>
+                    <div class="dropdown-section">
+                        <div class="dropdown-label">or LAB Color (L,a,b)</div>
+                        <input type="text" class="lab-input" id="labInput" placeholder="e.g., 50,25,-30">
                     </div>
                 </div>
             </div>
 
-            <div class="button-row">
-                <button class="btn-primary" id="startSelect">Start Select</button>
-                <button class="btn-secondary" id="clearFilters">Clear All Filters</button>
-                <button class="btn-success" id="exportSelected" style="display: none;">Export Selected (<span id="selectedCount">0</span>)</button>
+            <div class="control-btn" id="sortControl">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"></path></svg>
+                <div class="dropdown" id="sortDropdown">
+                    <div class="dropdown-title">Sort By</div>
+                    <div class="dropdown-option" data-sort="newest">Newest First</div>
+                    <div class="dropdown-option" data-sort="oldest">Oldest First</div>
+                    <div class="dropdown-option" data-sort="detail-high">High Detail</div>
+                    <div class="dropdown-option" data-sort="detail-low">Low Detail</div>
+                </div>
             </div>
-        </div>
 
-        <div class="stats">
-            <div class="stats-item">
-                Total Glyphs: <strong id="totalCount">0</strong>
+            <div class="control-btn" id="filterControl">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8,6.2V26.3A6.2,6.2,0,0,0,4,32a6,6,0,0,0,4,5.6v4.2A2.1,2.1,0,0,0,10,44a2.1,2.1,0,0,0,2-2.2V37.6A6,6,0,0,0,16,32a6.2,6.2,0,0,0-4-5.7V6.2A2.1,2.1,0,0,0,10,4,2.1,2.1,0,0,0,8,6.2ZM12,32a2,2,0,1,1-2-2A2,2,0,0,1,12,32Z"></path><path d="M22,6.2v4.1A6.2,6.2,0,0,0,18,16a6,6,0,0,0,4,5.6V41.8a2,2,0,1,0,4,0V21.6A6,6,0,0,0,30,16a6.2,6.2,0,0,0-4-5.7V6.2a2,2,0,1,0-4,0ZM26,16a2,2,0,1,1-2-2A2,2,0,0,1,26,16Z"></path><path d="M36,6.2V23.3A6.2,6.2,0,0,0,32,29a6,6,0,0,0,4,5.6v7.2a2,2,0,1,0,4,0V34.6A6,6,0,0,0,44,29a6.2,6.2,0,0,0-4-5.7V6.2a2,2,0,1,0-4,0ZM40,29a2,2,0,1,1-2-2A2,2,0,0,1,40,29Z"></path></svg>
+                <div class="dropdown" id="filterDropdown">
+                    <div class="dropdown-title">Filter By</div>
+                    <div class="filter-group">
+                        <div class="filter-group-title">Mood</div>
+                        <div class="color-tags" id="moodTags"></div>
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-group-title">Shape</div>
+                        <div class="color-tags" id="shapeTags"></div>
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-group-title">Harmony</div>
+                        <div class="color-tags" id="harmonyTags"></div>
+                    </div>
+                </div>
             </div>
-            <div class="stats-item">
-                Showing: <strong id="showingCount">0</strong>
-            </div>
-            <div class="stats-item" id="selectionStats" style="display: none;">
-                Selected: <strong id="selectedStats">0</strong>
-            </div>
-        </div>
 
-        <div class="gallery" id="gallery">
-            <div class="loading">Loading glyphs...</div>
+            <div class="control-btn" id="clearControl" title="Clear All Filters">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.9907,1.31133017e-07 C14.8816,1.31133017e-07 15.3277,1.07714 14.6978,1.70711 L13.8556,2.54922 C14.421,3.15654 14.8904,3.85028 15.2448,4.60695 C15.8028,5.79836 16.0583,7.109 15.9888,8.42277 C15.9193,9.73654 15.5268,11.0129 14.8462,12.1388 C14.1656,13.2646 13.2178,14.2053 12.0868,14.8773 C10.9558,15.5494 9.67655,15.9322 8.3623,15.9918 C7.04804,16.0514 5.73937,15.7859 4.55221,15.2189 C3.36505,14.652 2.33604,13.8009 1.55634,12.7413 C0.776635,11.6816 0.270299,10.446 0.0821822,9.14392 C0.00321229,8.59731 0.382309,8.09018 0.928918,8.01121 C1.47553,7.93224 1.98266,8.31133 2.06163,8.85794 C2.20272,9.83451 2.58247,10.7612 3.16725,11.556 C3.75203,12.3507 4.52378,12.989 5.41415,13.4142 C6.30452,13.8394 7.28602,14.0385 8.27172,13.9939 C9.25741,13.9492 10.2169,13.6621 11.0651,13.158 C11.9133,12.6539 12.6242,11.9485 13.1346,11.1041 C13.6451,10.2597 13.9395,9.30241 13.9916,8.31708 C14.0437,7.33175 13.8521,6.34877 13.4336,5.45521 C13.178,4.90949 12.8426,4.40741 12.4402,3.96464 L11.7071,4.69779 C11.0771,5.32776 9.99996,4.88159 9.99996,3.99069 L9.99996,1.31133017e-07 L13.9907,1.31133017e-07 Z M1.499979,4 C2.05226,4 2.499979,4.44772 2.499979,5 C2.499979,5.55229 2.05226,6 1.499979,6 C0.947694,6 0.499979,5.55228 0.499979,5 C0.499979,4.44772 0.947694,4 1.499979,4 Z M3.74998,1.25 C4.30226,1.25 4.74998,1.69772 4.74998,2.25 C4.74998,2.80229 4.30226,3.25 3.74998,3.25 C3.19769,3.25 2.74998,2.80228 2.74998,2.25 C2.74998,1.69772 3.19769,1.25 3.74998,1.25 Z M6.99998,0 C7.55226,0 7.99998,0.447716 7.99998,1 C7.99998,1.55229 7.55226,2 6.99998,2 C6.44769,2 5.99998,1.55229 5.99998,1 C5.99998,0.447716 6.44769,0 6.99998,0 Z"></path></svg>
+            </div>
+
+            <div class="control-btn" id="exportControl" style="display: none;">
+                <span style="font-size: 1.2em; font-weight: bold;">📦</span>
+                <div class="dropdown" id="exportDropdown">
+                    <div class="dropdown-title">Export <span id="exportCount">0</span> Selected</div>
+                    <div class="dropdown-option" id="downloadJSON">Download JSON</div>
+                    <div class="dropdown-option" id="downloadCSV">Download CSV</div>
+                    <div class="dropdown-option" id="copyURLs">Copy URLs</div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="modal" id="exportModal">
-        <div class="modal-content">
-            <div class="modal-header">Export Selected Glyphs</div>
-            <div class="modal-buttons">
-                <button class="btn-primary" id="exportJSON">JSON</button>
-                <button class="btn-primary" id="exportCSV">CSV</button>
-                <button class="btn-success" id="copyURLs">Copy URLs</button>
-                <button class="btn-secondary" id="closeModal">Cancel</button>
-            </div>
-            <textarea id="exportOutput" placeholder="Export data will appear here..." readonly></textarea>
-        </div>
+    <div class="gallery" id="gallery">
+        <div class="loading">Loading glyphs...</div>
     </div>
 
     <script>
         const DATA_URL = `https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/data/glyphs.catalog.json`;
-
         let allGlyphs = [];
         let filteredGlyphs = [];
         let selectedGlyphs = new Set();
-        let selectMode = false;
+        let filters = {
+            colorGroup: null,
+            hexColor: null,
+            labColor: null,
+            sort: 'newest',
+            mood: null,
+            shape: null,
+            harmony: null
+        };
 
-        // Load data
+        // Initialize
+        const colorGroups = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'gold', 'silver', 'black', 'white', 'gray'];
+        const moods = ['serene', 'calm', 'playful', 'energetic', 'futuristic', 'mysterious', 'dramatic', 'chaotic'];
+        const shapes = ['circular', 'angular', 'square', 'wide', 'tall'];
+        const harmonies = ['analogous', 'complementary'];
+
+        // Populate filter tags
+        const colorTagsEl = document.getElementById('colorTags');
+        colorGroups.forEach(color => {
+            const tag = document.createElement('div');
+            tag.className = 'color-tag';
+            tag.textContent = color;
+            tag.onclick = () => toggleColorTag(color, tag);
+            colorTagsEl.appendChild(tag);
+        });
+
+        const moodTagsEl = document.getElementById('moodTags');
+        moods.forEach(mood => {
+            const tag = document.createElement('div');
+            tag.className = 'color-tag';
+            tag.textContent = mood;
+            tag.onclick = () => toggleFilter('mood', mood, tag);
+            moodTagsEl.appendChild(tag);
+        });
+
+        const shapeTagsEl = document.getElementById('shapeTags');
+        shapes.forEach(shape => {
+            const tag = document.createElement('div');
+            tag.className = 'color-tag';
+            tag.textContent = shape;
+            tag.onclick = () => toggleFilter('shape', shape, tag);
+            shapeTagsEl.appendChild(tag);
+        });
+
+        const harmonyTagsEl = document.getElementById('harmonyTags');
+        harmonies.forEach(harmony => {
+            const tag = document.createElement('div');
+            tag.className = 'color-tag';
+            tag.textContent = harmony;
+            tag.onclick = () => toggleFilter('harmony', harmony, tag);
+            harmonyTagsEl.appendChild(tag);
+        });
+
+        // Dropdown toggles
+        document.getElementById('colorControl').onclick = (e) => {
+            e.stopPropagation();
+            toggleDropdown('colorDropdown');
+        };
+
+        document.getElementById('sortControl').onclick = (e) => {
+            e.stopPropagation();
+            toggleDropdown('sortDropdown');
+        };
+
+        document.getElementById('filterControl').onclick = (e) => {
+            e.stopPropagation();
+            toggleDropdown('filterDropdown');
+        };
+
+        document.getElementById('exportControl').onclick = (e) => {
+            e.stopPropagation();
+            toggleDropdown('exportDropdown');
+        };
+
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            const wasActive = dropdown.classList.contains('active');
+            
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            
+            if (!wasActive) {
+                dropdown.classList.add('active');
+            }
+        }
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+        });
+
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.onclick = (e) => e.stopPropagation();
+        });
+
+        // Clear filters
+        document.getElementById('clearControl').onclick = () => {
+            filters = {
+                colorGroup: null,
+                hexColor: null,
+                labColor: null,
+                sort: 'newest',
+                mood: null,
+                shape: null,
+                harmony: null
+            };
+            document.querySelectorAll('.color-tag').forEach(tag => tag.classList.remove('active'));
+            document.querySelectorAll('.dropdown-option').forEach(opt => opt.classList.remove('active'));
+            document.getElementById('hexPicker').value = '#667eea';
+            document.getElementById('labInput').value = '';
+            applyFilters();
+        };
+
+        // Filter functions
+        function toggleColorTag(color, element) {
+            document.querySelectorAll('#colorTags .color-tag').forEach(tag => tag.classList.remove('active'));
+            if (filters.colorGroup === color) {
+                filters.colorGroup = null;
+            } else {
+                filters.colorGroup = color;
+                element.classList.add('active');
+            }
+            applyFilters();
+        }
+
+        function toggleFilter(type, value, element) {
+            const parent = element.parentElement;
+            parent.querySelectorAll('.color-tag').forEach(tag => tag.classList.remove('active'));
+            
+            if (filters[type] === value) {
+                filters[type] = null;
+            } else {
+                filters[type] = value;
+                element.classList.add('active');
+            }
+            applyFilters();
+        }
+
+        // Sort options
+        document.querySelectorAll('[data-sort]').forEach(option => {
+            option.onclick = () => {
+                const sortValue = option.dataset.sort;
+                document.querySelectorAll('[data-sort]').forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                filters.sort = sortValue;
+                applyFilters();
+            };
+        });
+
+        // Hex picker
+        document.getElementById('hexPicker').oninput = (e) => {
+            filters.hexColor = e.target.value;
+            filters.colorGroup = null;
+            document.querySelectorAll('#colorTags .color-tag').forEach(tag => tag.classList.remove('active'));
+            applyFilters();
+        };
+
+        // LAB input
+        document.getElementById('labInput').oninput = (e) => {
+            filters.labColor = e.target.value;
+            applyFilters();
+        };
+
+        // Load glyphs
         async function loadGlyphs() {
             try {
                 const response = await fetch(DATA_URL);
                 const data = await response.json();
                 allGlyphs = data.glyphs;
                 filteredGlyphs = [...allGlyphs];
-                
-                document.getElementById('totalCount').textContent = allGlyphs.length;
                 applyFilters();
             } catch (error) {
                 document.getElementById('gallery').innerHTML = `
@@ -501,14 +661,13 @@
                             <line x1="12" y1="16" x2="12.01" y2="16"></line>
                         </svg>
                         <h2>Failed to load glyphs</h2>
-                        <p>Please check your configuration and try again.</p>
-                        <p style="font-size: 0.9em; color: #dc3545;">${error.message}</p>
+                        <p>${error.message}</p>
                     </div>
                 `;
             }
         }
 
-        // LAB color distance
+        // LAB distance
         function labDistance(lab1, lab2) {
             const dL = lab1[0] - lab2[0];
             const da = lab1[1] - lab2[1];
@@ -516,7 +675,7 @@
             return Math.sqrt(dL * dL + da * da + db * db);
         }
 
-        // Hex to LAB conversion
+        // Hex to LAB
         function hexToLAB(hex) {
             const r = parseInt(hex.substr(1, 2), 16) / 255;
             const g = parseInt(hex.substr(3, 2), 16) / 255;
@@ -539,61 +698,28 @@
 
         // Apply filters
         function applyFilters() {
-            const colorSearch = document.getElementById('colorSearch').value;
-            const filterBy = document.getElementById('filterBy').value;
-            const sortBy = document.getElementById('sortBy').value;
-            const colorPicker = document.getElementById('colorPicker').value;
-
-            // Filter
             filteredGlyphs = allGlyphs.filter(glyph => {
-                // Color group filter
-                if (colorSearch && glyph.color.group !== colorSearch) return false;
-
-                // Advanced filters
-                if (filterBy) {
-                    const [category, value] = filterBy.split(':');
-                    
-                    if (category === 'mood' && glyph.mood !== value) return false;
-                    
-                    if (category === 'contrast') {
-                        const c = glyph.metrics.contrast;
-                        if (value === 'low' && c >= 0.35) return false;
-                        if (value === 'medium' && (c < 0.35 || c >= 0.65)) return false;
-                        if (value === 'high' && c < 0.65) return false;
-                    }
-                    
-                    if (category === 'detail') {
-                        const e = glyph.metrics.edge_density;
-                        if (value === 'minimal' && e >= 0.3) return false;
-                        if (value === 'moderate' && (e < 0.3 || e >= 0.5)) return false;
-                        if (value === 'high' && e < 0.5) return false;
-                    }
-                    
-                    if (category === 'shape') {
-                        const circ = glyph.metrics.circularity;
-                        const ar = glyph.metrics.aspect_ratio;
-                        if (value === 'circular' && circ <= 0.7) return false;
-                        if (value === 'angular' && circ >= 0.5) return false;
-                        if (value === 'square' && (ar < 0.9 || ar > 1.1)) return false;
-                        if (value === 'wide' && ar <= 1.5) return false;
-                        if (value === 'tall' && ar >= 0.7) return false;
-                    }
-                    
-                    if (category === 'texture') {
-                        const t = glyph.metrics.texture;
-                        if (value === 'smooth' && t >= 1.0) return false;
-                        if (value === 'textured' && t <= 1.5) return false;
-                    }
-                    
-                    if (category === 'harmony' && glyph.color_harmony !== value) return false;
+                if (filters.colorGroup && glyph.color.group !== filters.colorGroup) return false;
+                if (filters.mood && glyph.mood !== filters.mood) return false;
+                
+                if (filters.shape) {
+                    const circ = glyph.metrics.circularity;
+                    const ar = glyph.metrics.aspect_ratio;
+                    if (filters.shape === 'circular' && circ <= 0.7) return false;
+                    if (filters.shape === 'angular' && circ >= 0.5) return false;
+                    if (filters.shape === 'square' && (ar < 0.9 || ar > 1.1)) return false;
+                    if (filters.shape === 'wide' && ar <= 1.5) return false;
+                    if (filters.shape === 'tall' && ar >= 0.7) return false;
                 }
-
+                
+                if (filters.harmony && glyph.color_harmony !== filters.harmony) return false;
+                
                 return true;
             });
 
-            // Color similarity search
-            if (colorPicker && colorPicker !== '#667eea') {
-                const targetLAB = hexToLAB(colorPicker);
+            // Hex color similarity
+            if (filters.hexColor && filters.hexColor !== '#667eea') {
+                const targetLAB = hexToLAB(filters.hexColor);
                 filteredGlyphs = filteredGlyphs
                     .map(g => ({
                         ...g,
@@ -603,31 +729,33 @@
                     .slice(0, 50);
             }
 
+            // LAB color similarity
+            if (filters.labColor) {
+                const parts = filters.labColor.split(',').map(p => parseFloat(p.trim()));
+                if (parts.length === 3 && parts.every(p => !isNaN(p))) {
+                    filteredGlyphs = filteredGlyphs
+                        .map(g => ({
+                            ...g,
+                            colorDistance: labDistance(parts, g.color.lab)
+                        }))
+                        .sort((a, b) => a.colorDistance - b.colorDistance)
+                        .slice(0, 50);
+                }
+            }
+
             // Sort
             filteredGlyphs.sort((a, b) => {
-                switch(sortBy) {
+                switch(filters.sort) {
                     case 'newest':
                         return new Date(`${b.created_at.date}T${b.created_at.time}`) - 
                                new Date(`${a.created_at.date}T${a.created_at.time}`);
                     case 'oldest':
                         return new Date(`${a.created_at.date}T${a.created_at.time}`) - 
                                new Date(`${b.created_at.date}T${b.created_at.time}`);
-                    case 'contrast-high':
-                        return b.metrics.contrast - a.metrics.contrast;
-                    case 'contrast-low':
-                        return a.metrics.contrast - b.metrics.contrast;
                     case 'detail-high':
                         return b.metrics.edge_density - a.metrics.edge_density;
                     case 'detail-low':
                         return a.metrics.edge_density - b.metrics.edge_density;
-                    case 'circular':
-                        return b.metrics.circularity - a.metrics.circularity;
-                    case 'angular':
-                        return a.metrics.circularity - b.metrics.circularity;
-                    case 'color-hue':
-                        const hueA = rgbToHue(a.color.rgb);
-                        const hueB = rgbToHue(b.color.rgb);
-                        return hueA - hueB;
                     default:
                         return 0;
                 }
@@ -636,32 +764,9 @@
             renderGallery();
         }
 
-        function rgbToHue(rgb) {
-            const r = rgb[0] / 255;
-            const g = rgb[1] / 255;
-            const b = rgb[2] / 255;
-            const max = Math.max(r, g, b);
-            const min = Math.min(r, g, b);
-            const delta = max - min;
-            
-            if (delta === 0) return 0;
-            
-            let hue;
-            if (max === r) {
-                hue = ((g - b) / delta) % 6;
-            } else if (max === g) {
-                hue = (b - r) / delta + 2;
-            } else {
-                hue = (r - g) / delta + 4;
-            }
-            
-            return hue * 60;
-        }
-
         // Render gallery
         function renderGallery() {
             const gallery = document.getElementById('gallery');
-            document.getElementById('showingCount').textContent = filteredGlyphs.length;
 
             if (filteredGlyphs.length === 0) {
                 gallery.innerHTML = `
@@ -678,36 +783,20 @@
             }
 
             gallery.innerHTML = filteredGlyphs.map(glyph => `
-                <div class="glyph-card ${selectMode ? 'selecting' : ''} ${selectedGlyphs.has(glyph.id) ? 'selected' : ''}" 
+                <div class="glyph-card ${selectedGlyphs.has(glyph.id) ? 'selected' : ''}" 
                      data-id="${glyph.id}">
                     <img src="${glyph.glyph_url}" alt="${glyph.filename}" class="glyph-image">
-                    <div class="glyph-info">
-                        <div class="glyph-color" style="background: #${glyph.color.hex}"></div>
-                        <div class="glyph-badge">${glyph.color.group}</div>
-                        <div class="glyph-badge">${glyph.mood}</div>
-                        <div class="glyph-meta">
-                            Contrast: ${glyph.metrics.contrast.toFixed(2)}<br>
-                            Detail: ${glyph.metrics.edge_density.toFixed(2)}
-                        </div>
-                    </div>
                 </div>
             `).join('');
 
-            // Add click handlers
-            if (selectMode) {
-                document.querySelectorAll('.glyph-card').forEach(card => {
-                    card.addEventListener('click', toggleSelection);
-                });
-            }
+            // Add click handlers for selection
+            document.querySelectorAll('.glyph-card').forEach(card => {
+                card.onclick = () => toggleSelection(card.dataset.id, card);
+            });
         }
 
         // Toggle selection
-        function toggleSelection(e) {
-            if (!selectMode) return;
-            
-            const card = e.currentTarget;
-            const id = card.dataset.id;
-            
+        function toggleSelection(id, card) {
             if (selectedGlyphs.has(id)) {
                 selectedGlyphs.delete(id);
                 card.classList.remove('selected');
@@ -716,34 +805,30 @@
                 card.classList.add('selected');
             }
             
-            updateSelectionUI();
+            updateExportButton();
         }
 
-        // Update selection UI
-        function updateSelectionUI() {
-            const count = selectedGlyphs.size;
-            document.getElementById('selectedCount').textContent = count;
-            document.getElementById('selectedStats').textContent = count;
+        // Update export button
+        function updateExportButton() {
+            const exportBtn = document.getElementById('exportControl');
+            const exportCount = document.getElementById('exportCount');
             
-            const exportBtn = document.getElementById('exportSelected');
-            const selectionStats = document.getElementById('selectionStats');
-            
-            if (count > 0) {
-                exportBtn.style.display = 'block';
-                selectionStats.style.display = 'block';
+            if (selectedGlyphs.size > 0) {
+                exportBtn.style.display = 'flex';
+                exportCount.textContent = selectedGlyphs.size;
             } else {
                 exportBtn.style.display = 'none';
-                selectionStats.style.display = 'none';
             }
         }
 
         // Export functions
-        function exportJSON() {
+        document.getElementById('downloadJSON').onclick = () => {
             const selected = allGlyphs.filter(g => selectedGlyphs.has(g.id));
-            document.getElementById('exportOutput').value = JSON.stringify(selected, null, 2);
-        }
+            const json = JSON.stringify(selected, null, 2);
+            downloadFile(json, 'glyphs-export.json', 'application/json');
+        };
 
-        function exportCSV() {
+        document.getElementById('downloadCSV').onclick = () => {
             const selected = allGlyphs.filter(g => selectedGlyphs.has(g.id));
             const headers = ['id', 'filename', 'glyph_url', 'color_hex', 'color_group', 'contrast', 'edge_density', 'mood'];
             const csv = [
@@ -759,72 +844,27 @@
                     g.mood
                 ].join(','))
             ].join('\n');
-            document.getElementById('exportOutput').value = csv;
-        }
+            downloadFile(csv, 'glyphs-export.csv', 'text/csv');
+        };
 
-        function copyURLs() {
+        document.getElementById('copyURLs').onclick = () => {
             const selected = allGlyphs.filter(g => selectedGlyphs.has(g.id));
             const urls = selected.map(g => g.glyph_url).join('\n');
             navigator.clipboard.writeText(urls);
-            alert('URLs copied to clipboard!');
+            alert('✓ URLs copied to clipboard!');
+        };
+
+        function downloadFile(content, filename, mimeType) {
+            const blob = new Blob([content], { type: mimeType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
         }
-
-        // Event listeners
-        document.getElementById('colorSearch').addEventListener('change', applyFilters);
-        document.getElementById('filterBy').addEventListener('change', applyFilters);
-        document.getElementById('sortBy').addEventListener('change', applyFilters);
-        document.getElementById('colorPicker').addEventListener('change', (e) => {
-            document.getElementById('colorPreview').style.background = e.target.value;
-            applyFilters();
-        });
-
-        document.getElementById('clearFilters').addEventListener('click', () => {
-            document.getElementById('colorSearch').value = '';
-            document.getElementById('filterBy').value = '';
-            document.getElementById('sortBy').value = 'newest';
-            document.getElementById('colorPicker').value = '#667eea';
-            document.getElementById('colorPreview').style.background = '#667eea';
-            applyFilters();
-        });
-
-        document.getElementById('startSelect').addEventListener('click', () => {
-            selectMode = !selectMode;
-            const btn = document.getElementById('startSelect');
-            
-            if (selectMode) {
-                btn.textContent = 'Stop Select';
-                btn.classList.remove('btn-primary');
-                btn.classList.add('btn-active');
-            } else {
-                btn.textContent = 'Start Select';
-                btn.classList.remove('btn-active');
-                btn.classList.add('btn-primary');
-                selectedGlyphs.clear();
-                updateSelectionUI();
-            }
-            
-            renderGallery();
-        });
-
-        document.getElementById('exportSelected').addEventListener('click', () => {
-            document.getElementById('exportModal').classList.add('active');
-            document.getElementById('exportOutput').value = '';
-        });
-
-        document.getElementById('closeModal').addEventListener('click', () => {
-            document.getElementById('exportModal').classList.remove('active');
-        });
-
-        document.getElementById('exportJSON').addEventListener('click', exportJSON);
-        document.getElementById('exportCSV').addEventListener('click', exportCSV);
-        document.getElementById('copyURLs').addEventListener('click', copyURLs);
-
-        // Close modal on outside click
-        document.getElementById('exportModal').addEventListener('click', (e) => {
-            if (e.target.id === 'exportModal') {
-                document.getElementById('exportModal').classList.remove('active');
-            }
-        });
 
         // Initialize
         loadGlyphs();
