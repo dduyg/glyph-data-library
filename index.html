@@ -12,14 +12,14 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 16px;
@@ -345,7 +345,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎨 Glyph Library Browser</h1>
+            <h1>Glyph Library</h1>
             <p>Explore, filter, and discover your visual assets</p>
         </div>
 
@@ -475,17 +475,8 @@
     </div>
 
     <script>
-        // Configuration
-        const CONFIG = {
-            // Update these with your GitHub username and repo
-            GITHUB_USER: 'YOUR_USERNAME',
-            GITHUB_REPO: 'YOUR_REPO',
-            BRANCH: 'main'
-        };
+        const DATA_URL = `https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/data/glyphs.catalog.json`;
 
-        const DATA_URL = `https://cdn.jsdelivr.net/gh/${CONFIG.GITHUB_USER}/${CONFIG.GITHUB_REPO}@${CONFIG.BRANCH}/data/glyphs.catalog.json`;
-
-        // State
         let allGlyphs = [];
         let filteredGlyphs = [];
         let selectedGlyphs = new Set();
