@@ -143,21 +143,19 @@ Each processed glyph produces one entry inside `glyphs.catalog.json`:
 ---
 
 ## 🌀 mood
-- **Type:** string (categorical)  
-- **Values:** `"serene"`, `"calm"`, `"energetic"`, `"chaotic"`, `"mysterious"`, `"futuristic"`, `"minimalistic"`, `"dramatic"`, `"playful"`  
+- **Type:** string (categorical) 
 - **Description:** Mood classification based on a few decision rules:
 
-| Mood | Classification Criteria | Scoring Factors |
-|------|-----------------|-----------------|
-| **Serene** | Low complexity, soft appearance | Entropy <4, edge density <0.05, saturation <0.4. Scores higher as values decrease. |
-| **Calm** | Gentle, understated | Entropy <5, edge density <0.08, pastel or cool hues. Balanced, relaxed aesthetic. |
-| **Energetic** | Vibrant, dynamic | Saturation >0.45, warm colors (red/orange/yellow), entropy 4–6. High saturation scores highest. |
-| **Chaotic** | High complexity, irregular | Entropy >6, edge density >0.15. Scores increase with complexity. |
-| **Mysterious** | Dark, enigmatic | Brightness <90, cool colors (blue/purple hues 165°-295°), entropy 4–6. Darker = higher score. |
-| **Futuristic** | Sleek, tech-inspired | Brightness >150, cool hue (blue/purple), saturation <0.35. Bright desaturated cool tones. |
-| **Minimalistic** | Simple, clean | Entropy <3.5, edge density <0.03. Extremely low complexity required. |
-| **Dramatic** | Bold, high-impact | Contrast >0.5, entropy 5–7, warm colors. High contrast with moderate complexity. |
-| **Playful** | Whimsical, fun | Entropy 4–6, brightness >120, circularity <0.6 (irregular shapes). Medium complexity with organic forms. |
+| Mood | Core Characteristics | Influencing Metrics | Notes |
+|------|----------------------|---------------------|-------|
+| **Serene** | Soft, low-detail, smooth, bright or balanced | Very low entropy, very low edge density, high circularity | Calm simplicity; minimal noise improves score |
+| **Calm** | Gentle, low-contrast, soft transitions | Low–medium entropy, low edges, low saturation, analogous harmony | Soft, cool colors boost score |
+| **Playful** | Fun, organic, quirky | Medium entropy (2.8–3.8), medium edge density, low circularity | Irregular shapes increase score |
+| **Energetic** | High saturation, dynamic, vivid | High saturation, warm hues, medium-high entropy & edges, complementary harmony | Warm (red/orange/yellow) increases score |
+| **Futuristic** | Tech-like, sleek, structured | Aspect ratio near elongated (0.4–0.7 or 1.3–1.6), bright cool colors | Blue/purple tones with low saturation help |
+| **Mysterious** | Dark, moody, cool-toned | Low brightness, cool hues, mid entropy | Darkness is the strongest factor |
+| **Dramatic** | High-impact, bold contrast | High contrast (>0.5), medium–high entropy | Warm hues can amplify drama |
+| **Chaotic** | Very noisy, irregular, high-complexity | Very high entropy (>5.3), high edge density | Extreme detail dominates score |
 
 ---
 
