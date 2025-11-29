@@ -22,16 +22,11 @@
         header {
             position: fixed;
             top: 0; left: 0; right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 15px 40px 10px 40px;
-        }
-
-        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 40px;
+            z-index: 1000;
             margin-bottom: 10px;
         }
 
@@ -74,18 +69,17 @@
             fill: rgba(0, 0, 0, 0.7);
         }
 
-        .header-stats {
+        .stats {
             display: flex;
-            align-items: center;
-            gap: 20px;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
             color: white;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
-
         .stats-main {
             font-size: 0.95em;
         }
-
         .stats-selection {
             display: none;
             align-items: center;
@@ -126,22 +120,6 @@
             to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
         }
 
-        .dropdown-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(3px);
-            z-index: 2999;
-        }
-
-        .dropdown-overlay.active {
-            display: block;
-        }
-
         .dropdown-title {
             font-weight: 700;
             font-size: 1.3em;
@@ -171,10 +149,8 @@
         .color-canvas::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0;
+            right: 0; bottom: 0;
             border-radius: 12px;
             background: linear-gradient(to right, 
                 #ffffff 0%, 
@@ -364,10 +340,8 @@
         .glyph-card.selected::after {
             content: '✓';
             position: absolute;
-            top: -12px;
-            right: -12px;
-            width: 30px;
-            height: 30px;
+            top: -12px; right: -12px;
+            width: 30px; height: 30px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-radius: 50%;
@@ -403,21 +377,10 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                padding-top: 120px;
-            }
-
-            header { 
-                padding: 10px 20px; 
-            }
-            
-            .logo { 
-                font-size: 1.3em; 
-            }
-            
-            .controls {
-                gap: 10px;
-            }
+            body { padding-top: 120px; }
+            header { padding: 10px 20px; }      
+            .logo { font-size: 1.3em; }     
+            .controls { gap: 10px; }
             
             .control-btn {
                 width: 28px;
@@ -427,13 +390,7 @@
             .dropdown {
                 min-width: 90vw;
                 padding: 20px;
-            }
-            
-            .header-stats {
-                flex-direction: column;
-                gap: 8px;
-                align-items: flex-start;
-            }
+            }  
             
             .gallery {
                 grid-template-columns: repeat(4, 1fr);
@@ -444,11 +401,15 @@
     </style>
 </head>
 <body>
-    <div class="dropdown-overlay" id="dropdownOverlay"></div>
-
     <header>
-        <div class="header-top">
+         <div class="stats">
             <div class="logo">Glyph Library</div>
+            <div class="stats-main">Showing <strong id="showingCount">0</strong> of <strong id="totalCount">0</strong> glyphs</div>
+            <div class="stats-selection" id="statsSelection">
+                Selected: <strong id="selectedCount">0</strong>
+            </div>
+         </div>
+            
             <div class="controls">
                 <div class="control-btn" id="colorControl">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g transform="translate(0,300) scale(0.05,-0.05)"><path d="M2944 5976 c-16 -16 -24 -96 -24 -229 l0 -205 -75 -12 c-1231 -190 -1567 -1755 -513 -2387 l138 -83 -1218 -5 c-1135 -5 -1219 -7 -1240 -40 -53 -85 0 -105 302 -111 l279 -5 23 -125 c195 -1060 1729 -1287 2224 -329 l70 134 10 -1272 c9 -1184 12 -1274 45 -1295 83 -52 105 2 111 275 5 243 7 253 50 261 24 5 103 20 174 34 1009 196 1343 1595 535 2238 l-100 80 1115 5 c1038 5 1117 7 1138 40 53 84 -1 105 -294 111 l-272 5 -12 95 c-164 1210 -1716 1514 -2273 444 l-47 -90 -5 1218 c-4 859 -12 1226 -28 1245 -27 33 -81 35 -113 3z m-24 -1728 l0 -1132 -85 15 c-777 129 -1196 933 -851 1633 154 312 571 593 911 614 20 2 25 -237 25 -1130z m599 -1411 c679 -339 826 -1245 291 -1789 -186 -189 -501 -343 -715 -348 -8 0 -15 495 -15 1100 l0 1100 157 0 c135 0 174 -8 282 -63z"/></g></svg>
@@ -519,17 +480,7 @@
                         <div class="dropdown-option" id="copyURLs">Copy URLs</div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="header-stats">
-            <div class="stats-main">
-                Showing <strong id="showingCount">0</strong> of <strong id="totalCount">0</strong> glyphs
-            </div>
-            <div class="stats-selection" id="statsSelection">
-                Selected: <strong id="selectedCount">0</strong>
-            </div>
-        </div>
+            </div> 
     </header>
 
     <div class="gallery" id="gallery">
