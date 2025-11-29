@@ -15,10 +15,9 @@
         body {
             font-family: 'Grotta', sans-serif;
             background: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/inwave1741.png') center/cover fixed;
+            width: 100vw;
             height: 100vh;
             overflow: hidden;
-            position: fixed;
-            width: 100%;
         }
 
         header {
@@ -364,24 +363,47 @@
             margin-bottom: 12px;
         }
 
-        /* Gallery Container - New Layout */
-        .gallery-container {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 80%;
-            max-width: 1000px;
+        /* Main Gallery Layout */
+        main {
+            position: absolute;
+            left: 0; right: 0;
+            top: 0; bottom: 0;
+            width: 100vw;
             height: 100vh;
-            overflow-y: auto;
+            overflow: hidden;
+            z-index: 10;
+            pointer-events: all;
+        }
+
+        .scroll {
+            position: absolute;
+            left: 20%;
+            right: 0;
+            top: 0; bottom: 0;
+            width: 80%;
+            height: 100vh;
+            overflow-y: scroll;
             overflow-x: hidden;
-            padding-top: 180px;
-            padding-bottom: 40px;
-            padding-left: 20px;
-            padding-right: 40px;
+            pointer-events: all;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .scroll::-webkit-scrollbar { 
+            display: none; 
         }
 
         .gallery {
+            position: relative;
             width: 100%;
+            max-width: 1000px;
+            min-height: 100vh;
+            padding-top: 20vh;
+            padding-bottom: 10vh;
+            padding-left: 5%;
+            padding-right: 5%;
+            margin: 0 auto;
+            z-index: 11;
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             gap: 15px;
@@ -440,18 +462,6 @@
             fill: white;
         }
 
-        @media (max-width: 1200px) {
-            .gallery {
-                grid-template-columns: repeat(6, 1fr);
-            }
-        }
-
-        @media (max-width: 900px) {
-            .gallery {
-                grid-template-columns: repeat(5, 1fr);
-            }
-        }
-
         @media (max-width: 768px) {
             .logo { 
                 font-size: 1.3em; 
@@ -474,27 +484,19 @@
                 height: 25px;
             }
 
-            .gallery-container {
+            .scroll {
+                left: 0;
                 width: 100%;
-                max-width: 100%;
-                padding-top: 150px;
-                padding-left: 20px;
-                padding-right: 20px;
             }
             
             .gallery {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 12px;
+                padding-top: 25vh;
             }
 
             .color-gradient {
                 height: 220px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery {
-                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -589,11 +591,13 @@
         </div>
     </div>
 
-    <div class="gallery-container">
-        <div class="gallery" id="gallery">
-            <div class="loading">Loading glyphs...</div>
+    <main>
+        <div class="scroll">
+            <div class="gallery" id="gallery">
+                <div class="loading">Loading glyphs...</div>
+            </div>
         </div>
-    </div>
+    </main>
 
     <script>
         const DATA_URL = `https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/data/glyphs.catalog.json`;
@@ -609,6 +613,7 @@
             harmony: null
         };
 
+        // Color picker state
         let currentHue = 0;
         let isDraggingGradient = false;
         let isDraggingHue = false;
@@ -618,6 +623,7 @@
         const shapes = ['circular', 'angular', 'wide', 'tall'];
         const harmonies = ['analogous', 'complementary'];
 
+        // Populate filter tags
         const colorTagsEl = document.getElementById('colorTags');
         colorGroups.forEach(color => {
             const tag = document.createElement('div');
@@ -654,6 +660,7 @@
             harmonyTagsEl.appendChild(tag);
         });
 
+        // Color picker implementation with canvas
         const canvas = document.getElementById('gradientCanvas');
         const ctx = canvas.getContext('2d');
         const gradientCursor = document.getElementById('gradientCursor');
@@ -736,6 +743,7 @@
             const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
             colorPreview.style.background = hex;
             colorHexInput.value = hex;
+            
             filters.pickedColor = hex;
             applyFilters();
         }
@@ -809,6 +817,7 @@
                     currentHue = h;
                     hueCursor.style.left = (h / 360 * hueSlider.offsetWidth) + 'px';
                     drawGradient();
+                    
                     filters.pickedColor = value;
                     applyFilters();
                 }
