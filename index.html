@@ -79,9 +79,10 @@
             fill: rgba(0, 0, 0, 0.7);
         }
 
-        .dropdown {
+        .panel {
             position: fixed;
-            top: 50vh; left: 50vw;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             background: #2d3548;
             border-radius: 20px;
@@ -92,11 +93,11 @@
             display: none;
             z-index: 3000;
         }     
-        .dropdown.active {
+        .panel.active {
             display: block;
         }
 
-        .dropdown-title {
+        .panel-title {
             font-weight: 700;
             font-size: 0.85em;
             margin-bottom: 20px;
@@ -215,15 +216,15 @@
             font-family: monospace;
         }
 
-        .dropdown-section {
+        .panel-section {
             margin-bottom: 20px;
         }
 
-        .dropdown-section:last-child {
+        .panel-section:last-child {
             margin-bottom: 0;
         }
 
-        .dropdown-label {
+        .panel-label {
             font-size: 0.75em;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.5);
@@ -261,7 +262,7 @@
             border-color: transparent;
         }
 
-        .dropdown-option {
+        .panel-option {
             padding: 12px 15px;
             border-radius: 10px;
             cursor: pointer;
@@ -271,11 +272,11 @@
             color: white;
         }
 
-        .dropdown-option:hover {
+        .panel-option:hover {
             background: rgba(255, 255, 255, 0.1);
         }
 
-        .dropdown-option.active {
+        .panel-option.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
@@ -366,7 +367,7 @@
                 font-size: 0.85em;
             }
 
-            .dropdown {
+            .panel {
                 max-width: calc(100vw - 40px);
                 min-width: calc(100vw - 40px);
             }
@@ -394,11 +395,11 @@
                 <span>Selected: <strong id="selectedCount">0</strong></span>
                 <div class="control-btn" id="exportControl">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g transform="translate(0,300) scale(0.1,-0.1)"><path d="M1140 2710 c-364 -36 -613 -157 -700 -342 l-30 -63 0 -805 0 -805 26 -55 c36 -78 84 -132 168 -188 85 -57 210 -105 346 -133 109 -23 401 -46 443 -36 58 15 89 74 67 128 -19 46 -51 56 -205 62 -355 16 -590 106 -649 249 -13 30 -16 81 -16 258 0 121 3 220 6 220 3 0 25 -11 49 -25 169 -100 494 -155 824 -141 460 19 741 135 841 348 l30 63 0 430 0 430 -30 63 c-76 161 -270 271 -565 322 -139 24 -454 34 -605 20z m583 -205 c185 -34 308 -86 377 -161 66 -71 66 -117 0 -188 -69 -75 -190 -127 -383 -163 -131 -25 -551 -25 -684 0 -191 36 -318 91 -386 166 -63 70 -62 115 5 187 48 52 147 103 258 133 65 17 111 25 255 45 74 10 474 -3 558 -19z m-1078 -580 c169 -100 494 -155 824 -141 284 12 497 59 638 141 23 14 44 25 47 25 3 0 6 -100 6 -222 0 -254 -5 -274 -78 -340 -74 -67 -185 -111 -365 -145 -131 -25 -551 -25 -684 0 -240 45 -383 122 -427 229 -13 30 -16 81 -16 258 0 121 3 220 6 220 3 0 25 -11 49 -25z"/><path d="M2313 1066 l-28 -24 -3 -283 -3 -283 -119 119 c-114 114 -122 120 -161 120 -53 0 -89 -38 -89 -93 0 -34 13 -50 213 -249 205 -205 214 -213 252 -213 38 0 47 8 252 213 200 199 213 215 213 249 0 55 -36 93 -89 93 -39 0 -47 -6 -161 -120 l-119 -119 -3 283 -3 283 -28 24 c-18 15 -41 24 -62 24 -21 0 -44 -9 -62 -24z"/></g></svg>
-                    <div class="dropdown" id="exportDropdown">
-                        <div class="dropdown-title">Export Selected</div>
-                        <div class="dropdown-option" id="downloadJSON">Download JSON</div>
-                        <div class="dropdown-option" id="downloadCSV">Download CSV</div>
-                        <div class="dropdown-option" id="copyURLs">Copy URLs</div>
+                    <div class="panel" id="exportPanel">
+                        <div class="panel-title">Export Selected</div>
+                        <div class="panel-option" id="downloadJSON">Download JSON</div>
+                        <div class="panel-option" id="downloadCSV">Download CSV</div>
+                        <div class="panel-option" id="copyURLs">Copy URLs</div>
                     </div>
                 </div>
             </div>
@@ -407,8 +408,8 @@
         <div class="controls">
             <div class="control-btn" id="colorControl">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g transform="translate(0,300) scale(0.05,-0.05)"><path d="M2944 5976 c-16 -16 -24 -96 -24 -229 l0 -205 -75 -12 c-1231 -190 -1567 -1755 -513 -2387 l138 -83 -1218 -5 c-1135 -5 -1219 -7 -1240 -40 -53 -85 0 -105 302 -111 l279 -5 23 -125 c195 -1060 1729 -1287 2224 -329 l70 134 10 -1272 c9 -1184 12 -1274 45 -1295 83 -52 105 2 111 275 5 243 7 253 50 261 24 5 103 20 174 34 1009 196 1343 1595 535 2238 l-100 80 1115 5 c1038 5 1117 7 1138 40 53 84 -1 105 -294 111 l-272 5 -12 95 c-164 1210 -1716 1514 -2273 444 l-47 -90 -5 1218 c-4 859 -12 1226 -28 1245 -27 33 -81 35 -113 3z m-24 -1728 l0 -1132 -85 15 c-777 129 -1196 933 -851 1633 154 312 571 593 911 614 20 2 25 -237 25 -1130z m599 -1411 c679 -339 826 -1245 291 -1789 -186 -189 -501 -343 -715 -348 -8 0 -15 495 -15 1100 l0 1100 157 0 c135 0 174 -8 282 -63z"/></g></svg>
-                <div class="dropdown" id="colorDropdown">
-                    <div class="dropdown-title">Pick a Color</div>
+                <div class="panel" id="colorPanel">
+                    <div class="panel-title">Pick a Color</div>
                     <div class="color-picker-container">
                         <div class="color-gradient" id="colorGradient">
                             <div class="color-gradient-overlay"></div>
@@ -427,19 +428,19 @@
 
             <div class="control-btn" id="sortControl">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"></path></svg>
-                <div class="dropdown" id="sortDropdown">
-                    <div class="dropdown-title">Sort By</div>
-                    <div class="dropdown-option" data-sort="newest">Newest First</div>
-                    <div class="dropdown-option" data-sort="oldest">Oldest First</div>
-                    <div class="dropdown-option" data-sort="detail-high">High Detail</div>
-                    <div class="dropdown-option" data-sort="detail-low">Low Detail</div>
+                <div class="panel" id="sortPanel">
+                    <div class="panel-title">Sort By</div>
+                    <div class="panel-option" data-sort="newest">Newest First</div>
+                    <div class="panel-option" data-sort="oldest">Oldest First</div>
+                    <div class="panel-option" data-sort="detail-high">High Detail</div>
+                    <div class="panel-option" data-sort="detail-low">Low Detail</div>
                 </div>
             </div>
 
             <div class="control-btn" id="filterControl">
                 <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8,6.2V26.3A6.2,6.2,0,0,0,4,32a6,6,0,0,0,4,5.6v4.2A2.1,2.1,0,0,0,10,44a2.1,2.1,0,0,0,2-2.2V37.6A6,6,0,0,0,16,32a6.2,6.2,0,0,0-4-5.7V6.2A2.1,2.1,0,0,0,10,4,2.1,2.1,0,0,0,8,6.2ZM12,32a2,2,0,1,1-2-2A2,2,0,0,1,12,32Z"></path><path d="M22,6.2v4.1A6.2,6.2,0,0,0,18,16a6,6,0,0,0,4,5.6V41.8a2,2,0,1,0,4,0V21.6A6,6,0,0,0,30,16a6.2,6.2,0,0,0-4-5.7V6.2a2,2,0,1,0-4,0ZM26,16a2,2,0,1,1-2-2A2,2,0,0,1,26,16Z"></path><path d="M36,6.2V23.3A6.2,6.2,0,0,0,32,29a6,6,0,0,0,4,5.6v7.2a2,2,0,1,0,4,0V34.6A6,6,0,0,0,44,29a6.2,6.2,0,0,0-4-5.7V6.2a2,2,0,1,0-4,0ZM40,29a2,2,0,1,1-2-2A2,2,0,0,1,40,29Z"></path></svg>
-                <div class="dropdown" id="filterDropdown">
-                    <div class="dropdown-title">Filter By</div>
+                <div class="panel" id="filterPanel">
+                    <div class="panel-title">Filter By</div>
                     <div class="filter-group">
                         <div class="filter-group-title">Color Group</div>
                         <div class="color-tags" id="colorTags"></div>
@@ -616,48 +617,48 @@
         gradientCursor.style.left = '50%';
         gradientCursor.style.top = '50%';
 
-        // Dropdown toggles
+        // Panel toggles
         document.getElementById('colorControl').onclick = (e) => {
             e.stopPropagation();
-            toggleDropdown('colorDropdown', 'colorControl');
+            togglePanel('colorPanel', 'colorControl');
         };
 
         document.getElementById('sortControl').onclick = (e) => {
             e.stopPropagation();
-            toggleDropdown('sortDropdown', 'sortControl');
+            togglePanel('sortPanel', 'sortControl');
         };
 
         document.getElementById('filterControl').onclick = (e) => {
             e.stopPropagation();
-            toggleDropdown('filterDropdown', 'filterControl');
+            togglePanel('filterPanel', 'filterControl');
         };
 
         document.getElementById('exportControl').onclick = (e) => {
             e.stopPropagation();
-            toggleDropdown('exportDropdown', 'exportControl');
+            togglePanel('exportPanel', 'exportControl');
         };
 
-        function toggleDropdown(dropdownId, controlId) {
-            const dropdown = document.getElementById(dropdownId);
+        function togglePanel(panelId, controlId) {
+            const panel = document.getElementById(panelId);
             const control = document.getElementById(controlId);
-            const wasActive = dropdown.classList.contains('active');
+            const wasActive = panel.classList.contains('active');
             
-            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            document.querySelectorAll('.panel').forEach(d => d.classList.remove('active'));
             document.querySelectorAll('.control-btn').forEach(c => c.classList.remove('active'));
             
             if (!wasActive) {
-                dropdown.classList.add('active');
+                panel.classList.add('active');
                 control.classList.add('active');
             }
         }
 
         document.addEventListener('click', () => {
-            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            document.querySelectorAll('.panel').forEach(d => d.classList.remove('active'));
             document.querySelectorAll('.control-btn').forEach(c => c.classList.remove('active'));
         });
 
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            dropdown.onclick = (e) => e.stopPropagation();
+        document.querySelectorAll('.panel').forEach(panel => {
+            panel.onclick = (e) => e.stopPropagation();
         });
 
         // Clear filters
@@ -671,7 +672,7 @@
                 harmony: null
             };
             document.querySelectorAll('.color-tag').forEach(tag => tag.classList.remove('active'));
-            document.querySelectorAll('.dropdown-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelectorAll('.panel-option').forEach(opt => opt.classList.remove('active'));
             
             // Reset color picker
             currentHue = 0;
