@@ -16,27 +16,51 @@
             font-family: 'Grotta', sans-serif;
             background: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/inwave1741.png') center/cover fixed;
             min-height: 100vh;
-            padding-top: 140px;
+            padding-top: 100px;
         }
 
         header {
             position: fixed;
             top: 0; left: 0; right: 0;
-            z-index: 1000;
-            padding: 15px 40px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        .header-top {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+            align-items: flex-start;
+            padding: 15px 40px;
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .logo {
             font-size: 1.8em;
             font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stats-line {
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .selection-line {
+            display: none;
+            align-items: center;
+            gap: 15px;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .selection-line.active {
+            display: flex;
         }
 
         .controls {
@@ -63,95 +87,108 @@
             fill: rgba(0, 0, 0, 0.4);
             transition: fill 0.3s;
         }
-        
-        .control-btn.active svg,
-        .control-btn:hover svg {
+
+        .control-btn:hover svg,
+        .control-btn.active svg {
             fill: rgba(0, 0, 0, 0.7);
-        }
-
-        .header-stats {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .stats-main {
-            font-size: 0.95em;
-        }
-
-        .stats-selection {
-            display: none;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .stats-selection.active {
-            display: flex;
-        }
-
-        .stats-main strong,
-        .stats-selection strong {
-            font-weight: 700;
         }
 
         .dropdown {
             position: fixed;
-            top: 50%; left: 50%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
-            background: white;
+            background: #2d3548;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             padding: 30px;
             min-width: 400px;
-            max-width: 90vw;
+            max-width: 500px;
             display: none;
             z-index: 3000;
-        }    
+        }
+        
         .dropdown.active {
+            display: block;
+            animation: dropdownAppear 0.3s ease;
+        }
+        
+        @keyframes dropdownAppear {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .dropdown-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2999;
+        }
+
+        .dropdown-overlay.active {
             display: block;
         }
 
         .dropdown-title {
             font-weight: 700;
-            font-size: 1.3em;
+            font-size: 0.85em;
             margin-bottom: 20px;
-            color: #333;
-            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .color-picker-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
 
-        .color-canvas {
+        .color-gradient {
             width: 100%;
-            height: 250px;
+            height: 200px;
             border-radius: 12px;
-            cursor: crosshair;
-            position: relative;
             background: linear-gradient(to bottom, 
-                rgba(255, 255, 255, 1) 0%, 
-                rgba(255, 255, 255, 0) 50%, 
-                rgba(0, 0, 0, 1) 100%);
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0) 50%,
+                rgba(0, 0, 0, 1) 100%
+            ), linear-gradient(to right, 
+                #ff0000 0%,
+                #ff0000 16.66%,
+                #ffff00 16.66%,
+                #ffff00 33.33%,
+                #00ff00 33.33%,
+                #00ff00 50%,
+                #00ffff 50%,
+                #00ffff 66.66%,
+                #0000ff 66.66%,
+                #0000ff 83.33%,
+                #ff00ff 83.33%,
+                #ff00ff 100%
+            );
+            position: relative;
+            cursor: crosshair;
         }
 
-        .color-canvas::before {
-            content: '';
+        .color-gradient-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0) 50%,
+                rgba(0, 0, 0, 1) 100%
+            );
             border-radius: 12px;
-            background: linear-gradient(to right, 
-                #ffffff 0%, 
-                var(--hue-color, #ff0000) 100%);
-            mix-blend-mode: multiply;
         }
 
-        .color-pointer {
+        .color-picker-cursor {
             position: absolute;
             width: 20px;
             height: 20px;
@@ -167,18 +204,19 @@
             height: 40px;
             border-radius: 20px;
             background: linear-gradient(to right, 
-                #ff0000 0%, 
-                #ffff00 17%, 
-                #00ff00 33%, 
-                #00ffff 50%, 
-                #0000ff 67%, 
-                #ff00ff 83%, 
-                #ff0000 100%);
+                #ff0000 0%,
+                #ffff00 16.66%,
+                #00ff00 33.33%,
+                #00ffff 50%,
+                #0000ff 66.66%,
+                #ff00ff 83.33%,
+                #ff0000 100%
+            );
             position: relative;
             cursor: pointer;
         }
 
-        .hue-pointer {
+        .hue-slider-cursor {
             position: absolute;
             width: 24px;
             height: 24px;
@@ -187,63 +225,45 @@
             border-radius: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            pointer-events: none;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
         }
 
-        .color-result {
+        .color-output {
             display: flex;
             align-items: center;
             gap: 15px;
+            background: rgba(0, 0, 0, 0.2);
             padding: 15px;
-            background: #f5f5f5;
             border-radius: 12px;
         }
 
         .color-preview {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 10px;
-            border: 2px solid #ddd;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .color-hex {
-            font-size: 1.5em;
+            font-size: 1.2em;
             font-weight: 700;
-            color: #333;
-            font-family: monospace;
-        }
-
-        .color-action {
-            margin-left: auto;
-        }
-
-        .btn-find {
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1em;
-        }
-
-        .btn-find:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            font-family: monospace;
         }
 
         .dropdown-section {
             margin-bottom: 20px;
         }
 
+        .dropdown-section:last-child {
+            margin-bottom: 0;
+        }
+
         .dropdown-label {
-            font-size: 0.85em;
+            font-size: 0.75em;
             font-weight: 600;
-            color: #666;
+            color: rgba(255, 255, 255, 0.5);
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -258,17 +278,18 @@
         .color-tag {
             padding: 8px 14px;
             border-radius: 8px;
-            border: 2px solid #e0e0e0;
-            background: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
             cursor: pointer;
             font-size: 0.85em;
             font-weight: 600;
             transition: all 0.3s;
+            color: white;
         }
 
         .color-tag:hover {
-            border-color: #667eea;
-            background: #f0f4ff;
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .color-tag.active {
@@ -284,10 +305,11 @@
             transition: all 0.2s;
             margin-bottom: 5px;
             font-weight: 500;
+            color: white;
         }
 
         .dropdown-option:hover {
-            background: #f5f5f5;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .dropdown-option.active {
@@ -302,14 +324,14 @@
         .filter-group-title {
             font-weight: 600;
             font-size: 0.9em;
-            color: #333;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 8px;
         }
 
         .gallery {
-            padding: 10%;
+            padding: 20px 40px 40px 40px;
             display: grid;
-            grid-template-columns: repeat(9, 1fr);
+            grid-template-columns: repeat(8, 1fr);
             gap: 15px;
         }
 
@@ -373,19 +395,31 @@
 
         @media (max-width: 768px) {
             body {
-                padding-top: 120px;
+                padding-top: 130px;
             }
 
             header { 
-                padding: 10px 20px; 
+                padding: 10px 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .header-left {
+                width: 100%;
             }
             
             .logo { 
                 font-size: 1.3em; 
             }
+
+            .stats-line {
+                font-size: 0.85em;
+            }
             
             .controls {
                 gap: 10px;
+                width: 100%;
+                justify-content: flex-end;
             }
             
             .control-btn {
@@ -394,92 +428,33 @@
             }
             
             .dropdown {
-                min-width: 90vw;
-                padding: 20px;
-            }
-            
-            .header-stats {
-                flex-direction: column;
-                gap: 8px;
-                align-items: flex-start;
+                max-width: calc(100vw - 40px);
+                min-width: calc(100vw - 40px);
             }
             
             .gallery {
-                grid-template-columns: repeat(5, 1fr);
+                grid-template-columns: repeat(4, 1fr);
+                padding: 15px 20px 30px 20px;
                 gap: 12px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="dropdown-overlay" id="dropdownOverlay"></div>
+
     <header>
-        <div class="header-top">
+        <div class="header-left">
             <div class="logo">Glyph Library</div>
-            <div class="controls">
-                <div class="control-btn" id="colorControl">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g transform="translate(0,300) scale(0.05,-0.05)"><path d="M2944 5976 c-16 -16 -24 -96 -24 -229 l0 -205 -75 -12 c-1231 -190 -1567 -1755 -513 -2387 l138 -83 -1218 -5 c-1135 -5 -1219 -7 -1240 -40 -53 -85 0 -105 302 -111 l279 -5 23 -125 c195 -1060 1729 -1287 2224 -329 l70 134 10 -1272 c9 -1184 12 -1274 45 -1295 83 -52 105 2 111 275 5 243 7 253 50 261 24 5 103 20 174 34 1009 196 1343 1595 535 2238 l-100 80 1115 5 c1038 5 1117 7 1138 40 53 84 -1 105 -294 111 l-272 5 -12 95 c-164 1210 -1716 1514 -2273 444 l-47 -90 -5 1218 c-4 859 -12 1226 -28 1245 -27 33 -81 35 -113 3z m-24 -1728 l0 -1132 -85 15 c-777 129 -1196 933 -851 1633 154 312 571 593 911 614 20 2 25 -237 25 -1130z m599 -1411 c679 -339 826 -1245 291 -1789 -186 -189 -501 -343 -715 -348 -8 0 -15 495 -15 1100 l0 1100 157 0 c135 0 174 -8 282 -63z"/></g></svg>
-                    <div class="dropdown" id="colorDropdown">
-                        <div class="dropdown-title">Search by Color</div>
-                        <div class="color-picker-container">
-                            <div class="color-canvas" id="colorCanvas">
-                                <div class="color-pointer" id="colorPointer"></div>
-                            </div>
-                            <div class="hue-slider" id="hueSlider">
-                                <div class="hue-pointer" id="huePointer"></div>
-                            </div>
-                            <div class="color-result">
-                                <div class="color-preview" id="colorPreview"></div>
-                                <div class="color-hex" id="colorHex">#FF0000</div>
-                                <div class="color-action">
-                                    <button class="btn-find" id="findSimilar">Find Similar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="control-btn" id="sortControl">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"></path></svg>
-                    <div class="dropdown" id="sortDropdown">
-                        <div class="dropdown-title">Sort By</div>
-                        <div class="dropdown-option" data-sort="newest">Newest First</div>
-                        <div class="dropdown-option" data-sort="oldest">Oldest First</div>
-                        <div class="dropdown-option" data-sort="detail-high">High Detail</div>
-                        <div class="dropdown-option" data-sort="detail-low">Low Detail</div>
-                    </div>
-                </div>
-
-                <div class="control-btn" id="filterControl">
-                    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8,6.2V26.3A6.2,6.2,0,0,0,4,32a6,6,0,0,0,4,5.6v4.2A2.1,2.1,0,0,0,10,44a2.1,2.1,0,0,0,2-2.2V37.6A6,6,0,0,0,16,32a6.2,6.2,0,0,0-4-5.7V6.2A2.1,2.1,0,0,0,10,4,2.1,2.1,0,0,0,8,6.2ZM12,32a2,2,0,1,1-2-2A2,2,0,0,1,12,32Z"></path><path d="M22,6.2v4.1A6.2,6.2,0,0,0,18,16a6,6,0,0,0,4,5.6V41.8a2,2,0,1,0,4,0V21.6A6,6,0,0,0,30,16a6.2,6.2,0,0,0-4-5.7V6.2a2,2,0,1,0-4,0ZM26,16a2,2,0,1,1-2-2A2,2,0,0,1,26,16Z"></path><path d="M36,6.2V23.3A6.2,6.2,0,0,0,32,29a6,6,0,0,0,4,5.6v7.2a2,2,0,1,0,4,0V34.6A6,6,0,0,0,44,29a6.2,6.2,0,0,0-4-5.7V6.2a2,2,0,1,0-4,0ZM40,29a2,2,0,1,1-2-2A2,2,0,0,1,40,29Z"></path></svg>
-                    <div class="dropdown" id="filterDropdown">
-                        <div class="dropdown-title">Filter By</div>
-                        <div class="filter-group">
-                            <div class="filter-group-title">Color Group</div>
-                            <div class="color-tags" id="colorGroupTags"></div>
-                        </div>
-                        <div class="filter-group">
-                            <div class="filter-group-title">Mood</div>
-                            <div class="color-tags" id="moodTags"></div>
-                        </div>
-                        <div class="filter-group">
-                            <div class="filter-group-title">Shape</div>
-                            <div class="color-tags" id="shapeTags"></div>
-                        </div>
-                        <div class="filter-group">
-                            <div class="filter-group-title">Harmony</div>
-                            <div class="color-tags" id="harmonyTags"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="control-btn" id="clearControl" title="Clear All Filters">
-                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.9907,1.31133017e-07 C14.8816,1.31133017e-07 15.3277,1.07714 14.6978,1.70711 L13.8556,2.54922 C14.421,3.15654 14.8904,3.85028 15.2448,4.60695 C15.8028,5.79836 16.0583,7.109 15.9888,8.42277 C15.9193,9.73654 15.5268,11.0129 14.8462,12.1388 C14.1656,13.2646 13.2178,14.2053 12.0868,14.8773 C10.9558,15.5494 9.67655,15.9322 8.3623,15.9918 C7.04804,16.0514 5.73937,15.7859 4.55221,15.2189 C3.36505,14.652 2.33604,13.8009 1.55634,12.7413 C0.776635,11.6816 0.270299,10.446 0.0821822,9.14392 C0.00321229,8.59731 0.382309,8.09018 0.928918,8.01121 C1.47553,7.93224 1.98266,8.31133 2.06163,8.85794 C2.20272,9.83451 2.58247,10.7612 3.16725,11.556 C3.75203,12.3507 4.52378,12.989 5.41415,13.4142 C6.30452,13.8394 7.28602,14.0385 8.27172,13.9939 C9.25741,13.9492 10.2169,13.6621 11.0651,13.158 C11.9133,12.6539 12.6242,11.9485 13.1346,11.1041 C13.6451,10.2597 13.9395,9.30241 13.9916,8.31708 C14.0437,7.33175 13.8521,6.34877 13.4336,5.45521 C13.178,4.90949 12.8426,4.40741 12.4402,3.96464 L11.7071,4.69779 C11.0771,5.32776 9.99996,4.88159 9.99996,3.99069 L9.99996,1.31133017e-07 L13.9907,1.31133017e-07 Z M1.499979,4 C2.05226,4 2.499979,4.44772 2.499979,5 C2.499979,5.55229 2.05226,6 1.499979,6 C0.947694,6 0.499979,5.55228 0.499979,5 C0.499979,4.44772 0.947694,4 1.499979,4 Z M3.74998,1.25 C4.30226,1.25 4.74998,1.69772 4.74998,2.25 C4.74998,2.80229 4.30226,3.25 3.74998,3.25 C3.19769,3.25 2.74998,2.80228 2.74998,2.25 C2.74998,1.69772 3.19769,1.25 3.74998,1.25 Z M6.99998,0 C7.55226,0 7.99998,0.447716 7.99998,1 C7.99998,1.55229 7.55226,2 6.99998,2 C6.44769,2 5.99998,1.55229 5.99998,1 C5.99998,0.447716 6.44769,0 6.99998,0 Z"></path></svg>
-                </div>
-
-                <div class="control-btn" id="exportControl" style="display: none;">
+            <div class="stats-line">
+                Showing <strong id="showingCount">0</strong> of <strong id="totalCount">0</strong> glyphs
+            </div>
+            <div class="selection-line" id="selectionLine">
+                <span>Selected: <strong id="selectedCount">0</strong></span>
+                <div class="control-btn" id="exportControl">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g transform="translate(0,300) scale(0.1,-0.1)"><path d="M1140 2710 c-364 -36 -613 -157 -700 -342 l-30 -63 0 -805 0 -805 26 -55 c36 -78 84 -132 168 -188 85 -57 210 -105 346 -133 109 -23 401 -46 443 -36 58 15 89 74 67 128 -19 46 -51 56 -205 62 -355 16 -590 106 -649 249 -13 30 -16 81 -16 258 0 121 3 220 6 220 3 0 25 -11 49 -25 169 -100 494 -155 824 -141 460 19 741 135 841 348 l30 63 0 430 0 430 -30 63 c-76 161 -270 271 -565 322 -139 24 -454 34 -605 20z m583 -205 c185 -34 308 -86 377 -161 66 -71 66 -117 0 -188 -69 -75 -190 -127 -383 -163 -131 -25 -551 -25 -684 0 -191 36 -318 91 -386 166 -63 70 -62 115 5 187 48 52 147 103 258 133 65 17 111 25 255 45 74 10 474 -3 558 -19z m-1078 -580 c169 -100 494 -155 824 -141 284 12 497 59 638 141 23 14 44 25 47 25 3 0 6 -100 6 -222 0 -254 -5 -274 -78 -340 -74 -67 -185 -111 -365 -145 -131 -25 -551 -25 -684 0 -240 45 -383 122 -427 229 -13 30 -16 81 -16 258 0 121 3 220 6 220 3 0 25 -11 49 -25z"/><path d="M2313 1066 l-28 -24 -3 -283 -3 -283 -119 119 c-114 114 -122 120 -161 120 -53 0 -89 -38 -89 -93 0 -34 13 -50 213 -249 205 -205 214 -213 252 -213 38 0 47 8 252 213 200 199 213 215 213 249 0 55 -36 93 -89 93 -39 0 -47 -6 -161 -120 l-119 -119 -3 283 -3 283 -28 24 c-18 15 -41 24 -62 24 -21 0 -44 -9 -62 -24z"/></g></svg>
                     <div class="dropdown" id="exportDropdown">
-                        <div class="dropdown-title">Export <span id="exportCount">0</span> Selected</div>
+                        <div class="dropdown-title">Export Selected</div>
                         <div class="dropdown-option" id="downloadJSON">Download JSON</div>
                         <div class="dropdown-option" id="downloadCSV">Download CSV</div>
                         <div class="dropdown-option" id="copyURLs">Copy URLs</div>
@@ -488,12 +463,63 @@
             </div>
         </div>
 
-        <div class="header-stats">
-            <div class="stats-main">
-                Showing <strong id="showingCount">0</strong> of <strong id="totalCount">0</strong> glyphs
+        <div class="controls">
+            <div class="control-btn" id="colorControl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g transform="translate(0,300) scale(0.05,-0.05)"><path d="M2944 5976 c-16 -16 -24 -96 -24 -229 l0 -205 -75 -12 c-1231 -190 -1567 -1755 -513 -2387 l138 -83 -1218 -5 c-1135 -5 -1219 -7 -1240 -40 -53 -85 0 -105 302 -111 l279 -5 23 -125 c195 -1060 1729 -1287 2224 -329 l70 134 10 -1272 c9 -1184 12 -1274 45 -1295 83 -52 105 2 111 275 5 243 7 253 50 261 24 5 103 20 174 34 1009 196 1343 1595 535 2238 l-100 80 1115 5 c1038 5 1117 7 1138 40 53 84 -1 105 -294 111 l-272 5 -12 95 c-164 1210 -1716 1514 -2273 444 l-47 -90 -5 1218 c-4 859 -12 1226 -28 1245 -27 33 -81 35 -113 3z m-24 -1728 l0 -1132 -85 15 c-777 129 -1196 933 -851 1633 154 312 571 593 911 614 20 2 25 -237 25 -1130z m599 -1411 c679 -339 826 -1245 291 -1789 -186 -189 -501 -343 -715 -348 -8 0 -15 495 -15 1100 l0 1100 157 0 c135 0 174 -8 282 -63z"/></g></svg>
+                <div class="dropdown" id="colorDropdown">
+                    <div class="dropdown-title">Pick a Color</div>
+                    <div class="color-picker-container">
+                        <div class="color-gradient" id="colorGradient">
+                            <div class="color-gradient-overlay"></div>
+                            <div class="color-picker-cursor" id="gradientCursor"></div>
+                        </div>
+                        <div class="hue-slider" id="hueSlider">
+                            <div class="hue-slider-cursor" id="hueCursor"></div>
+                        </div>
+                        <div class="color-output">
+                            <div class="color-preview" id="colorPreview"></div>
+                            <div class="color-hex" id="colorHex">#FF0000</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="stats-selection" id="statsSelection">
-                Selected: <strong id="selectedCount">0</strong>
+
+            <div class="control-btn" id="sortControl">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"></path></svg>
+                <div class="dropdown" id="sortDropdown">
+                    <div class="dropdown-title">Sort By</div>
+                    <div class="dropdown-option" data-sort="newest">Newest First</div>
+                    <div class="dropdown-option" data-sort="oldest">Oldest First</div>
+                    <div class="dropdown-option" data-sort="detail-high">High Detail</div>
+                    <div class="dropdown-option" data-sort="detail-low">Low Detail</div>
+                </div>
+            </div>
+
+            <div class="control-btn" id="filterControl">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8,6.2V26.3A6.2,6.2,0,0,0,4,32a6,6,0,0,0,4,5.6v4.2A2.1,2.1,0,0,0,10,44a2.1,2.1,0,0,0,2-2.2V37.6A6,6,0,0,0,16,32a6.2,6.2,0,0,0-4-5.7V6.2A2.1,2.1,0,0,0,10,4,2.1,2.1,0,0,0,8,6.2ZM12,32a2,2,0,1,1-2-2A2,2,0,0,1,12,32Z"></path><path d="M22,6.2v4.1A6.2,6.2,0,0,0,18,16a6,6,0,0,0,4,5.6V41.8a2,2,0,1,0,4,0V21.6A6,6,0,0,0,30,16a6.2,6.2,0,0,0-4-5.7V6.2a2,2,0,1,0-4,0ZM26,16a2,2,0,1,1-2-2A2,2,0,0,1,26,16Z"></path><path d="M36,6.2V23.3A6.2,6.2,0,0,0,32,29a6,6,0,0,0,4,5.6v7.2a2,2,0,1,0,4,0V34.6A6,6,0,0,0,44,29a6.2,6.2,0,0,0-4-5.7V6.2a2,2,0,1,0-4,0ZM40,29a2,2,0,1,1-2-2A2,2,0,0,1,40,29Z"></path></svg>
+                <div class="dropdown" id="filterDropdown">
+                    <div class="dropdown-title">Filter By</div>
+                    <div class="filter-group">
+                        <div class="filter-group-title">Color Group</div>
+                        <div class="color-tags" id="colorTags"></div>
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-group-title">Mood</div>
+                        <div class="color-tags" id="moodTags"></div>
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-group-title">Shape</div>
+                        <div class="color-tags" id="shapeTags"></div>
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-group-title">Harmony</div>
+                        <div class="color-tags" id="harmonyTags"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-btn" id="clearControl" title="Clear All Filters">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.9907,1.31133017e-07 C14.8816,1.31133017e-07 15.3277,1.07714 14.6978,1.70711 L13.8556,2.54922 C14.421,3.15654 14.8904,3.85028 15.2448,4.60695 C15.8028,5.79836 16.0583,7.109 15.9888,8.42277 C15.9193,9.73654 15.5268,11.0129 14.8462,12.1388 C14.1656,13.2646 13.2178,14.2053 12.0868,14.8773 C10.9558,15.5494 9.67655,15.9322 8.3623,15.9918 C7.04804,16.0514 5.73937,15.7859 4.55221,15.2189 C3.36505,14.652 2.33604,13.8009 1.55634,12.7413 C0.776635,11.6816 0.270299,10.446 0.0821822,9.14392 C0.00321229,8.59731 0.382309,8.09018 0.928918,8.01121 C1.47553,7.93224 1.98266,8.31133 2.06163,8.85794 C2.20272,9.83451 2.58247,10.7612 3.16725,11.556 C3.75203,12.3507 4.52378,12.989 5.41415,13.4142 C6.30452,13.8394 7.28602,14.0385 8.27172,13.9939 C9.25741,13.9492 10.2169,13.6621 11.0651,13.158 C11.9133,12.6539 12.6242,11.9485 13.1346,11.1041 C13.6451,10.2597 13.9395,9.30241 13.9916,8.31708 C14.0437,7.33175 13.8521,6.34877 13.4336,5.45521 C13.178,4.90949 12.8426,4.40741 12.4402,3.96464 L11.7071,4.69779 C11.0771,5.32776 9.99996,4.88159 9.99996,3.99069 L9.99996,1.31133017e-07 L13.9907,1.31133017e-07 Z M1.499979,4 C2.05226,4 2.499979,4.44772 2.499979,5 C2.499979,5.55229 2.05226,6 1.499979,6 C0.947694,6 0.499979,5.55228 0.499979,5 C0.499979,4.44772 0.947694,4 1.499979,4 Z M3.74998,1.25 C4.30226,1.25 4.74998,1.69772 4.74998,2.25 C4.74998,2.80229 4.30226,3.25 3.74998,3.25 C3.19769,3.25 2.74998,2.80228 2.74998,2.25 C2.74998,1.69772 3.19769,1.25 3.74998,1.25 Z M6.99998,0 C7.55226,0 7.99998,0.447716 7.99998,1 C7.99998,1.55229 7.55226,2 6.99998,2 C6.44769,2 5.99998,1.55229 5.99998,1 C5.99998,0.447716 6.44769,0 6.99998,0 Z"></path></svg>
             </div>
         </div>
     </header>
@@ -520,7 +546,7 @@
         let currentHue = 0;
         let currentSaturation = 100;
         let currentLightness = 50;
-        let isDraggingCanvas = false;
+        let isDraggingGradient = false;
         let isDraggingHue = false;
 
         const colorGroups = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'gold', 'silver', 'black', 'white', 'gray'];
@@ -529,13 +555,13 @@
         const harmonies = ['analogous', 'complementary'];
 
         // Populate filter tags
-        const colorGroupTagsEl = document.getElementById('colorGroupTags');
+        const colorTagsEl = document.getElementById('colorTags');
         colorGroups.forEach(color => {
             const tag = document.createElement('div');
             tag.className = 'color-tag';
             tag.textContent = color;
             tag.onclick = () => toggleFilter('colorGroup', color, tag);
-            colorGroupTagsEl.appendChild(tag);
+            colorTagsEl.appendChild(tag);
         });
 
         const moodTagsEl = document.getElementById('moodTags');
@@ -565,7 +591,14 @@
             harmonyTagsEl.appendChild(tag);
         });
 
-        // Color picker functions
+        // Color picker implementation
+        const colorGradient = document.getElementById('colorGradient');
+        const gradientCursor = document.getElementById('gradientCursor');
+        const hueSlider = document.getElementById('hueSlider');
+        const hueCursor = document.getElementById('hueCursor');
+        const colorPreview = document.getElementById('colorPreview');
+        const colorHex = document.getElementById('colorHex');
+
         function hslToRgb(h, s, l) {
             s /= 100;
             l /= 100;
@@ -576,133 +609,117 @@
         }
 
         function rgbToHex(r, g, b) {
-            return '#' + [r, g, b].map(x => {
-                const hex = x.toString(16);
-                return hex.length === 1 ? '0' + hex : hex;
-            }).join('').toUpperCase();
+            return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
         }
 
         function updateColorDisplay() {
             const [r, g, b] = hslToRgb(currentHue, currentSaturation, currentLightness);
             const hex = rgbToHex(r, g, b);
-            
-            document.getElementById('colorPreview').style.backgroundColor = hex;
-            document.getElementById('colorHex').textContent = hex;
-            
-            const hueColor = `hsl(${currentHue}, 100%, 50%)`;
-            document.getElementById('colorCanvas').style.setProperty('--hue-color', hueColor);
+            colorPreview.style.background = hex;
+            colorHex.textContent = hex;
+            filters.pickedColor = hex;
+            applyFilters();
         }
 
-        const colorCanvas = document.getElementById('colorCanvas');
-        const colorPointer = document.getElementById('colorPointer');
-        const hueSlider = document.getElementById('hueSlider');
-        const huePointer = document.getElementById('huePointer');
-
-        colorCanvas.addEventListener('mousedown', (e) => {
-            isDraggingCanvas = true;
-            updateCanvasColor(e);
+        colorGradient.addEventListener('mousedown', (e) => {
+            isDraggingGradient = true;
+            updateGradientPosition(e);
         });
 
         document.addEventListener('mousemove', (e) => {
-            if (isDraggingCanvas) {
-                updateCanvasColor(e);
+            if (isDraggingGradient) {
+                updateGradientPosition(e);
             }
             if (isDraggingHue) {
-                updateHue(e);
+                updateHuePosition(e);
             }
         });
 
         document.addEventListener('mouseup', () => {
-            isDraggingCanvas = false;
+            isDraggingGradient = false;
             isDraggingHue = false;
         });
 
-        function updateCanvasColor(e) {
-            const rect = colorCanvas.getBoundingClientRect();
+        function updateGradientPosition(e) {
+            const rect = colorGradient.getBoundingClientRect();
             let x = e.clientX - rect.left;
             let y = e.clientY - rect.top;
-            
             x = Math.max(0, Math.min(x, rect.width));
             y = Math.max(0, Math.min(y, rect.height));
-            
+
+            gradientCursor.style.left = x + 'px';
+            gradientCursor.style.top = y + 'px';
+
             currentSaturation = (x / rect.width) * 100;
             currentLightness = 100 - (y / rect.height) * 100;
-            
-            colorPointer.style.left = x + 'px';
-            colorPointer.style.top = y + 'px';
-            
             updateColorDisplay();
         }
 
         hueSlider.addEventListener('mousedown', (e) => {
             isDraggingHue = true;
-            updateHue(e);
+            updateHuePosition(e);
         });
 
-        function updateHue(e) {
+        function updateHuePosition(e) {
             const rect = hueSlider.getBoundingClientRect();
             let x = e.clientX - rect.left;
-            
             x = Math.max(0, Math.min(x, rect.width));
-            
+
+            hueCursor.style.left = x + 'px';
             currentHue = (x / rect.width) * 360;
-            
-            huePointer.style.left = x + 'px';
-            
             updateColorDisplay();
         }
 
-        document.getElementById('findSimilar').onclick = () => {
-            const hex = document.getElementById('colorHex').textContent;
-            filters.pickedColor = hex;
-            closeAllDropdowns();
-            applyFilters();
-        };
+        // Initialize color picker
+        hueCursor.style.left = '0px';
+        gradientCursor.style.left = '50%';
+        gradientCursor.style.top = '50%';
+        updateColorDisplay();
 
         // Dropdown toggles
+        const dropdownOverlay = document.getElementById('dropdownOverlay');
+
         document.getElementById('colorControl').onclick = (e) => {
             e.stopPropagation();
-            toggleDropdown('colorDropdown');
+            toggleDropdown('colorDropdown', 'colorControl');
         };
 
         document.getElementById('sortControl').onclick = (e) => {
             e.stopPropagation();
-            toggleDropdown('sortDropdown');
+            toggleDropdown('sortDropdown', 'sortControl');
         };
 
         document.getElementById('filterControl').onclick = (e) => {
             e.stopPropagation();
-            toggleDropdown('filterDropdown');
+            toggleDropdown('filterDropdown', 'filterControl');
         };
 
         document.getElementById('exportControl').onclick = (e) => {
             e.stopPropagation();
-            toggleDropdown('exportDropdown');
+            toggleDropdown('exportDropdown', 'exportControl');
         };
 
-        function toggleDropdown(id) {
-            const dropdown = document.getElementById(id);
-            const overlay = document.getElementById('dropdownOverlay');
+        function toggleDropdown(dropdownId, controlId) {
+            const dropdown = document.getElementById(dropdownId);
+            const control = document.getElementById(controlId);
             const wasActive = dropdown.classList.contains('active');
             
-            closeAllDropdowns();
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            document.querySelectorAll('.control-btn').forEach(c => c.classList.remove('active'));
+            dropdownOverlay.classList.remove('active');
             
             if (!wasActive) {
                 dropdown.classList.add('active');
-                overlay.classList.add('active');
-                
-                const controlBtn = dropdown.parentElement;
-                controlBtn.classList.add('active');
+                control.classList.add('active');
+                dropdownOverlay.classList.add('active');
             }
         }
 
-        function closeAllDropdowns() {
+        dropdownOverlay.addEventListener('click', () => {
             document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
-            document.getElementById('dropdownOverlay').classList.remove('active');
-            document.querySelectorAll('.control-btn').forEach(b => b.classList.remove('active'));
-        }
-
-        document.getElementById('dropdownOverlay').addEventListener('click', closeAllDropdowns);
+            document.querySelectorAll('.control-btn').forEach(c => c.classList.remove('active'));
+            dropdownOverlay.classList.remove('active');
+        });
 
         document.querySelectorAll('.dropdown').forEach(dropdown => {
             dropdown.onclick = (e) => e.stopPropagation();
@@ -720,9 +737,20 @@
             };
             document.querySelectorAll('.color-tag').forEach(tag => tag.classList.remove('active'));
             document.querySelectorAll('.dropdown-option').forEach(opt => opt.classList.remove('active'));
+            
+            // Reset color picker
+            currentHue = 0;
+            currentSaturation = 100;
+            currentLightness = 50;
+            hueCursor.style.left = '0px';
+            gradientCursor.style.left = '50%';
+            gradientCursor.style.top = '50%';
+            updateColorDisplay();
+            
             applyFilters();
         };
 
+        // Filter functions
         function toggleFilter(type, value, element) {
             const parent = element.parentElement;
             parent.querySelectorAll('.color-tag').forEach(tag => tag.classList.remove('active'));
@@ -780,17 +808,31 @@
             } : null;
         }
 
-        function colorDistance(hex1, hex2) {
-            const c1 = hexToRgb(hex1);
-            const c2 = hexToRgb(hex2);
-            
-            if (!c1 || !c2) return Infinity;
-            
-            const rDiff = c1.r - c2.r;
-            const gDiff = c1.g - c2.g;
-            const bDiff = c1.b - c2.b;
-            
-            return Math.sqrt(rDiff * rDiff + gDiff * gDiff + bDiff * bDiff);
+        function rgbToLab(rgb) {
+            let r = rgb.r / 255;
+            let g = rgb.g / 255;
+            let b = rgb.b / 255;
+
+            r = r > 0.04045 ? Math.pow((r + 0.055) / 1.055, 2.4) : r / 12.92;
+            g = g > 0.04045 ? Math.pow((g + 0.055) / 1.055, 2.4) : g / 12.92;
+            b = b > 0.04045 ? Math.pow((b + 0.055) / 1.055, 2.4) : b / 12.92;
+
+            let x = (r * 0.4124 + g * 0.3576 + b * 0.1805) / 0.95047;
+            let y = r * 0.2126 + g * 0.7152 + b * 0.0722;
+            let z = (r * 0.0193 + g * 0.1192 + b * 0.9505) / 1.08883;
+
+            x = x > 0.008856 ? Math.pow(x, 1/3) : 7.787 * x + 16/116;
+            y = y > 0.008856 ? Math.pow(y, 1/3) : 7.787 * y + 16/116;
+            z = z > 0.008856 ? Math.pow(z, 1/3) : 7.787 * z + 16/116;
+
+            return [116 * y - 16, 500 * (x - y), 200 * (y - z)];
+        }
+
+        function labDistance(lab1, lab2) {
+            const dL = lab1[0] - lab2[0];
+            const da = lab1[1] - lab2[1];
+            const db = lab1[2] - lab2[2];
+            return Math.sqrt(dL * dL + da * da + db * db);
         }
 
         function applyFilters() {
@@ -815,12 +857,16 @@
 
             // Color similarity search
             if (filters.pickedColor) {
-                const threshold = 80; // Color distance threshold for similarity
-                filteredGlyphs = filteredGlyphs.filter(glyph => {
-                    const glyphHex = '#' + glyph.color.hex;
-                    const distance = colorDistance(filters.pickedColor, glyphHex);
-                    return distance <= threshold;
-                });
+                const pickedRgb = hexToRgb(filters.pickedColor);
+                const pickedLab = rgbToLab(pickedRgb);
+                
+                filteredGlyphs = filteredGlyphs
+                    .map(g => ({
+                        ...g,
+                        colorDistance: labDistance(pickedLab, g.color.lab)
+                    }))
+                    .filter(g => g.colorDistance < 30) // Show similar colors within range
+                    .sort((a, b) => a.colorDistance - b.colorDistance);
             }
 
             // Sort
@@ -887,22 +933,18 @@
         }
 
         function updateExportButton() {
-            const exportBtn = document.getElementById('exportControl');
-            const exportCount = document.getElementById('exportCount');
-            const statsSelection = document.getElementById('statsSelection');
+            const selectionLine = document.getElementById('selectionLine');
             const selectedCount = document.getElementById('selectedCount');
             
             if (selectedGlyphs.size > 0) {
-                exportBtn.style.display = 'flex';
-                exportCount.textContent = selectedGlyphs.size;
-                statsSelection.classList.add('active');
+                selectionLine.classList.add('active');
                 selectedCount.textContent = selectedGlyphs.size;
             } else {
-                exportBtn.style.display = 'none';
-                statsSelection.classList.remove('active');
+                selectionLine.classList.remove('active');
             }
         }
 
+        // Export functions
         document.getElementById('downloadJSON').onclick = () => {
             const selected = allGlyphs.filter(g => selectedGlyphs.has(g.id));
             const json = JSON.stringify(selected, null, 2);
@@ -947,8 +989,6 @@
             URL.revokeObjectURL(url);
         }
 
-        // Initialize
-        updateColorDisplay();
         loadGlyphs();
     </script>
 </body>
