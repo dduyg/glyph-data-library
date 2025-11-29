@@ -38,10 +38,6 @@
         .logo {
             font-size: 1.8em;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .stats-line {
@@ -84,7 +80,7 @@
         .control-btn svg {
             width: 100%;
             height: 100%;
-            fill: rgba(0, 0, 0, 0.4);
+            fill: rgba(255, 255, 255, 0.6);
             transition: fill 0.3s;
         }
 
@@ -95,8 +91,7 @@
 
         .dropdown {
             position: fixed;
-            top: 50%;
-            left: 50%;
+            top: 50vh; left: 50vw;
             transform: translate(-50%, -50%);
             background: #2d3548;
             border-radius: 20px;
@@ -106,8 +101,7 @@
             max-width: 500px;
             display: none;
             z-index: 3000;
-        }
-        
+        }     
         .dropdown.active {
             display: block;
         }
@@ -308,7 +302,9 @@
         }
 
         .gallery {
-            padding: 20px 40px 40px 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             gap: 15px;
@@ -321,23 +317,18 @@
             aspect-ratio: 1;
             border: 3px solid transparent;
         }
-
         .glyph-card:hover {
             transform: translateY(-8px) scale(1.05);
         }
-
         .glyph-card.selected {
             border-color: #667eea;
             box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.5);
         }
-
         .glyph-card.selected::after {
             content: '✓';
             position: absolute;
-            top: -12px;
-            right: -12px;
-            width: 30px;
-            height: 30px;
+            top: -12px; right: -12px;
+            width: 30px; height: 30px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-radius: 50%;
@@ -376,16 +367,6 @@
             body {
                 padding-top: 130px;
             }
-
-            header { 
-                padding: 10px 20px;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .header-left {
-                width: 100%;
-            }
             
             .logo { 
                 font-size: 1.3em; 
@@ -395,15 +376,9 @@
                 font-size: 0.85em;
             }
             
-            .controls {
-                gap: 10px;
-                width: 100%;
-                justify-content: flex-end;
-            }
-            
             .control-btn {
-                width: 28px;
-                height: 28px;
+                width: 25px;
+                height: 25px;
             }
             
             .dropdown {
@@ -413,7 +388,7 @@
             
             .gallery {
                 grid-template-columns: repeat(4, 1fr);
-                padding: 15px 20px 30px 20px;
+                padding: 20px;
                 gap: 12px;
             }
         }
