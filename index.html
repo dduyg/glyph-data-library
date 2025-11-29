@@ -59,13 +59,12 @@
             align-items: center;
         }
 
-        /* --- CORRECTION 1: Set parent to relative position --- */
         .control-btn {
             width: 35px; 
             height: 35px;
             cursor: pointer;
             transition: all 0.3s;
-            position: relative; /* <-- Allows .panel children to be positioned relative to this button */
+            position: relative;
         }    
         .control-btn:hover {
             transform: translateY(-2px);
@@ -81,28 +80,136 @@
             fill: rgba(0, 0, 0, 0.7);
         }
 
-        /* --- CORRECTION 2: Panel right-aligned and below button --- */
-        .panel {
-            position: absolute; /* <-- Positioned relative to the .control-btn parent */
-            top: 100%; /* <-- Starts just below the button */
-            right: 0;  /* <-- Align the right edge of the panel with the right edge of the button */
-            left: auto; /* <-- Important: remove old left-centering property */
-            transform: none; /* <-- Important: remove old centering transform */
-            margin-top: 10px; /* <-- Add a small gap below the button */
-
+        /* Sort Dropdown - stays as dropdown */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 10px;
             background: #2d3548;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            padding: 30px;
-            min-width: 400px;
-            max-width: 500px;
+            padding: 15px;
+            min-width: 220px;
             display: none;
             z-index: 3000;
         }     
-        .panel.active {
+        .dropdown.active {
             display: block;
+            animation: dropdownSlide 0.3s ease;
         }
-        /* --- End of Positioning Corrections --- */
+
+        @keyframes dropdownSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sidebars for Color and Filter */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 450px;
+            height: 100vh;
+            background: rgba(45, 53, 72, 0.95);
+            backdrop-filter: contrast(0.8) blur(20px);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            padding: 40px 30px;
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+            animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        /* Sidebar overlay */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1500;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-title {
+            font-weight: 700;
+            font-size: 1.3em;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-close {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .sidebar-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .sidebar-close::before,
+        .sidebar-close::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            background: white;
+        }
+
+        .sidebar-close::before {
+            transform: rotate(45deg);
+        }
+
+        .sidebar-close::after {
+            transform: rotate(-45deg);
+        }
 
         .panel-title {
             font-weight: 700;
@@ -224,7 +331,7 @@
         }
 
         .panel-section {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .panel-section:last-child {
@@ -289,14 +396,14 @@
         }
 
         .filter-group {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
 
         .filter-group-title {
             font-weight: 600;
             font-size: 0.9em;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .gallery {
@@ -374,20 +481,14 @@
                 font-size: 0.85em;
             }
 
-            /* --- CORRECTION 3: Mobile responsiveness for panels --- */
-            .panel {
-                /* On small screens, switch back to fixed/centered for better usability */
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                right: auto; /* Override desktop 'right: 0' */
-                transform: translate(-50%, -50%);
-                margin-top: 0; /* Remove desktop margin */
-                
-                max-width: calc(100vw - 40px);
-                min-width: calc(100vw - 40px);
+            .sidebar {
+                width: 100%;
+                max-width: 100vw;
             }
-            /* --- End of Mobile Correction --- */
+
+            .dropdown {
+                min-width: 180px;
+            }
             
             .control-btn {
                 width: 25px;
@@ -402,6 +503,9 @@
     </style>
 </head>
 <body>
+    <!-- Sidebar overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <header>
         <div class="header-left">
             <div class="logo">Glyph Library</div>
@@ -412,8 +516,7 @@
                 <span>Selected: <strong id="selectedCount">0</strong></span>
                 <div class="control-btn" id="exportControl">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g transform="translate(0,300) scale(0.1,-0.1)"><path d="M1140 2710 c-364 -36 -613 -157 -700 -342 l-30 -63 0 -805 0 -805 26 -55 c36 -78 84 -132 168 -188 85 -57 210 -105 346 -133 109 -23 401 -46 443 -36 58 15 89 74 67 128 -19 46 -51 56 -205 62 -355 16 -590 106 -649 249 -13 30 -16 81 -16 258 0 121 3 220 6 220 3 0 25 -11 49 -25 169 -100 494 -155 824 -141 460 19 741 135 841 348 l30 63 0 430 0 430 -30 63 c-76 161 -270 271 -565 322 -139 24 -454 34 -605 20z m583 -205 c185 -34 308 -86 377 -161 66 -71 66 -117 0 -188 -69 -75 -190 -127 -383 -163 -131 -25 -551 -25 -684 0 -191 36 -318 91 -386 166 -63 70 -62 115 5 187 48 52 147 103 258 133 65 17 111 25 255 45 74 10 474 -3 558 -19z m-1078 -580 c169 -100 494 -155 824 -141 284 12 497 59 638 141 23 14 44 25 47 25 3 0 6 -100 6 -222 0 -254 -5 -274 -78 -340 -74 -67 -185 -111 -365 -145 -131 -25 -551 -25 -684 0 -240 45 -383 122 -427 229 -13 30 -16 81 -16 258 0 121 3 220 6 220 3 0 25 -11 49 -25z"/><path d="M2313 1066 l-28 -24 -3 -283 -3 -283 -119 119 c-114 114 -122 120 -161 120 -53 0 -89 -38 -89 -93 0 -34 13 -50 213 -249 205 -205 214 -213 252 -213 38 0 47 8 252 213 200 199 213 215 213 249 0 55 -36 93 -89 93 -39 0 -47 -6 -161 -120 l-119 -119 -3 283 -3 283 -28 24 c-18 15 -41 24 -62 24 -21 0 -44 -9 -62 -24z"/></g></svg>
-                    <div class="panel" id="exportPanel">
-                        <div class="panel-title">Export Selected</div>
+                    <div class="dropdown" id="exportPanel">
                         <div class="panel-option" id="downloadJSON">Download JSON</div>
                         <div class="panel-option" id="downloadCSV">Download CSV</div>
                         <div class="panel-option" id="copyURLs">Copy URLs</div>
@@ -425,28 +528,11 @@
         <div class="controls">
             <div class="control-btn" id="colorControl">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g transform="translate(0,300) scale(0.05,-0.05)"><path d="M2944 5976 c-16 -16 -24 -96 -24 -229 l0 -205 -75 -12 c-1231 -190 -1567 -1755 -513 -2387 l138 -83 -1218 -5 c-1135 -5 -1219 -7 -1240 -40 -53 -85 0 -105 302 -111 l279 -5 23 -125 c195 -1060 1729 -1287 2224 -329 l70 134 10 -1272 c9 -1184 12 -1274 45 -1295 83 -52 105 2 111 275 5 243 7 253 50 261 24 5 103 20 174 34 1009 196 1343 1595 535 2238 l-100 80 1115 5 c1038 5 1117 7 1138 40 53 84 -1 105 -294 111 l-272 5 -12 95 c-164 1210 -1716 1514 -2273 444 l-47 -90 -5 1218 c-4 859 -12 1226 -28 1245 -27 33 -81 35 -113 3z m-24 -1728 l0 -1132 -85 15 c-777 129 -1196 933 -851 1633 154 312 571 593 911 614 20 2 25 -237 25 -1130z m599 -1411 c679 -339 826 -1245 291 -1789 -186 -189 -501 -343 -715 -348 -8 0 -15 495 -15 1100 l0 1100 157 0 c135 0 174 -8 282 -63z"/></g></svg>
-                <div class="panel" id="colorPanel">
-                    <div class="panel-title">Pick a Color</div>
-                    <div class="color-picker-container">
-                        <div class="color-gradient" id="colorGradient">
-                            <div class="color-gradient-overlay"></div>
-                            <div class="color-picker-cursor" id="gradientCursor"></div>
-                        </div>
-                        <div class="hue-slider" id="hueSlider">
-                            <div class="hue-slider-cursor" id="hueCursor"></div>
-                        </div>
-                        <div class="color-output">
-                            <div class="color-preview" id="colorPreview"></div>
-                            <div class="color-hex" id="colorHex">#FF0000</div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="control-btn" id="sortControl">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"></path></svg>
-                <div class="panel" id="sortPanel">
-                    <div class="panel-title">Sort By</div>
+                <div class="dropdown" id="sortPanel">
                     <div class="panel-option" data-sort="newest">Newest First</div>
                     <div class="panel-option" data-sort="oldest">Oldest First</div>
                     <div class="panel-option" data-sort="detail-high">High Detail</div>
@@ -456,25 +542,6 @@
 
             <div class="control-btn" id="filterControl">
                 <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8,6.2V26.3A6.2,6.2,0,0,0,4,32a6,6,0,0,0,4,5.6v4.2A2.1,2.1,0,0,0,10,44a2.1,2.1,0,0,0,2-2.2V37.6A6,6,0,0,0,16,32a6.2,6.2,0,0,0-4-5.7V6.2A2.1,2.1,0,0,0,10,4,2.1,2.1,0,0,0,8,6.2ZM12,32a2,2,0,1,1-2-2A2,2,0,0,1,12,32Z"></path><path d="M22,6.2v4.1A6.2,6.2,0,0,0,18,16a6,6,0,0,0,4,5.6V41.8a2,2,0,1,0,4,0V21.6A6,6,0,0,0,30,16a6.2,6.2,0,0,0-4-5.7V6.2a2,2,0,1,0-4,0ZM26,16a2,2,0,1,1-2-2A2,2,0,0,1,26,16Z"></path><path d="M36,6.2V23.3A6.2,6.2,0,0,0,32,29a6,6,0,0,0,4,5.6v7.2a2,2,0,1,0,4,0V34.6A6,6,0,0,0,44,29a6.2,6.2,0,0,0-4-5.7V6.2a2,2,0,1,0-4,0ZM40,29a2,2,0,1,1-2-2A2,2,0,0,1,40,29Z"></path></svg>
-                <div class="panel" id="filterPanel">
-                    <div class="panel-title">Filter By</div>
-                    <div class="filter-group">
-                        <div class="filter-group-title">Color Group</div>
-                        <div class="color-tags" id="colorTags"></div>
-                    </div>
-                    <div class="filter-group">
-                        <div class="filter-group-title">Mood</div>
-                        <div class="color-tags" id="moodTags"></div>
-                    </div>
-                    <div class="filter-group">
-                        <div class="filter-group-title">Shape</div>
-                        <div class="color-tags" id="shapeTags"></div>
-                    </div>
-                    <div class="filter-group">
-                        <div class="filter-group-title">Harmony</div>
-                        <div class="color-tags" id="harmonyTags"></div>
-                    </div>
-                </div>
             </div>
 
             <div class="control-btn" id="clearControl" title="Clear All Filters">
@@ -482,6 +549,51 @@
             </div>
         </div>
     </header>
+
+    <!-- Color Picker Sidebar -->
+    <div class="sidebar" id="colorSidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-title">Pick a Color</div>
+            <div class="sidebar-close" id="closeColorSidebar"></div>
+        </div>
+        <div class="color-picker-container">
+            <div class="color-gradient" id="colorGradient">
+                <div class="color-gradient-overlay"></div>
+                <div class="color-picker-cursor" id="gradientCursor"></div>
+            </div>
+            <div class="hue-slider" id="hueSlider">
+                <div class="hue-slider-cursor" id="hueCursor"></div>
+            </div>
+            <div class="color-output">
+                <div class="color-preview" id="colorPreview"></div>
+                <div class="color-hex" id="colorHex">#FF0000</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Sidebar -->
+    <div class="sidebar" id="filterSidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-title">Filter Glyphs</div>
+            <div class="sidebar-close" id="closeFilterSidebar"></div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-group-title">Color Group</div>
+            <div class="color-tags" id="colorTags"></div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-group-title">Mood</div>
+            <div class="color-tags" id="moodTags"></div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-group-title">Shape</div>
+            <div class="color-tags" id="shapeTags"></div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-group-title">Harmony</div>
+            <div class="color-tags" id="harmonyTags"></div>
+        </div>
+    </div>
 
     <div class="gallery" id="gallery">
         <div class="loading">Loading glyphs...</div>
@@ -633,36 +745,81 @@
         hueCursor.style.left = '0px';
         gradientCursor.style.left = '50%';
         gradientCursor.style.top = '50%';
-        updateColorDisplay(); // Initial display update
+        updateColorDisplay();
 
-        // Panel toggles
+        // Sidebar controls
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const colorSidebar = document.getElementById('colorSidebar');
+        const filterSidebar = document.getElementById('filterSidebar');
+
         document.getElementById('colorControl').onclick = (e) => {
             e.stopPropagation();
-            togglePanel('colorPanel', 'colorControl');
-        };
-
-        document.getElementById('sortControl').onclick = (e) => {
-            e.stopPropagation();
-            togglePanel('sortPanel', 'sortControl');
+            closeSortDropdown();
+            closeExportDropdown();
+            toggleSidebar(colorSidebar);
         };
 
         document.getElementById('filterControl').onclick = (e) => {
             e.stopPropagation();
-            togglePanel('filterPanel', 'filterControl');
+            closeSortDropdown();
+            closeExportDropdown();
+            toggleSidebar(filterSidebar);
+        };
+
+        document.getElementById('closeColorSidebar').onclick = () => closeSidebar(colorSidebar);
+        document.getElementById('closeFilterSidebar').onclick = () => closeSidebar(filterSidebar);
+
+        function toggleSidebar(sidebar) {
+            const isActive = sidebar.classList.contains('active');
+            
+            // Close all sidebars first
+            document.querySelectorAll('.sidebar').forEach(s => {
+                s.classList.remove('active');
+            });
+            sidebarOverlay.classList.remove('active');
+            
+            // Open the clicked sidebar if it wasn't active
+            if (!isActive) {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+            }
+        }
+
+        function closeSidebar(sidebar) {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        }
+
+        // Close sidebar when clicking overlay
+        sidebarOverlay.onclick = () => {
+            document.querySelectorAll('.sidebar').forEach(s => {
+                s.classList.remove('active');
+            });
+            sidebarOverlay.classList.remove('active');
+        };
+
+        // Sort dropdown (stays as dropdown)
+        document.getElementById('sortControl').onclick = (e) => {
+            e.stopPropagation();
+            closeAllSidebars();
+            closeExportDropdown();
+            toggleDropdown('sortPanel', 'sortControl');
         };
 
         document.getElementById('exportControl').onclick = (e) => {
             e.stopPropagation();
-            togglePanel('exportPanel', 'exportControl');
+            closeAllSidebars();
+            closeSortDropdown();
+            toggleDropdown('exportPanel', 'exportControl');
         };
 
-        function togglePanel(panelId, controlId) {
+        function toggleDropdown(panelId, controlId) {
             const panel = document.getElementById(panelId);
             const control = document.getElementById(controlId);
             const wasActive = panel.classList.contains('active');
             
-            // Close all other panels and remove active states from controls
-            document.querySelectorAll('.panel').forEach(d => d.classList.remove('active'));
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
             document.querySelectorAll('.control-btn').forEach(c => c.classList.remove('active'));
             
             if (!wasActive) {
@@ -671,14 +828,29 @@
             }
         }
 
-        // Close panels when clicking anywhere else on the document
+        function closeSortDropdown() {
+            document.getElementById('sortPanel').classList.remove('active');
+            document.getElementById('sortControl').classList.remove('active');
+        }
+
+        function closeExportDropdown() {
+            document.getElementById('exportPanel').classList.remove('active');
+            document.getElementById('exportControl').classList.remove('active');
+        }
+
+        function closeAllSidebars() {
+            document.querySelectorAll('.sidebar').forEach(s => s.classList.remove('active'));
+            sidebarOverlay.classList.remove('active');
+        }
+
+        // Close dropdowns when clicking outside
         document.addEventListener('click', () => {
-            document.querySelectorAll('.panel').forEach(d => d.classList.remove('active'));
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
             document.querySelectorAll('.control-btn').forEach(c => c.classList.remove('active'));
         });
 
-        // Prevent click inside the panel from closing the panel
-        document.querySelectorAll('.panel').forEach(panel => {
+        // Prevent dropdown clicks from closing
+        document.querySelectorAll('.dropdown').forEach(panel => {
             panel.onclick = (e) => e.stopPropagation();
         });
 
@@ -703,7 +875,7 @@
             gradientCursor.style.left = '50%';
             gradientCursor.style.top = '50%';
             updateColorDisplay();
-            filters.pickedColor = null; // Ensure this is null until user interacts or if initial color is filtered
+            filters.pickedColor = null;
             
             applyFilters();
         };
@@ -722,7 +894,7 @@
             applyFilters();
         }
 
-        // Sort options
+        // Sort options - close dropdown after selection
         document.querySelectorAll('[data-sort]').forEach(option => {
             option.onclick = () => {
                 const sortValue = option.dataset.sort;
@@ -730,6 +902,8 @@
                 option.classList.add('active');
                 filters.sort = sortValue;
                 applyFilters();
+                // Close the dropdown after selection
+                closeSortDropdown();
             };
         });
 
@@ -744,12 +918,11 @@
                         ...glyph.color,
                         lab: rgbToLab(hexToRgb(glyph.color.hex))
                     }
-                })); // Pre-calculate LAB for quick filtering
+                }));
 
                 filteredGlyphs = [...allGlyphs];
                 document.getElementById('totalCount').textContent = allGlyphs.length;
 
-                // Set default sort active state
                 document.querySelector('.panel-option[data-sort="newest"]').classList.add('active');
 
                 applyFilters();
@@ -794,7 +967,6 @@
             y = y > 0.008856 ? Math.pow(y, 1/3) : 7.787 * y + 16/116;
             z = z > 0.008856 ? Math.pow(z, 1/3) : 7.787 * z + 16/116;
 
-            // D65 standard illuminant
             return [116 * y - 16, 500 * (x - y), 200 * (y - z)];
         }
 
@@ -802,13 +974,11 @@
             const dL = lab1[0] - lab2[0];
             const da = lab1[1] - lab2[1];
             const db = lab1[2] - lab2[2];
-            // Euclidean distance in CIELAB space
-            return Math.sqrt(dL * dL + da * da + db * db); 
+            return Math.sqrt(dL * dL + da * da + db * db);
         }
 
         function applyFilters() {
             filteredGlyphs = allGlyphs.filter(glyph => {
-                // ... (filtering logic remains the same)
                 if (filters.colorGroup && glyph.color.group !== filters.colorGroup) return false;
                 if (filters.mood && glyph.mood !== filters.mood) return false;
                 
@@ -827,7 +997,6 @@
                 return true;
             });
 
-            // Color similarity search
             if (filters.pickedColor && filters.pickedColor !== '#FF0000') {
                 const pickedRgb = hexToRgb(filters.pickedColor);
                 if (pickedRgb) {
@@ -836,20 +1005,16 @@
                     filteredGlyphs = filteredGlyphs
                         .map(g => ({
                             ...g,
-                            // LAB is pre-calculated in loadGlyphs
                             colorDistance: labDistance(pickedLab, g.color.lab)
                         }))
-                        // Filter out colors that are too far (Delta E 30 is a good threshold)
-                        .filter(g => g.colorDistance < 30) 
+                        .filter(g => g.colorDistance < 30)
                         .sort((a, b) => a.colorDistance - b.colorDistance);
                 }
             }
 
-            // Sort
             filteredGlyphs.sort((a, b) => {
                 switch(filters.sort) {
                     case 'newest':
-                        // Assuming created_at is a string that can be parsed
                         return new Date(`${b.created_at.date}T${b.created_at.time}`) - 
                                new Date(`${a.created_at.date}T${a.created_at.time}`);
                     case 'oldest':
@@ -860,7 +1025,7 @@
                     case 'detail-low':
                         return a.metrics.edge_density - b.metrics.edge_density;
                     default:
-                        return 0; // Maintain current order if no valid sort is applied
+                        return 0;
                 }
             });
 
@@ -926,6 +1091,7 @@
             const selected = allGlyphs.filter(g => selectedGlyphs.has(g.id));
             const json = JSON.stringify(selected, null, 2);
             downloadFile(json, 'glyphs-export.json', 'application/json');
+            closeExportDropdown();
         };
 
         document.getElementById('downloadCSV').onclick = () => {
@@ -945,6 +1111,7 @@
                 ].join(','))
             ].join('\n');
             downloadFile(csv, 'glyphs-export.csv', 'text/csv');
+            closeExportDropdown();
         };
 
         document.getElementById('copyURLs').onclick = () => {
@@ -952,6 +1119,7 @@
             const urls = selected.map(g => g.glyph_url).join('\n');
             navigator.clipboard.writeText(urls);
             alert('✓ URLs copied to clipboard!');
+            closeExportDropdown();
         };
 
         function downloadFile(content, filename, mimeType) {
