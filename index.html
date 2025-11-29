@@ -15,8 +15,10 @@
         body {
             font-family: 'Grotta', sans-serif;
             background: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/inwave1741.png') center/cover fixed;
-            min-height: 100vh;
-            padding-top: 100px;
+            height: 100vh;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
         }
 
         header {
@@ -183,7 +185,7 @@
             letter-spacing: 1px;
         }
 
-        /* Color Picker - New Design */
+        /* Color Picker */
         .color-picker-container {
             display: flex;
             flex-direction: column;
@@ -362,10 +364,24 @@
             margin-bottom: 12px;
         }
 
-        .gallery {
-            width: 90%;
+        /* Gallery Container - New Layout */
+        .gallery-container {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80%;
             max-width: 1000px;
-            margin: 0 auto;
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-top: 180px;
+            padding-bottom: 40px;
+            padding-left: 20px;
+            padding-right: 40px;
+        }
+
+        .gallery {
+            width: 100%;
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             gap: 15px;
@@ -424,11 +440,19 @@
             fill: white;
         }
 
-        @media (max-width: 768px) {
-            body {
-                padding-top: 130px;
+        @media (max-width: 1200px) {
+            .gallery {
+                grid-template-columns: repeat(6, 1fr);
             }
-            
+        }
+
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
             .logo { 
                 font-size: 1.3em; 
             }
@@ -449,6 +473,14 @@
                 width: 25px;
                 height: 25px;
             }
+
+            .gallery-container {
+                width: 100%;
+                max-width: 100%;
+                padding-top: 150px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
             
             .gallery {
                 grid-template-columns: repeat(4, 1fr);
@@ -457,6 +489,12 @@
 
             .color-gradient {
                 height: 220px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -551,8 +589,10 @@
         </div>
     </div>
 
-    <div class="gallery" id="gallery">
-        <div class="loading">Loading glyphs...</div>
+    <div class="gallery-container">
+        <div class="gallery" id="gallery">
+            <div class="loading">Loading glyphs...</div>
+        </div>
     </div>
 
     <script>
@@ -569,17 +609,15 @@
             harmony: null
         };
 
-        // Color picker state
         let currentHue = 0;
         let isDraggingGradient = false;
         let isDraggingHue = false;
 
         const colorGroups = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'gold', 'silver', 'black', 'white', 'gray'];
         const moods = ['serene', 'calm', 'playful', 'energetic', 'futuristic', 'mysterious', 'dramatic', 'chaotic'];
-        const shapes = ['circular', 'angular', 'square', 'wide', 'tall'];
+        const shapes = ['circular', 'angular', 'wide', 'tall'];
         const harmonies = ['analogous', 'complementary'];
 
-        // Populate filter tags
         const colorTagsEl = document.getElementById('colorTags');
         colorGroups.forEach(color => {
             const tag = document.createElement('div');
@@ -616,7 +654,6 @@
             harmonyTagsEl.appendChild(tag);
         });
 
-        // Color picker implementation with canvas
         const canvas = document.getElementById('gradientCanvas');
         const ctx = canvas.getContext('2d');
         const gradientCursor = document.getElementById('gradientCursor');
@@ -699,8 +736,6 @@
             const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
             colorPreview.style.background = hex;
             colorHexInput.value = hex;
-            
-            // Automatically apply filter when color changes
             filters.pickedColor = hex;
             applyFilters();
         }
@@ -774,7 +809,6 @@
                     currentHue = h;
                     hueCursor.style.left = (h / 360 * hueSlider.offsetWidth) + 'px';
                     drawGradient();
-                    
                     filters.pickedColor = value;
                     applyFilters();
                 }
@@ -796,7 +830,6 @@
             initCanvas();
         });
 
-        // Sidebar controls
         const sidebarOverlay = document.getElementById('sidebarOverlay');
         const colorSidebar = document.getElementById('colorSidebar');
         const filterSidebar = document.getElementById('filterSidebar');
@@ -999,7 +1032,6 @@
                     const ar = glyph.metrics.aspect_ratio;
                     if (filters.shape === 'circular' && circ <= 0.7) return false;
                     if (filters.shape === 'angular' && circ >= 0.5) return false;
-                    if (filters.shape === 'square' && (ar < 0.9 || ar > 1.1)) return false;
                     if (filters.shape === 'wide' && ar <= 1.5) return false;
                     if (filters.shape === 'tall' && ar >= 0.7) return false;
                 }
@@ -1112,7 +1144,6 @@
             updateExportButton();
         }
 
-        // Export functions with selection clearing
         document.getElementById('downloadJSON').onclick = () => {
             const selected = allGlyphs.filter(g => selectedGlyphs.has(g.id));
             const json = JSON.stringify(selected, null, 2);
