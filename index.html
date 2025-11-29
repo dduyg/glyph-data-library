@@ -24,12 +24,8 @@
             top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: 15px 40px;
-            mix-blend-mode: difference;
             color: white;
-        }
-        /* If browser supports exclusion */
-        @supports (mix-blend-mode: exclusion) {
-            header { mix-blend-mode: exclusion; }
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         .header-top {
             display: flex;
@@ -77,7 +73,6 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .stats-main {
