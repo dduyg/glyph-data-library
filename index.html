@@ -80,7 +80,7 @@
             fill: rgba(0, 0, 0, 0.7);
         }
 
-        /* Sort Dropdown - stays as dropdown */
+        /* Sort Dropdown */
         .dropdown {
             position: absolute;
             top: 100%;
@@ -110,12 +110,13 @@
             }
         }
 
-        /* Sidebars for Color and Filter */
+        /* Sidebars */
         .sidebar {
             position: fixed;
             top: 0;
             right: 0;
             width: 450px;
+            max-width: 55%;
             height: 100vh;
             background: rgba(45, 53, 72, 0.95);
             backdrop-filter: contrast(0.8) blur(20px);
@@ -141,7 +142,6 @@
             }
         }
 
-        /* Sidebar overlay */
         .sidebar-overlay {
             position: fixed;
             top: 0;
@@ -161,9 +161,6 @@
         }
 
         .sidebar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
@@ -171,44 +168,10 @@
 
         .sidebar-title {
             font-weight: 700;
-            font-size: 1.3em;
-            color: white;
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .sidebar-close {
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
-        }
-
-        .sidebar-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: rotate(90deg);
-        }
-
-        .sidebar-close::before,
-        .sidebar-close::after {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 2px;
-            background: white;
-        }
-
-        .sidebar-close::before {
-            transform: rotate(45deg);
-        }
-
-        .sidebar-close::after {
-            transform: rotate(-45deg);
+            letter-spacing: 1.5px;
         }
 
         .panel-title {
@@ -220,67 +183,48 @@
             letter-spacing: 1px;
         }
 
+        /* Color Picker - New Design */
         .color-picker-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .color-gradient {
             width: 100%;
-            height: 200px;
-            border-radius: 12px;
-            background: linear-gradient(to bottom, 
-                rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0) 50%,
-                rgba(0, 0, 0, 1) 100%
-            ), linear-gradient(to right, 
-                #ff0000 0%,
-                #ff0000 16.66%,
-                #ffff00 16.66%,
-                #ffff00 33.33%,
-                #00ff00 33.33%,
-                #00ff00 50%,
-                #00ffff 50%,
-                #00ffff 66.66%,
-                #0000ff 66.66%,
-                #0000ff 83.33%,
-                #ff00ff 83.33%,
-                #ff00ff 100%
-            );
+            height: 280px;
+            border-radius: 16px;
             position: relative;
             cursor: crosshair;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
-        .color-gradient-overlay {
+        .color-gradient-canvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, 
-                rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0) 50%,
-                rgba(0, 0, 0, 1) 100%
-            );
-            border-radius: 12px;
+            border-radius: 16px;
         }
 
         .color-picker-cursor {
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             border: 3px solid white;
             border-radius: 50%;
             pointer-events: none;
             transform: translate(-50%, -50%);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+            z-index: 10;
         }
 
         .hue-slider {
             width: 100%;
-            height: 40px;
-            border-radius: 20px;
+            height: 50px;
+            border-radius: 25px;
             background: linear-gradient(to right, 
                 #ff0000 0%,
                 #ffff00 16.66%,
@@ -292,18 +236,19 @@
             );
             position: relative;
             cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
         }
 
         .hue-slider-cursor {
             position: absolute;
-            width: 24px;
-            height: 24px;
+            width: 30px;
+            height: 30px;
             background: white;
-            border: 3px solid rgba(0, 0, 0, 0.2);
+            border: 4px solid rgba(0, 0, 0, 0.2);
             border-radius: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             pointer-events: none;
         }
 
@@ -311,23 +256,82 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 16px;
         }
 
         .color-preview {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .color-hex {
-            font-size: 1.2em;
+        .color-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .color-hex-input {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 1.1em;
             font-weight: 700;
             color: white;
             font-family: monospace;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .color-hex-input:focus {
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .color-group-label {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+        }
+
+        .color-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .color-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Grotta', sans-serif;
+        }
+
+        .color-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .color-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .color-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         .panel-section {
@@ -482,8 +486,7 @@
             }
 
             .sidebar {
-                width: 100%;
-                max-width: 100vw;
+                max-width: 85%;
             }
 
             .dropdown {
@@ -499,11 +502,14 @@
                 grid-template-columns: repeat(4, 1fr);
                 gap: 12px;
             }
+
+            .color-gradient {
+                height: 220px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Sidebar overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <header>
@@ -554,11 +560,10 @@
     <div class="sidebar" id="colorSidebar">
         <div class="sidebar-header">
             <div class="sidebar-title">Pick a Color</div>
-            <div class="sidebar-close" id="closeColorSidebar"></div>
         </div>
         <div class="color-picker-container">
             <div class="color-gradient" id="colorGradient">
-                <div class="color-gradient-overlay"></div>
+                <canvas class="color-gradient-canvas" id="gradientCanvas"></canvas>
                 <div class="color-picker-cursor" id="gradientCursor"></div>
             </div>
             <div class="hue-slider" id="hueSlider">
@@ -566,7 +571,14 @@
             </div>
             <div class="color-output">
                 <div class="color-preview" id="colorPreview"></div>
-                <div class="color-hex" id="colorHex">#FF0000</div>
+                <div class="color-info">
+                    <input type="text" class="color-hex-input" id="colorHexInput" maxlength="7" placeholder="#000000">
+                    <div class="color-group-label" id="colorGroupLabel">Color Group</div>
+                </div>
+            </div>
+            <div class="color-actions">
+                <button class="color-btn" id="findSimilarBtn">🔍 Find Similar Colors</button>
+                <button class="color-btn secondary" id="showAllBtn">Show All</button>
             </div>
         </div>
     </div>
@@ -575,7 +587,6 @@
     <div class="sidebar" id="filterSidebar">
         <div class="sidebar-header">
             <div class="sidebar-title">Filter Glyphs</div>
-            <div class="sidebar-close" id="closeFilterSidebar"></div>
         </div>
         <div class="filter-group">
             <div class="filter-group-title">Color Group</div>
@@ -615,8 +626,6 @@
 
         // Color picker state
         let currentHue = 0;
-        let currentSaturation = 100;
-        let currentLightness = 50;
         let isDraggingGradient = false;
         let isDraggingHue = false;
 
@@ -662,13 +671,44 @@
             harmonyTagsEl.appendChild(tag);
         });
 
-        // Color picker implementation
-        const colorGradient = document.getElementById('colorGradient');
+        // Color picker implementation with canvas
+        const canvas = document.getElementById('gradientCanvas');
+        const ctx = canvas.getContext('2d');
         const gradientCursor = document.getElementById('gradientCursor');
         const hueSlider = document.getElementById('hueSlider');
         const hueCursor = document.getElementById('hueCursor');
         const colorPreview = document.getElementById('colorPreview');
-        const colorHex = document.getElementById('colorHex');
+        const colorHexInput = document.getElementById('colorHexInput');
+        const colorGroupLabel = document.getElementById('colorGroupLabel');
+
+        function initCanvas() {
+            const container = document.getElementById('colorGradient');
+            canvas.width = container.offsetWidth;
+            canvas.height = container.offsetHeight;
+            drawGradient();
+        }
+
+        function drawGradient() {
+            const width = canvas.width;
+            const height = canvas.height;
+
+            // Base hue color
+            const baseColor = hslToRgb(currentHue, 100, 50);
+            
+            // Create horizontal saturation gradient
+            for (let x = 0; x < width; x++) {
+                const satGradient = ctx.createLinearGradient(0, 0, 0, height);
+                const sat = (x / width) * 100;
+                
+                // White to color to black
+                satGradient.addColorStop(0, 'white');
+                satGradient.addColorStop(0.5, `hsl(${currentHue}, ${sat}%, 50%)`);
+                satGradient.addColorStop(1, 'black');
+                
+                ctx.fillStyle = satGradient;
+                ctx.fillRect(x, 0, 1, height);
+            }
+        }
 
         function hslToRgb(h, s, l) {
             s /= 100;
@@ -683,27 +723,83 @@
             return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
         }
 
-        function updateColorDisplay() {
-            const [r, g, b] = hslToRgb(currentHue, currentSaturation, currentLightness);
-            const hex = rgbToHex(r, g, b);
-            colorPreview.style.background = hex;
-            colorHex.textContent = hex;
-            filters.pickedColor = hex;
-            applyFilters();
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
         }
 
+        function rgbToHsl(r, g, b) {
+            r /= 255; g /= 255; b /= 255;
+            const max = Math.max(r, g, b), min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+
+            if (max === min) {
+                h = s = 0;
+            } else {
+                const d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+                    case g: h = ((b - r) / d + 2) / 6; break;
+                    case b: h = ((r - g) / d + 4) / 6; break;
+                }
+            }
+            return [h * 360, s * 100, l * 100];
+        }
+
+        function getColorFromCanvas(x, y) {
+            const pixel = ctx.getImageData(x, y, 1, 1).data;
+            return { r: pixel[0], g: pixel[1], b: pixel[2] };
+        }
+
+        function updateColorDisplay(rgb) {
+            const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+            colorPreview.style.background = hex;
+            colorHexInput.value = hex;
+            
+            // Determine color group
+            const group = getColorGroup(rgb);
+            colorGroupLabel.textContent = group.charAt(0).toUpperCase() + group.slice(1);
+        }
+
+        function getColorGroup(rgb) {
+            const [h, s, l] = rgbToHsl(rgb.r, rgb.g, rgb.b);
+            
+            if (s < 10) {
+                if (l < 20) return 'black';
+                if (l > 80) return 'white';
+                return 'gray';
+            }
+            
+            if (l > 70 && s > 20 && (h >= 40 && h <= 60)) return 'gold';
+            if (l > 60 && s < 30 && l < 80) return 'silver';
+            
+            if (h >= 0 && h < 15) return 'red';
+            if (h >= 15 && h < 45) return 'orange';
+            if (h >= 45 && h < 70) return 'yellow';
+            if (h >= 70 && h < 150) return 'green';
+            if (h >= 150 && h < 250) return 'blue';
+            if (h >= 250 && h < 330) return 'purple';
+            if (h >= 330 || h < 15) return 'pink';
+            
+            return 'gray';
+        }
+
+        // Canvas interactions
+        const colorGradient = document.getElementById('colorGradient');
+        
         colorGradient.addEventListener('mousedown', (e) => {
             isDraggingGradient = true;
             updateGradientPosition(e);
         });
 
         document.addEventListener('mousemove', (e) => {
-            if (isDraggingGradient) {
-                updateGradientPosition(e);
-            }
-            if (isDraggingHue) {
-                updateHuePosition(e);
-            }
+            if (isDraggingGradient) updateGradientPosition(e);
+            if (isDraggingHue) updateHuePosition(e);
         });
 
         document.addEventListener('mouseup', () => {
@@ -712,18 +808,20 @@
         });
 
         function updateGradientPosition(e) {
-            const rect = colorGradient.getBoundingClientRect();
+            const rect = canvas.getBoundingClientRect();
             let x = e.clientX - rect.left;
             let y = e.clientY - rect.top;
             x = Math.max(0, Math.min(x, rect.width));
             y = Math.max(0, Math.min(y, rect.height));
 
+            const canvasX = (x / rect.width) * canvas.width;
+            const canvasY = (y / rect.height) * canvas.height;
+
             gradientCursor.style.left = x + 'px';
             gradientCursor.style.top = y + 'px';
 
-            currentSaturation = (x / rect.width) * 100;
-            currentLightness = 100 - (y / rect.height) * 100;
-            updateColorDisplay();
+            const rgb = getColorFromCanvas(canvasX, canvasY);
+            updateColorDisplay(rgb);
         }
 
         hueSlider.addEventListener('mousedown', (e) => {
@@ -738,14 +836,67 @@
 
             hueCursor.style.left = x + 'px';
             currentHue = (x / rect.width) * 360;
-            updateColorDisplay();
+            drawGradient();
+            
+            // Update current color
+            const cursorX = parseFloat(gradientCursor.style.left || rect.width / 2);
+            const cursorY = parseFloat(gradientCursor.style.top || rect.height / 2);
+            const canvasRect = canvas.getBoundingClientRect();
+            const canvasX = (cursorX / canvasRect.width) * canvas.width;
+            const canvasY = (cursorY / canvasRect.height) * canvas.height;
+            const rgb = getColorFromCanvas(canvasX, canvasY);
+            updateColorDisplay(rgb);
         }
 
-        // Initialize color picker
-        hueCursor.style.left = '0px';
-        gradientCursor.style.left = '50%';
-        gradientCursor.style.top = '50%';
-        updateColorDisplay();
+        // Hex input handling
+        colorHexInput.addEventListener('input', (e) => {
+            let value = e.target.value;
+            if (!value.startsWith('#')) value = '#' + value;
+            
+            if (/^#[0-9A-F]{6}$/i.test(value)) {
+                const rgb = hexToRgb(value);
+                if (rgb) {
+                    colorPreview.style.background = value;
+                    const [h, s, l] = rgbToHsl(rgb.r, rgb.g, rgb.b);
+                    currentHue = h;
+                    hueCursor.style.left = (h / 360 * hueSlider.offsetWidth) + 'px';
+                    drawGradient();
+                    
+                    const group = getColorGroup(rgb);
+                    colorGroupLabel.textContent = group.charAt(0).toUpperCase() + group.slice(1);
+                }
+            }
+        });
+
+        // Find similar colors button
+        document.getElementById('findSimilarBtn').addEventListener('click', () => {
+            const hex = colorHexInput.value;
+            if (hex && /^#[0-9A-F]{6}$/i.test(hex)) {
+                filters.pickedColor = hex;
+                applyFilters();
+                closeSidebar(document.getElementById('colorSidebar'));
+            }
+        });
+
+        document.getElementById('showAllBtn').addEventListener('click', () => {
+            filters.pickedColor = null;
+            applyFilters();
+            closeSidebar(document.getElementById('colorSidebar'));
+        });
+
+        // Initialize
+        window.addEventListener('load', () => {
+            initCanvas();
+            hueCursor.style.left = '0px';
+            gradientCursor.style.left = '50%';
+            gradientCursor.style.top = '50%';
+            const rgb = getColorFromCanvas(canvas.width / 2, canvas.height / 2);
+            updateColorDisplay(rgb);
+        });
+
+        window.addEventListener('resize', () => {
+            initCanvas();
+        });
 
         // Sidebar controls
         const sidebarOverlay = document.getElementById('sidebarOverlay');
@@ -766,19 +917,12 @@
             toggleSidebar(filterSidebar);
         };
 
-        document.getElementById('closeColorSidebar').onclick = () => closeSidebar(colorSidebar);
-        document.getElementById('closeFilterSidebar').onclick = () => closeSidebar(filterSidebar);
-
         function toggleSidebar(sidebar) {
             const isActive = sidebar.classList.contains('active');
             
-            // Close all sidebars first
-            document.querySelectorAll('.sidebar').forEach(s => {
-                s.classList.remove('active');
-            });
+            document.querySelectorAll('.sidebar').forEach(s => s.classList.remove('active'));
             sidebarOverlay.classList.remove('active');
             
-            // Open the clicked sidebar if it wasn't active
             if (!isActive) {
                 sidebar.classList.add('active');
                 sidebarOverlay.classList.add('active');
@@ -790,15 +934,12 @@
             sidebarOverlay.classList.remove('active');
         }
 
-        // Close sidebar when clicking overlay
         sidebarOverlay.onclick = () => {
-            document.querySelectorAll('.sidebar').forEach(s => {
-                s.classList.remove('active');
-            });
+            document.querySelectorAll('.sidebar').forEach(s => s.classList.remove('active'));
             sidebarOverlay.classList.remove('active');
         };
 
-        // Sort dropdown (stays as dropdown)
+        // Sort dropdown
         document.getElementById('sortControl').onclick = (e) => {
             e.stopPropagation();
             closeAllSidebars();
@@ -818,7 +959,6 @@
             const control = document.getElementById(controlId);
             const wasActive = panel.classList.contains('active');
             
-            // Close all dropdowns
             document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
             document.querySelectorAll('.control-btn').forEach(c => c.classList.remove('active'));
             
@@ -843,13 +983,11 @@
             sidebarOverlay.classList.remove('active');
         }
 
-        // Close dropdowns when clicking outside
         document.addEventListener('click', () => {
             document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
             document.querySelectorAll('.control-btn').forEach(c => c.classList.remove('active'));
         });
 
-        // Prevent dropdown clicks from closing
         document.querySelectorAll('.dropdown').forEach(panel => {
             panel.onclick = (e) => e.stopPropagation();
         });
@@ -867,20 +1005,17 @@
             document.querySelectorAll('.color-tag').forEach(tag => tag.classList.remove('active'));
             document.querySelectorAll('.panel-option').forEach(opt => opt.classList.remove('active'));
             
-            // Reset color picker
             currentHue = 0;
-            currentSaturation = 100;
-            currentLightness = 50;
             hueCursor.style.left = '0px';
             gradientCursor.style.left = '50%';
             gradientCursor.style.top = '50%';
-            updateColorDisplay();
-            filters.pickedColor = null;
+            drawGradient();
+            const rgb = getColorFromCanvas(canvas.width / 2, canvas.height / 2);
+            updateColorDisplay(rgb);
             
             applyFilters();
         };
 
-        // Filter functions
         function toggleFilter(type, value, element) {
             const parent = element.parentElement;
             parent.querySelectorAll('.color-tag').forEach(tag => tag.classList.remove('active'));
@@ -894,7 +1029,6 @@
             applyFilters();
         }
 
-        // Sort options - close dropdown after selection
         document.querySelectorAll('[data-sort]').forEach(option => {
             option.onclick = () => {
                 const sortValue = option.dataset.sort;
@@ -902,7 +1036,6 @@
                 option.classList.add('active');
                 filters.sort = sortValue;
                 applyFilters();
-                // Close the dropdown after selection
                 closeSortDropdown();
             };
         });
@@ -912,19 +1045,10 @@
             try {
                 const response = await fetch(DATA_URL);
                 const data = await response.json();
-                allGlyphs = data.glyphs.map(glyph => ({
-                    ...glyph,
-                    color: {
-                        ...glyph.color,
-                        lab: rgbToLab(hexToRgb(glyph.color.hex))
-                    }
-                }));
-
+                allGlyphs = data.glyphs;
                 filteredGlyphs = [...allGlyphs];
                 document.getElementById('totalCount').textContent = allGlyphs.length;
-
                 document.querySelector('.panel-option[data-sort="newest"]').classList.add('active');
-
                 applyFilters();
             } catch (error) {
                 document.getElementById('gallery').innerHTML = `
@@ -939,15 +1063,6 @@
                     </div>
                 `;
             }
-        }
-
-        function hexToRgb(hex) {
-            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-            return result ? {
-                r: parseInt(result[1], 16),
-                g: parseInt(result[2], 16),
-                b: parseInt(result[3], 16)
-            } : null;
         }
 
         function rgbToLab(rgb) {
@@ -997,21 +1112,30 @@
                 return true;
             });
 
-            if (filters.pickedColor && filters.pickedColor !== '#FF0000') {
+            // Color similarity using LAB color space
+            if (filters.pickedColor) {
                 const pickedRgb = hexToRgb(filters.pickedColor);
                 if (pickedRgb) {
                     const pickedLab = rgbToLab(pickedRgb);
                     
                     filteredGlyphs = filteredGlyphs
-                        .map(g => ({
-                            ...g,
-                            colorDistance: labDistance(pickedLab, g.color.lab)
-                        }))
-                        .filter(g => g.colorDistance < 30)
+                        .map(g => {
+                            const glyphLab = g.color.lab || rgbToLab({
+                                r: g.color.rgb[0],
+                                g: g.color.rgb[1],
+                                b: g.color.rgb[2]
+                            });
+                            return {
+                                ...g,
+                                colorDistance: labDistance(pickedLab, glyphLab)
+                            };
+                        })
+                        .filter(g => g.colorDistance < 50) // Wider range for similar colors
                         .sort((a, b) => a.colorDistance - b.colorDistance);
                 }
             }
 
+            // Sort
             filteredGlyphs.sort((a, b) => {
                 switch(filters.sort) {
                     case 'newest':
@@ -1070,7 +1194,6 @@
                 selectedGlyphs.add(id);
                 card.classList.add('selected');
             }
-            
             updateExportButton();
         }
 
