@@ -24,6 +24,12 @@
             top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: 15px 40px;
+            mix-blend-mode: difference;
+            color: white;
+        }
+        /* If browser supports exclusion */
+        @supports (mix-blend-mode: exclusion) {
+            header { mix-blend-mode: exclusion; }
         }
         .header-top {
             display: flex;
@@ -35,10 +41,6 @@
         .logo {
             font-size: 1.8em;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .controls {
@@ -75,7 +77,6 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            color: white;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
