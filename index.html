@@ -27,6 +27,8 @@
             align-items: flex-start;
             padding: 15px 40px;
             z-index: 1000;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
         .header-left {
@@ -109,27 +111,6 @@
         }
         
         .dropdown.active {
-            display: block;
-            animation: dropdownAppear 0.3s ease;
-        }
-        
-        @keyframes dropdownAppear {
-            from { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
-            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-        }
-
-        .dropdown-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2999;
-        }
-
-        .dropdown-overlay.active {
             display: block;
         }
 
@@ -441,8 +422,6 @@
     </style>
 </head>
 <body>
-    <div class="dropdown-overlay" id="dropdownOverlay"></div>
-
     <header>
         <div class="header-left">
             <div class="logo">Glyph Library</div>
@@ -674,11 +653,8 @@
         hueCursor.style.left = '0px';
         gradientCursor.style.left = '50%';
         gradientCursor.style.top = '50%';
-        updateColorDisplay();
 
         // Dropdown toggles
-        const dropdownOverlay = document.getElementById('dropdownOverlay');
-
         document.getElementById('colorControl').onclick = (e) => {
             e.stopPropagation();
             toggleDropdown('colorDropdown', 'colorControl');
@@ -706,19 +682,16 @@
             
             document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
             document.querySelectorAll('.control-btn').forEach(c => c.classList.remove('active'));
-            dropdownOverlay.classList.remove('active');
             
             if (!wasActive) {
                 dropdown.classList.add('active');
                 control.classList.add('active');
-                dropdownOverlay.classList.add('active');
             }
         }
 
-        dropdownOverlay.addEventListener('click', () => {
+        document.addEventListener('click', () => {
             document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
             document.querySelectorAll('.control-btn').forEach(c => c.classList.remove('active'));
-            dropdownOverlay.classList.remove('active');
         });
 
         document.querySelectorAll('.dropdown').forEach(dropdown => {
@@ -746,6 +719,7 @@
             gradientCursor.style.left = '50%';
             gradientCursor.style.top = '50%';
             updateColorDisplay();
+            filters.pickedColor = null;
             
             applyFilters();
         };
@@ -856,17 +830,19 @@
             });
 
             // Color similarity search
-            if (filters.pickedColor) {
+            if (filters.pickedColor && filters.pickedColor !== '#FF0000') {
                 const pickedRgb = hexToRgb(filters.pickedColor);
-                const pickedLab = rgbToLab(pickedRgb);
-                
-                filteredGlyphs = filteredGlyphs
-                    .map(g => ({
-                        ...g,
-                        colorDistance: labDistance(pickedLab, g.color.lab)
-                    }))
-                    .filter(g => g.colorDistance < 30) // Show similar colors within range
-                    .sort((a, b) => a.colorDistance - b.colorDistance);
+                if (pickedRgb) {
+                    const pickedLab = rgbToLab(pickedRgb);
+                    
+                    filteredGlyphs = filteredGlyphs
+                        .map(g => ({
+                            ...g,
+                            colorDistance: labDistance(pickedLab, g.color.lab)
+                        }))
+                        .filter(g => g.colorDistance < 30)
+                        .sort((a, b) => a.colorDistance - b.colorDistance);
+                }
             }
 
             // Sort
