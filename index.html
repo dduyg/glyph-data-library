@@ -11,8 +11,7 @@
             src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Grotta-Regular.woff2') format('woff2');
             font-style: normal;
             font-weight: normal;
-        }     
-        
+        }    
         body {
             font-family: 'Grotta', sans-serif;
             background: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/inwave1741.png') center/cover fixed;
@@ -26,11 +25,10 @@
             top: 0; left: 0; right: 0;
             display: flex;
             justify-content: space-between;
-            padding: 5% 7%;
+            padding: 5%;
             z-index: 1000;
             color: white;
         }
-
         .header-left {
             display: flex;
             flex-direction: column;
@@ -82,11 +80,9 @@
             fill: rgba(0, 0, 0, 0.7);
         }
 
-        /* Sort Dropdown */
         .dropdown {
             position: absolute;
-            top: 100%;
-            right: 0;
+            top: 100%; right: 0;
             margin-top: 10px;
             background: #2d3548;
             border-radius: 20px;
@@ -100,54 +96,39 @@
             display: block;
             animation: dropdownSlide 0.3s ease;
         }
-
         @keyframes dropdownSlide {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Sidebars */
         .sidebar {
             position: fixed;
-            top: 0;
-            right: 0;
+            top: 0; right: 0;
             width: 450px;
             max-width: 55%;
             height: 100vh;
-            background: rgba(45, 53, 72, 0.95);
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: contrast(0.8) blur(20px);
             box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
             z-index: 2000;
             transform: translateX(100%);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow-y: auto;
-            padding: 40px 30px;
+            overflow-x: hidden;
+            padding: 40px 30px 60px;
         }
-
         .sidebar.active {
             transform: translateX(0);
             animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(0);
-            }
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
         }
 
         .sidebar-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
@@ -156,7 +137,6 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-
         .sidebar-overlay.active {
             display: block;
             opacity: 1;
@@ -167,7 +147,6 @@
             padding-bottom: 20px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
-
         .sidebar-title {
             font-weight: 700;
             font-size: 1.1em;
@@ -175,7 +154,6 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
         }
-
         .panel-title {
             font-weight: 700;
             font-size: 0.85em;
@@ -191,7 +169,6 @@
             flex-direction: column;
             gap: 20px;
         }
-
         .color-gradient {
             width: 100%;
             height: 280px;
@@ -201,16 +178,13 @@
             overflow: hidden;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
-
         .color-gradient-canvas {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100%;
             height: 100%;
             border-radius: 16px;
         }
-
         .color-picker-cursor {
             position: absolute;
             width: 24px;
@@ -222,7 +196,6 @@
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.3);
             z-index: 10;
         }
-
         .hue-slider {
             width: 100%;
             height: 50px;
@@ -240,7 +213,6 @@
             cursor: pointer;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
         }
-
         .hue-slider-cursor {
             position: absolute;
             width: 30px;
@@ -282,9 +254,7 @@
             color: white;
             font-family: monospace;
             text-transform: uppercase;
-            text-align: center;
         }
-
         .color-hex-input::placeholder {
             color: rgba(255, 255, 255, 0.5);
         }
@@ -292,11 +262,9 @@
         .panel-section {
             margin-bottom: 30px;
         }
-
         .panel-section:last-child {
             margin-bottom: 0;
         }
-
         .panel-label {
             font-size: 0.75em;
             font-weight: 600;
@@ -365,13 +333,10 @@
             margin-bottom: 12px;
         }
 
-        /* Main layout */
         main {
             position: absolute;
-            left: 0; 
-            right: 0;
-            top: 0; 
-            bottom: 0;
+            left: 0; right: 0;
+            top: 0; bottom: 0;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
@@ -381,10 +346,8 @@
 
         .scroll {
             position: absolute;
-            left: 0; 
-            right: 0;
-            top: 0; 
-            bottom: 0;
+            left: 0; right: 0;
+            top: 0; bottom: 0;
             width: 100vw;
             height: 100vh;
             overflow-y: scroll;
@@ -393,7 +356,6 @@
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
-
         .scroll::-webkit-scrollbar { 
             display: none; 
         }
@@ -434,17 +396,14 @@
             aspect-ratio: 1;
             border: 3px solid transparent;
             overflow: hidden;
-        }
-        
+        }    
         .glyph-card:hover {
             transform: translateY(-8px) scale(1.05);
-        }
-        
+        }     
         .glyph-card.selected {
             border-color: #667eea;
             box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.5);
-        }
-        
+        }   
         .glyph-card.selected::after {
             content: '✓';
             position: absolute;
@@ -542,7 +501,6 @@
         </div>
     </header>
 
-    <!-- Color Picker Sidebar -->
     <div class="sidebar" id="colorSidebar">
         <div class="sidebar-header">
             <div class="sidebar-title">Pick a Color</div>
@@ -562,7 +520,6 @@
         </div>
     </div>
 
-    <!-- Filter Sidebar -->
     <div class="sidebar" id="filterSidebar">
         <div class="sidebar-header">
             <div class="sidebar-title">Filter Glyphs</div>
