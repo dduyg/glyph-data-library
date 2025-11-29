@@ -484,38 +484,14 @@
             fill: white;
         }
 
-        @media (max-width: 1200px) {
-            .gallery-container {
-                grid-template-columns: 10% 90%;
-            }
-        }
-
         @media (max-width: 768px) {
-            .logo { 
-                font-size: 1.3em; 
-            }
-
-            .stats-line {
-                font-size: 0.85em;
-            }
-
-            .dropdown {
-                min-width: 180px;
-            }
-            
-            .control-btn {
-                width: 25px;
-                height: 25px;
-            }
-
-            .gallery {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 12px;
-            }
-
-            .color-gradient {
-                height: 220px;
-            }
+            .logo { font-size: 1.3em;  }
+            .stats-line { font-size: 0.85em; }
+            .sidebar { max-width: 85%; }
+            .dropdown { min-width: 180px; }     
+            .control-btn { width: 22px; height: 22px; }
+            .gallery { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+            .color-gradient { height: 220px; }
         }
     </style>
 </head>
