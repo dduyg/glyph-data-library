@@ -17,6 +17,7 @@
             font-family: 'Grotta', sans-serif;
             background: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/inwave1741.png') center/cover fixed;
             height: 100vh;
+            width: 100vw;
             overflow: hidden;
         }
 
@@ -268,6 +269,7 @@
             border-radius: 12px;
             border: 3px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0;
         }
 
         .color-hex-input {
@@ -400,35 +402,49 @@
             position: relative;
             width: 100%;
             min-height: 100vh;
-            display: flex;
-            justify-content: flex-end;
+            display: grid;
+            grid-template-columns: 20% 80%;
             padding-top: 120px;
             padding-bottom: 60px;
         }
 
-        .gallery {
-            width: 80%;
+        .empty-space {
+            grid-column: 1;
+        }
+
+        .gallery-wrapper {
+            grid-column: 2;
+            width: 100%;
             max-width: 1000px;
-            padding-right: 5%;
+            padding: 0 5%;
+        }
+
+        .gallery {
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             gap: 15px;
+            width: 100%;
         }
 
         .glyph-card {
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
+            width: 100%;
             aspect-ratio: 1;
             border: 3px solid transparent;
+            overflow: hidden;
         }
+        
         .glyph-card:hover {
             transform: translateY(-8px) scale(1.05);
         }
+        
         .glyph-card.selected {
             border-color: #667eea;
             box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.5);
         }
+        
         .glyph-card.selected::after {
             content: '✓';
             position: absolute;
@@ -468,6 +484,12 @@
             fill: white;
         }
 
+        @media (max-width: 1200px) {
+            .gallery-container {
+                grid-template-columns: 10% 90%;
+            }
+        }
+
         @media (max-width: 768px) {
             .logo { 
                 font-size: 1.3em; 
@@ -491,8 +513,18 @@
             }
 
             .gallery-container {
+                grid-template-columns: 1fr;
                 padding-top: 150px;
-                justify-content: center;
+            }
+
+            .empty-space {
+                display: none;
+            }
+
+            .gallery-wrapper {
+                grid-column: 1;
+                max-width: 100%;
+                padding: 0 5%;
             }
 
             .gallery {
@@ -599,8 +631,11 @@
     <main>
         <div class="scroll">
             <div class="gallery-container">
-                <div class="gallery" id="gallery">
-                    <div class="loading">Loading glyphs...</div>
+                <div class="empty-space"></div>
+                <div class="gallery-wrapper">
+                    <div class="gallery" id="gallery">
+                        <div class="loading">Loading glyphs...</div>
+                    </div>
                 </div>
             </div>
         </div>
