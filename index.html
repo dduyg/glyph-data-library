@@ -269,69 +269,21 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .color-info {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
         .color-hex-input {
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
+            flex: 1;
+            background: transparent;
+            border: none;
             padding: 10px 14px;
             font-size: 1.1em;
             font-weight: 700;
             color: white;
             font-family: monospace;
             text-transform: uppercase;
-            transition: all 0.3s;
+            text-align: center;
         }
 
-        .color-hex-input:focus {
-            border-color: rgba(255, 255, 255, 0.5);
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        .color-group-label {
-            font-size: 0.85em;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 600;
-        }
-
-        .color-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .color-btn {
-            flex: 1;
-            padding: 12px 20px;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-weight: 600;
-            font-size: 0.9em;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Grotta', sans-serif;
-        }
-
-        .color-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .color-btn.secondary {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .color-btn.secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        .color-hex-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .panel-section {
@@ -571,14 +523,7 @@
             </div>
             <div class="color-output">
                 <div class="color-preview" id="colorPreview"></div>
-                <div class="color-info">
-                    <input type="text" class="color-hex-input" id="colorHexInput" maxlength="7" placeholder="#000000">
-                    <div class="color-group-label" id="colorGroupLabel">Color Group</div>
-                </div>
-            </div>
-            <div class="color-actions">
-                <button class="color-btn" id="findSimilarBtn">🔍 Find Similar Colors</button>
-                <button class="color-btn secondary" id="showAllBtn">Show All</button>
+                <input type="text" class="color-hex-input" id="colorHexInput" maxlength="7" placeholder="#FF0000">
             </div>
         </div>
     </div>
@@ -679,7 +624,6 @@
         const hueCursor = document.getElementById('hueCursor');
         const colorPreview = document.getElementById('colorPreview');
         const colorHexInput = document.getElementById('colorHexInput');
-        const colorGroupLabel = document.getElementById('colorGroupLabel');
 
         function initCanvas() {
             const container = document.getElementById('colorGradient');
@@ -692,15 +636,10 @@
             const width = canvas.width;
             const height = canvas.height;
 
-            // Base hue color
-            const baseColor = hslToRgb(currentHue, 100, 50);
-            
-            // Create horizontal saturation gradient
             for (let x = 0; x < width; x++) {
                 const satGradient = ctx.createLinearGradient(0, 0, 0, height);
                 const sat = (x / width) * 100;
                 
-                // White to color to black
                 satGradient.addColorStop(0, 'white');
                 satGradient.addColorStop(0.5, `hsl(${currentHue}, ${sat}%, 50%)`);
                 satGradient.addColorStop(1, 'black');
@@ -761,35 +700,11 @@
             colorPreview.style.background = hex;
             colorHexInput.value = hex;
             
-            // Determine color group
-            const group = getColorGroup(rgb);
-            colorGroupLabel.textContent = group.charAt(0).toUpperCase() + group.slice(1);
+            // Automatically apply filter when color changes
+            filters.pickedColor = hex;
+            applyFilters();
         }
 
-        function getColorGroup(rgb) {
-            const [h, s, l] = rgbToHsl(rgb.r, rgb.g, rgb.b);
-            
-            if (s < 10) {
-                if (l < 20) return 'black';
-                if (l > 80) return 'white';
-                return 'gray';
-            }
-            
-            if (l > 70 && s > 20 && (h >= 40 && h <= 60)) return 'gold';
-            if (l > 60 && s < 30 && l < 80) return 'silver';
-            
-            if (h >= 0 && h < 15) return 'red';
-            if (h >= 15 && h < 45) return 'orange';
-            if (h >= 45 && h < 70) return 'yellow';
-            if (h >= 70 && h < 150) return 'green';
-            if (h >= 150 && h < 250) return 'blue';
-            if (h >= 250 && h < 330) return 'purple';
-            if (h >= 330 || h < 15) return 'pink';
-            
-            return 'gray';
-        }
-
-        // Canvas interactions
         const colorGradient = document.getElementById('colorGradient');
         
         colorGradient.addEventListener('mousedown', (e) => {
@@ -838,7 +753,6 @@
             currentHue = (x / rect.width) * 360;
             drawGradient();
             
-            // Update current color
             const cursorX = parseFloat(gradientCursor.style.left || rect.width / 2);
             const cursorY = parseFloat(gradientCursor.style.top || rect.height / 2);
             const canvasRect = canvas.getBoundingClientRect();
@@ -848,7 +762,6 @@
             updateColorDisplay(rgb);
         }
 
-        // Hex input handling
         colorHexInput.addEventListener('input', (e) => {
             let value = e.target.value;
             if (!value.startsWith('#')) value = '#' + value;
@@ -862,36 +775,21 @@
                     hueCursor.style.left = (h / 360 * hueSlider.offsetWidth) + 'px';
                     drawGradient();
                     
-                    const group = getColorGroup(rgb);
-                    colorGroupLabel.textContent = group.charAt(0).toUpperCase() + group.slice(1);
+                    filters.pickedColor = value;
+                    applyFilters();
                 }
             }
         });
 
-        // Find similar colors button
-        document.getElementById('findSimilarBtn').addEventListener('click', () => {
-            const hex = colorHexInput.value;
-            if (hex && /^#[0-9A-F]{6}$/i.test(hex)) {
-                filters.pickedColor = hex;
-                applyFilters();
-                closeSidebar(document.getElementById('colorSidebar'));
-            }
-        });
-
-        document.getElementById('showAllBtn').addEventListener('click', () => {
-            filters.pickedColor = null;
-            applyFilters();
-            closeSidebar(document.getElementById('colorSidebar'));
-        });
-
-        // Initialize
         window.addEventListener('load', () => {
             initCanvas();
             hueCursor.style.left = '0px';
             gradientCursor.style.left = '50%';
             gradientCursor.style.top = '50%';
             const rgb = getColorFromCanvas(canvas.width / 2, canvas.height / 2);
-            updateColorDisplay(rgb);
+            const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+            colorPreview.style.background = hex;
+            colorHexInput.value = hex;
         });
 
         window.addEventListener('resize', () => {
@@ -939,7 +837,6 @@
             sidebarOverlay.classList.remove('active');
         };
 
-        // Sort dropdown
         document.getElementById('sortControl').onclick = (e) => {
             e.stopPropagation();
             closeAllSidebars();
@@ -992,7 +889,6 @@
             panel.onclick = (e) => e.stopPropagation();
         });
 
-        // Clear filters
         document.getElementById('clearControl').onclick = () => {
             filters = {
                 colorGroup: null,
@@ -1011,7 +907,9 @@
             gradientCursor.style.top = '50%';
             drawGradient();
             const rgb = getColorFromCanvas(canvas.width / 2, canvas.height / 2);
-            updateColorDisplay(rgb);
+            const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+            colorPreview.style.background = hex;
+            colorHexInput.value = hex;
             
             applyFilters();
         };
@@ -1040,7 +938,6 @@
             };
         });
 
-        // Load glyphs
         async function loadGlyphs() {
             try {
                 const response = await fetch(DATA_URL);
@@ -1112,7 +1009,6 @@
                 return true;
             });
 
-            // Color similarity using LAB color space
             if (filters.pickedColor) {
                 const pickedRgb = hexToRgb(filters.pickedColor);
                 if (pickedRgb) {
@@ -1130,12 +1026,11 @@
                                 colorDistance: labDistance(pickedLab, glyphLab)
                             };
                         })
-                        .filter(g => g.colorDistance < 50) // Wider range for similar colors
+                        .filter(g => g.colorDistance < 50)
                         .sort((a, b) => a.colorDistance - b.colorDistance);
                 }
             }
 
-            // Sort
             filteredGlyphs.sort((a, b) => {
                 switch(filters.sort) {
                     case 'newest':
@@ -1209,12 +1104,21 @@
             }
         }
 
-        // Export functions
+        function clearSelections() {
+            selectedGlyphs.clear();
+            document.querySelectorAll('.glyph-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            updateExportButton();
+        }
+
+        // Export functions with selection clearing
         document.getElementById('downloadJSON').onclick = () => {
             const selected = allGlyphs.filter(g => selectedGlyphs.has(g.id));
             const json = JSON.stringify(selected, null, 2);
             downloadFile(json, 'glyphs-export.json', 'application/json');
             closeExportDropdown();
+            clearSelections();
         };
 
         document.getElementById('downloadCSV').onclick = () => {
@@ -1235,6 +1139,7 @@
             ].join('\n');
             downloadFile(csv, 'glyphs-export.csv', 'text/csv');
             closeExportDropdown();
+            clearSelections();
         };
 
         document.getElementById('copyURLs').onclick = () => {
@@ -1243,6 +1148,7 @@
             navigator.clipboard.writeText(urls);
             alert('✓ URLs copied to clipboard!');
             closeExportDropdown();
+            clearSelections();
         };
 
         function downloadFile(content, filename, mimeType) {
