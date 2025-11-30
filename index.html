@@ -29,27 +29,27 @@
             z-index: 1000;
             color: white;
         }
-        .details {
+        .header-left {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
-        .badge {
+        .logo {
             font-size: 1.8em;
             font-weight: 700;
         }
-        .stats {
+        .stats-line {
             font-size: 0.9em;
             font-weight: 500;
         }
-        .selection-stat {
+        .selection-line {
             display: none;
             align-items: center;
             gap: 15px;
             font-size: 0.9em;
             font-weight: 500;
         }
-        .selection-stat.active {
+        .selection-line.active {
             display: flex;
         }
 
@@ -58,10 +58,8 @@
             gap: 25px;
             align-items: center;
         }
-
         .control-btn {
-            width: 35px; 
-            height: 35px;
+            width: 35px; height: 35px;
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
@@ -76,7 +74,7 @@
             transition: fill 0.3s;
         }
         .control-btn:hover svg, .control-btn.active svg {
-            fill: rgba(255, 255, 255, 0.3);
+            fill: rgba(255, 255, 255, 0.2);
         }
 
         .dropdown {
@@ -153,18 +151,11 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
         }
-        .panel-title {
-            font-weight: 700;
-            font-size: 0.85em;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
 
         .color-picker {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 9px;
         }
         .color-gradient {
             width: 100%;
@@ -184,7 +175,8 @@
         }
         .color-picker-cursor {
             position: absolute;
-            width: 24px; height: 24px;
+            width: 24px;
+            height: 24px;
             border: 3px solid white;
             border-radius: 50%;
             pointer-events: none;
@@ -221,24 +213,26 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             pointer-events: none;
         }
-
         .color-output {
             display: flex;
             align-items: center;
-            gap: 9px;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 16px;
         }
         .color-preview {
-            width: 60px; height: 30px;
+            width: 60px;
+            height: 60px;
             border-radius: 12px;
-            border: 3px solid rgba(0, 0, 0, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             flex-shrink: 0;
         }
-
         .color-hex-input {
             flex: 1;
-            background: rgba(0, 0, 0, 0.3);
-            border: 3px solid rgba(0, 0, 0, 0.5);
+            background: transparent;
+            border: none;
             padding: 10px 14px;
             font-size: 1.1em;
             font-weight: 700;
@@ -253,12 +247,12 @@
         .color-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 15px;
         }
         .color-tag {
             padding: 8px 14px;
             border-radius: 8px;
-            border: 2px solid rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             background: transparent;
             cursor: pointer;
             font-size: 0.85em;
@@ -276,7 +270,7 @@
             border-color: transparent;
         }
 
-        .dropdown-option {
+        .panel-option {
             padding: 12px 15px;
             border-radius: 10px;
             cursor: pointer;
@@ -285,19 +279,21 @@
             font-weight: 500;
             color: white;
         }
-        .dropdown-option:hover {
+        .panel-option:hover {
             background: rgba(255, 255, 255, 0.1);
         }
-        .dropdown-option.active {
+        .panel-option.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
 
-        .filter { margin-bottom: 25px; }
-        .filter-title {
+        .filter-group {
+            margin-bottom: 25px;
+        }
+        .filter-group-title {
             font-weight: 600;
             font-size: 0.9em;
-            color: #212529;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 12px;
         }
 
@@ -324,7 +320,6 @@
         .scroll::-webkit-scrollbar { 
             display: none; 
         }
-
         .gallery-container {
             position: relative;
             width: 100%;
@@ -334,7 +329,10 @@
             padding-top: 120px;
             padding-bottom: 60px;
         }
-        .empty-space { grid-column: 1; }
+
+        .empty-space {
+            grid-column: 1;
+        }
         .gallery-wrapper {
             grid-column: 2;
             width: 100%;
@@ -361,7 +359,7 @@
             transform: translateY(-8px) scale(1.05);
         }     
         .glyph-card.selected {
-            border-color: #6c757d;
+            border-color: #667eea;
         }   
         .glyph-card.selected::after {
             content: '✓';
@@ -402,8 +400,8 @@
         }
 
         @media (max-width: 768px) {
-            .badge { font-size: 1.3em;  }
-            .stats { font-size: 0.85em; }
+            .logo { font-size: 1.3em;  }
+            .stats-line { font-size: 0.85em; }
             .sidebar { max-width: 85%; }
             .dropdown { min-width: 180px; }     
             .control-btn { width: 22px; height: 22px; }
@@ -413,20 +411,22 @@
     </style>
 </head>
 <body>
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <header>
-        <div class="details">
-            <div class="badge">Glyph Gallery</div>
-            <div class="stats">Showing <strong id="showingCount">0</strong> of <strong id="totalCount">0</strong> glyphs</div>
-            <div class="selection-stat" id="selectionLine">
+        <div class="header-left">
+            <div class="logo">Glyph Library</div>
+            <div class="stats-line">
+                Showing <strong id="showingCount">0</strong> of <strong id="totalCount">0</strong> glyphs
+            </div>
+            <div class="selection-line" id="selectionLine">
                 <span>Selected: <strong id="selectedCount">0</strong></span>
                 <div class="control-btn" id="exportControl">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g transform="translate(0,300) scale(0.1,-0.1)"><path d="M1140 2710 c-364 -36 -613 -157 -700 -342 l-30 -63 0 -805 0 -805 26 -55 c36 -78 84 -132 168 -188 85 -57 210 -105 346 -133 109 -23 401 -46 443 -36 58 15 89 74 67 128 -19 46 -51 56 -205 62 -355 16 -590 106 -649 249 -13 30 -16 81 -16 258 0 121 3 220 6 220 3 0 25 -11 49 -25 169 -100 494 -155 824 -141 460 19 741 135 841 348 l30 63 0 430 0 430 -30 63 c-76 161 -270 271 -565 322 -139 24 -454 34 -605 20z m583 -205 c185 -34 308 -86 377 -161 66 -71 66 -117 0 -188 -69 -75 -190 -127 -383 -163 -131 -25 -551 -25 -684 0 -191 36 -318 91 -386 166 -63 70 -62 115 5 187 48 52 147 103 258 133 65 17 111 25 255 45 74 10 474 -3 558 -19z m-1078 -580 c169 -100 494 -155 824 -141 284 12 497 59 638 141 23 14 44 25 47 25 3 0 6 -100 6 -222 0 -254 -5 -274 -78 -340 -74 -67 -185 -111 -365 -145 -131 -25 -551 -25 -684 0 -240 45 -383 122 -427 229 -13 30 -16 81 -16 258 0 121 3 220 6 220 3 0 25 -11 49 -25z"/><path d="M2313 1066 l-28 -24 -3 -283 -3 -283 -119 119 c-114 114 -122 120 -161 120 -53 0 -89 -38 -89 -93 0 -34 13 -50 213 -249 205 -205 214 -213 252 -213 38 0 47 8 252 213 200 199 213 215 213 249 0 55 -36 93 -89 93 -39 0 -47 -6 -161 -120 l-119 -119 -3 283 -3 283 -28 24 c-18 15 -41 24 -62 24 -21 0 -44 -9 -62 -24z"/></g></svg>
                     <div class="dropdown" id="exportPanel">
-                        <div class="dropdown-option" id="downloadJSON">Download as JSON</div>
-                        <div class="dropdown-option" id="downloadCSV">Download as CSV</div>
-                        <div class="dropdown-option" id="copyURLs">Copy only glyph URLs</div>
+                        <div class="panel-option" id="downloadJSON">Download JSON</div>
+                        <div class="panel-option" id="downloadCSV">Download CSV</div>
+                        <div class="panel-option" id="copyURLs">Copy URLs</div>
                     </div>
                 </div>
             </div>
@@ -440,10 +440,10 @@
             <div class="control-btn" id="sortControl">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"></path></svg>
                 <div class="dropdown" id="sortPanel">
-                    <div class="dropdown-option" data-sort="newest">Newest First</div>
-                    <div class="dropdown-option" data-sort="oldest">Oldest First</div>
-                    <div class="dropdown-option" data-sort="detail-high">High Detail</div>
-                    <div class="dropdown-option" data-sort="detail-low">Low Detail</div>
+                    <div class="panel-option" data-sort="newest">Newest First</div>
+                    <div class="panel-option" data-sort="oldest">Oldest First</div>
+                    <div class="panel-option" data-sort="detail-high">High Detail</div>
+                    <div class="panel-option" data-sort="detail-low">Low Detail</div>
                 </div>
             </div>
 
@@ -480,20 +480,20 @@
         <div class="sidebar-header">
             <div class="sidebar-title">Filter Glyphs</div>
         </div>
-        <div class="filter">
-            <div class="filter-title">Color Group</div>
+        <div class="filter-group">
+            <div class="filter-group-title">Color Group</div>
             <div class="color-tags" id="colorTags"></div>
         </div>
-        <div class="filter">
-            <div class="filter-title">Mood</div>
+        <div class="filter-group">
+            <div class="filter-group-title">Mood</div>
             <div class="color-tags" id="moodTags"></div>
         </div>
-        <div class="filter">
-            <div class="filter-title">Shape</div>
+        <div class="filter-group">
+            <div class="filter-group-title">Shape</div>
             <div class="color-tags" id="shapeTags"></div>
         </div>
-        <div class="filter">
-            <div class="filter-title">Harmony</div>
+        <div class="filter-group">
+            <div class="filter-group-title">Harmony</div>
             <div class="color-tags" id="harmonyTags"></div>
         </div>
     </div>
@@ -849,7 +849,7 @@
                 harmony: null
             };
             document.querySelectorAll('.color-tag').forEach(tag => tag.classList.remove('active'));
-            document.querySelectorAll('.dropdown-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelectorAll('.panel-option').forEach(opt => opt.classList.remove('active'));
             
             currentHue = 0;
             hueCursor.style.left = '0px';
@@ -1094,7 +1094,7 @@
             const selected = allGlyphs.filter(g => selectedGlyphs.has(g.id));
             const urls = selected.map(g => g.glyph_url).join('\n');
             navigator.clipboard.writeText(urls);
-            alert('☑️ URLs copied to clipboard!');
+            alert('✓ URLs copied to clipboard!');
             closeExportDropdown();
             clearSelections();
         };
