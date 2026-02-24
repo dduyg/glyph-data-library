@@ -1,5 +1,5 @@
 {
-  "total": 827,
+  "total": 809,
   "glyphs": [
     {
       "id": "625111a9",
@@ -33616,55 +33616,6 @@
       }
     },
     {
-      "id": "30d31ac5",
-      "filename": "fa7095_a41fdc_30d31ac5.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/fa7095_a41fdc_30d31ac5.png",
-      "color": {
-        "dominant": {
-          "hex": "fa7095",
-          "rgb": [
-            250,
-            112,
-            149
-          ],
-          "lab": [
-            65.03,
-            56.09,
-            6.26
-          ]
-        },
-        "secondary": {
-          "hex": "a41fdc",
-          "rgb": [
-            164,
-            31,
-            220
-          ],
-          "lab": [
-            44.29,
-            75.64,
-            -67.76
-          ]
-        },
-        "palette_distance": 0.7932
-      },
-      "metrics": {
-        "edge_density": 0.017,
-        "entropy": 13.0561,
-        "texture": 2.1339,
-        "contrast": 1.0,
-        "circularity": 0.8393,
-        "aspect_ratio": 1.1342,
-        "edge_angle": 46.2835
-      },
-      "color_harmony": "none",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:09:14"
-      }
-    },
-    {
       "id": "07ccaa3d",
       "filename": "ed4975_f95b86_07ccaa3d.png",
       "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/ed4975_f95b86_07ccaa3d.png",
@@ -35674,55 +35625,6 @@
       }
     },
     {
-      "id": "6a869a3c",
-      "filename": "5c37e7_13192d_6a869a3c.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/5c37e7_13192d_6a869a3c.png",
-      "color": {
-        "dominant": {
-          "hex": "5c37e7",
-          "rgb": [
-            92,
-            55,
-            231
-          ],
-          "lab": [
-            39.2,
-            60.46,
-            -82.71
-          ]
-        },
-        "secondary": {
-          "hex": "13192d",
-          "rgb": [
-            19,
-            25,
-            45
-          ],
-          "lab": [
-            9.18,
-            4.2,
-            -14.34
-          ]
-        },
-        "palette_distance": 0.9349
-      },
-      "metrics": {
-        "edge_density": 0.0209,
-        "entropy": 13.1326,
-        "texture": 2.6026,
-        "contrast": 1.0,
-        "circularity": 0.8943,
-        "aspect_ratio": 1.0,
-        "edge_angle": 1.8212
-      },
-      "color_harmony": "analogous",
-      "mood": "mysterious",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:18:23"
-      }
-    },
-    {
       "id": "39476b7a",
       "filename": "58fe00_0000fe_39476b7a.png",
       "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/58fe00_0000fe_39476b7a.png",
@@ -35919,55 +35821,6 @@
       }
     },
     {
-      "id": "9cb7c31f",
-      "filename": "a6af84_818b65_9cb7c31f.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/a6af84_818b65_9cb7c31f.png",
-      "color": {
-        "dominant": {
-          "hex": "a6af84",
-          "rgb": [
-            166,
-            175,
-            132
-          ],
-          "lab": [
-            69.78,
-            -10.59,
-            21.05
-          ]
-        },
-        "secondary": {
-          "hex": "818b65",
-          "rgb": [
-            129,
-            139,
-            101
-          ],
-          "lab": [
-            56.16,
-            -10.52,
-            19.16
-          ]
-        },
-        "palette_distance": 0.1375
-      },
-      "metrics": {
-        "edge_density": 0.0172,
-        "entropy": 13.0308,
-        "texture": 3.0525,
-        "contrast": 1.0,
-        "circularity": 0.8814,
-        "aspect_ratio": 1.0014,
-        "edge_angle": 6.1702
-      },
-      "color_harmony": "analogous",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:18:31"
-      }
-    },
-    {
       "id": "6493e9f6",
       "filename": "cc8088_ae5257_6493e9f6.png",
       "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/cc8088_ae5257_6493e9f6.png",
@@ -36063,55 +35916,6 @@
       "created_at": {
         "date": "2026-01-30",
         "time": "20:18:33"
-      }
-    },
-    {
-      "id": "2bf802e0",
-      "filename": "acab87_7c8766_2bf802e0.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/acab87_7c8766_2bf802e0.png",
-      "color": {
-        "dominant": {
-          "hex": "acab87",
-          "rgb": [
-            172,
-            171,
-            135
-          ],
-          "lab": [
-            69.22,
-            -5.72,
-            18.72
-          ]
-        },
-        "secondary": {
-          "hex": "7c8766",
-          "rgb": [
-            124,
-            135,
-            102
-          ],
-          "lab": [
-            54.63,
-            -10.17,
-            16.44
-          ]
-        },
-        "palette_distance": 0.1542
-      },
-      "metrics": {
-        "edge_density": 0.0192,
-        "entropy": 13.4595,
-        "texture": 2.9343,
-        "contrast": 1.0,
-        "circularity": 0.8654,
-        "aspect_ratio": 1.0,
-        "edge_angle": 5.4403
-      },
-      "color_harmony": "analogous",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:18:35"
       }
     },
     {
@@ -36850,55 +36654,6 @@
       }
     },
     {
-      "id": "db0cc0ff",
-      "filename": "93768f_614c5d_db0cc0ff.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/93768f_614c5d_db0cc0ff.png",
-      "color": {
-        "dominant": {
-          "hex": "93768f",
-          "rgb": [
-            147,
-            118,
-            143
-          ],
-          "lab": [
-            53.11,
-            15.81,
-            -9.28
-          ]
-        },
-        "secondary": {
-          "hex": "614c5d",
-          "rgb": [
-            97,
-            76,
-            93
-          ],
-          "lab": [
-            35.0,
-            12.11,
-            -6.59
-          ]
-        },
-        "palette_distance": 0.1867
-      },
-      "metrics": {
-        "edge_density": 0.0187,
-        "entropy": 15.9953,
-        "texture": 2.8041,
-        "contrast": 0.9393,
-        "circularity": 0.8963,
-        "aspect_ratio": 1.0,
-        "edge_angle": 1.3904
-      },
-      "color_harmony": "analogous",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:18:48"
-      }
-    },
-    {
       "id": "1c22b2cd",
       "filename": "d76a9a_186285_1c22b2cd.png",
       "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/d76a9a_186285_1c22b2cd.png",
@@ -36945,104 +36700,6 @@
       "created_at": {
         "date": "2026-01-30",
         "time": "20:18:50"
-      }
-    },
-    {
-      "id": "284f95af",
-      "filename": "634f53_5f4b4f_284f95af.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/634f53_5f4b4f_284f95af.png",
-      "color": {
-        "dominant": {
-          "hex": "634f53",
-          "rgb": [
-            99,
-            79,
-            83
-          ],
-          "lab": [
-            35.73,
-            9.09,
-            0.82
-          ]
-        },
-        "secondary": {
-          "hex": "5f4b4f",
-          "rgb": [
-            95,
-            75,
-            79
-          ],
-          "lab": [
-            34.04,
-            9.17,
-            0.84
-          ]
-        },
-        "palette_distance": 0.0169
-      },
-      "metrics": {
-        "edge_density": 0.0206,
-        "entropy": 7.2198,
-        "texture": 2.9037,
-        "contrast": 0.684,
-        "circularity": 0.3727,
-        "aspect_ratio": 2.0117,
-        "edge_angle": 50.1944
-      },
-      "color_harmony": "analogous",
-      "mood": "calm",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:18:51"
-      }
-    },
-    {
-      "id": "facb0074",
-      "filename": "048591_8b7e74_facb0074.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/048591_8b7e74_facb0074.png",
-      "color": {
-        "dominant": {
-          "hex": "048591",
-          "rgb": [
-            4,
-            133,
-            145
-          ],
-          "lab": [
-            50.51,
-            -25.47,
-            -15.06
-          ]
-        },
-        "secondary": {
-          "hex": "8b7e74",
-          "rgb": [
-            139,
-            126,
-            116
-          ],
-          "lab": [
-            53.68,
-            3.19,
-            7.23
-          ]
-        },
-        "palette_distance": 0.3645
-      },
-      "metrics": {
-        "edge_density": 0.0177,
-        "entropy": 13.1697,
-        "texture": 2.7973,
-        "contrast": 1.0,
-        "circularity": 0.8861,
-        "aspect_ratio": 0.9975,
-        "edge_angle": 2.2906
-      },
-      "color_harmony": "complementary",
-      "mood": "energetic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:18:52"
       }
     },
     {
@@ -37340,55 +36997,6 @@
       }
     },
     {
-      "id": "91318793",
-      "filename": "8e5a74_4d8732_91318793.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/8e5a74_4d8732_91318793.png",
-      "color": {
-        "dominant": {
-          "hex": "8e5a74",
-          "rgb": [
-            142,
-            90,
-            116
-          ],
-          "lab": [
-            44.69,
-            25.33,
-            -5.81
-          ]
-        },
-        "secondary": {
-          "hex": "4d8732",
-          "rgb": [
-            77,
-            135,
-            50
-          ],
-          "lab": [
-            50.85,
-            -35.22,
-            38.88
-          ]
-        },
-        "palette_distance": 0.7551
-      },
-      "metrics": {
-        "edge_density": 0.0195,
-        "entropy": 16.2667,
-        "texture": 3.0364,
-        "contrast": 0.9083,
-        "circularity": 0.8917,
-        "aspect_ratio": 1.0015,
-        "edge_angle": 0.6031
-      },
-      "color_harmony": "triadic",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:18:59"
-      }
-    },
-    {
       "id": "473690ac",
       "filename": "c06c5b_a85b56_473690ac.png",
       "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/c06c5b_a85b56_473690ac.png",
@@ -37484,55 +37092,6 @@
       "created_at": {
         "date": "2026-01-30",
         "time": "20:19:01"
-      }
-    },
-    {
-      "id": "b318da59",
-      "filename": "7c2a7f_9c2497_b318da59.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/7c2a7f_9c2497_b318da59.png",
-      "color": {
-        "dominant": {
-          "hex": "7c2a7f",
-          "rgb": [
-            124,
-            42,
-            127
-          ],
-          "lab": [
-            32.86,
-            46.82,
-            -31.01
-          ]
-        },
-        "secondary": {
-          "hex": "9c2497",
-          "rgb": [
-            156,
-            36,
-            151
-          ],
-          "lab": [
-            38.84,
-            60.67,
-            -35.98
-          ]
-        },
-        "palette_distance": 0.1589
-      },
-      "metrics": {
-        "edge_density": 0.0215,
-        "entropy": 16.8541,
-        "texture": 2.9338,
-        "contrast": 1.0,
-        "circularity": 0.8963,
-        "aspect_ratio": 1.0,
-        "edge_angle": 0.0
-      },
-      "color_harmony": "analogous",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:19:00"
       }
     },
     {
@@ -37781,55 +37340,6 @@
       }
     },
     {
-      "id": "03702d8c",
-      "filename": "ea8699_0ab3c5_03702d8c.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/ea8699_0ab3c5_03702d8c.png",
-      "color": {
-        "dominant": {
-          "hex": "ea8699",
-          "rgb": [
-            234,
-            134,
-            153
-          ],
-          "lab": [
-            67.16,
-            40.3,
-            6.76
-          ]
-        },
-        "secondary": {
-          "hex": "0ab3c5",
-          "rgb": [
-            10,
-            179,
-            197
-          ],
-          "lab": [
-            66.78,
-            -30.88,
-            -19.83
-          ]
-        },
-        "palette_distance": 0.7598
-      },
-      "metrics": {
-        "edge_density": 0.0185,
-        "entropy": 14.5784,
-        "texture": 2.7433,
-        "contrast": 0.9743,
-        "circularity": 0.7337,
-        "aspect_ratio": 1.0078,
-        "edge_angle": 4.3987
-      },
-      "color_harmony": "complementary",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:19:05"
-      }
-    },
-    {
       "id": "da3dea7a",
       "filename": "e4634a_dba620_da3dea7a.png",
       "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/e4634a_dba620_da3dea7a.png",
@@ -37971,55 +37481,6 @@
       },
       "color_harmony": "analogous",
       "mood": "serene",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:19:11"
-      }
-    },
-    {
-      "id": "0bb9c0eb",
-      "filename": "d1beb9_bcaaa6_0bb9c0eb.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/d1beb9_bcaaa6_0bb9c0eb.png",
-      "color": {
-        "dominant": {
-          "hex": "d1beb9",
-          "rgb": [
-            209,
-            190,
-            185
-          ],
-          "lab": [
-            78.39,
-            5.87,
-            4.95
-          ]
-        },
-        "secondary": {
-          "hex": "bcaaa6",
-          "rgb": [
-            188,
-            170,
-            166
-          ],
-          "lab": [
-            71.0,
-            5.81,
-            4.41
-          ]
-        },
-        "palette_distance": 0.0741
-      },
-      "metrics": {
-        "edge_density": 0.0192,
-        "entropy": 6.8637,
-        "texture": 2.8481,
-        "contrast": 0.3922,
-        "circularity": 0.8909,
-        "aspect_ratio": 1.0,
-        "edge_angle": 0.0
-      },
-      "color_harmony": "analogous",
-      "mood": "calm",
       "created_at": {
         "date": "2026-01-30",
         "time": "20:19:11"
@@ -38271,55 +37732,6 @@
       }
     },
     {
-      "id": "dbd8fcdf",
-      "filename": "f822b0_c7a095_dbd8fcdf.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/f822b0_c7a095_dbd8fcdf.png",
-      "color": {
-        "dominant": {
-          "hex": "f822b0",
-          "rgb": [
-            248,
-            34,
-            176
-          ],
-          "lab": [
-            56.32,
-            83.99,
-            -22.35
-          ]
-        },
-        "secondary": {
-          "hex": "c7a095",
-          "rgb": [
-            199,
-            160,
-            149
-          ],
-          "lab": [
-            69.08,
-            12.75,
-            11.19
-          ]
-        },
-        "palette_distance": 0.7976
-      },
-      "metrics": {
-        "edge_density": 0.0219,
-        "entropy": 9.331,
-        "texture": 1.9746,
-        "contrast": 1.0,
-        "circularity": 0.8972,
-        "aspect_ratio": 1.0,
-        "edge_angle": 8.1301
-      },
-      "color_harmony": "none",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:19:18"
-      }
-    },
-    {
       "id": "27ef9487",
       "filename": "8e9499_bcb8b4_27ef9487.png",
       "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/8e9499_bcb8b4_27ef9487.png",
@@ -38362,55 +37774,6 @@
         "edge_angle": 22.7064
       },
       "color_harmony": "complementary",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:19:18"
-      }
-    },
-    {
-      "id": "a9c85a53",
-      "filename": "e5cfaa_2a4845_a9c85a53.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/e5cfaa_2a4845_a9c85a53.png",
-      "color": {
-        "dominant": {
-          "hex": "e5cfaa",
-          "rgb": [
-            229,
-            207,
-            170
-          ],
-          "lab": [
-            84.06,
-            2.05,
-            21.2
-          ]
-        },
-        "secondary": {
-          "hex": "2a4845",
-          "rgb": [
-            42,
-            72,
-            69
-          ],
-          "lab": [
-            28.27,
-            -12.0,
-            -1.74
-          ]
-        },
-        "palette_distance": 0.6194
-      },
-      "metrics": {
-        "edge_density": 0.0216,
-        "entropy": 7.2738,
-        "texture": 1.9063,
-        "contrast": 1.0,
-        "circularity": 0.8949,
-        "aspect_ratio": 0.9973,
-        "edge_angle": 0.8814
-      },
-      "color_harmony": "triadic",
       "mood": "dramatic",
       "created_at": {
         "date": "2026-01-30",
@@ -38464,55 +37827,6 @@
       "created_at": {
         "date": "2026-01-30",
         "time": "20:19:21"
-      }
-    },
-    {
-      "id": "fc9d35b7",
-      "filename": "948284_dab3c9_fc9d35b7.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/948284_dab3c9_fc9d35b7.png",
-      "color": {
-        "dominant": {
-          "hex": "948284",
-          "rgb": [
-            148,
-            130,
-            132
-          ],
-          "lab": [
-            56.01,
-            7.19,
-            1.43
-          ]
-        },
-        "secondary": {
-          "hex": "dab3c9",
-          "rgb": [
-            218,
-            179,
-            201
-          ],
-          "lab": [
-            76.9,
-            17.68,
-            -5.82
-          ]
-        },
-        "palette_distance": 0.2447
-      },
-      "metrics": {
-        "edge_density": 0.0207,
-        "entropy": 8.6734,
-        "texture": 2.3988,
-        "contrast": 1.0,
-        "circularity": 0.8992,
-        "aspect_ratio": 0.9976,
-        "edge_angle": 81.8699
-      },
-      "color_harmony": "analogous",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:19:22"
       }
     },
     {
@@ -38611,55 +37925,6 @@
       "created_at": {
         "date": "2026-01-30",
         "time": "20:19:22"
-      }
-    },
-    {
-      "id": "5a6fab59",
-      "filename": "6f87a4_d9a27c_5a6fab59.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/6f87a4_d9a27c_5a6fab59.png",
-      "color": {
-        "dominant": {
-          "hex": "6f87a4",
-          "rgb": [
-            111,
-            135,
-            164
-          ],
-          "lab": [
-            55.47,
-            -1.43,
-            -18.18
-          ]
-        },
-        "secondary": {
-          "hex": "d9a27c",
-          "rgb": [
-            217,
-            162,
-            124
-          ],
-          "lab": [
-            70.9,
-            15.61,
-            27.69
-          ]
-        },
-        "palette_distance": 0.5131
-      },
-      "metrics": {
-        "edge_density": 0.0168,
-        "entropy": 14.9732,
-        "texture": 2.6921,
-        "contrast": 1.0,
-        "circularity": 0.8994,
-        "aspect_ratio": 1.0,
-        "edge_angle": 13.3521
-      },
-      "color_harmony": "complementary",
-      "mood": "dramatic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:19:24"
       }
     },
     {
@@ -39003,153 +38268,6 @@
       "created_at": {
         "date": "2026-01-30",
         "time": "20:19:28"
-      }
-    },
-    {
-      "id": "6eb1a295",
-      "filename": "020cef_010a27_6eb1a295.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/020cef_010a27_6eb1a295.png",
-      "color": {
-        "dominant": {
-          "hex": "020cef",
-          "rgb": [
-            2,
-            12,
-            239
-          ],
-          "lab": [
-            30.66,
-            73.44,
-            -101.58
-          ]
-        },
-        "secondary": {
-          "hex": "010a27",
-          "rgb": [
-            1,
-            10,
-            39
-          ],
-          "lab": [
-            3.34,
-            5.55,
-            -19.11
-          ]
-        },
-        "palette_distance": 1.1025
-      },
-      "metrics": {
-        "edge_density": 0.0161,
-        "entropy": 8.2481,
-        "texture": 2.2819,
-        "contrast": 1.0,
-        "circularity": 0.514,
-        "aspect_ratio": 0.7015,
-        "edge_angle": 0.0
-      },
-      "color_harmony": "analogous",
-      "mood": "mysterious",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:19:31"
-      }
-    },
-    {
-      "id": "31ac4885",
-      "filename": "d90f30_6a0f16_31ac4885.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/d90f30_6a0f16_31ac4885.png",
-      "color": {
-        "dominant": {
-          "hex": "d90f30",
-          "rgb": [
-            217,
-            15,
-            48
-          ],
-          "lab": [
-            46.05,
-            70.38,
-            39.38
-          ]
-        },
-        "secondary": {
-          "hex": "6a0f16",
-          "rgb": [
-            106,
-            15,
-            22
-          ],
-          "lab": [
-            21.81,
-            38.93,
-            21.99
-          ]
-        },
-        "palette_distance": 0.4335
-      },
-      "metrics": {
-        "edge_density": 0.0217,
-        "entropy": 12.9102,
-        "texture": 2.8441,
-        "contrast": 0.7629,
-        "circularity": 0.89,
-        "aspect_ratio": 1.0,
-        "edge_angle": 0.0
-      },
-      "color_harmony": "analogous",
-      "mood": "energetic",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:19:30"
-      }
-    },
-    {
-      "id": "7c9057a0",
-      "filename": "0f0f10_c0ec9f_7c9057a0.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/0f0f10_c0ec9f_7c9057a0.png",
-      "color": {
-        "dominant": {
-          "hex": "0f0f10",
-          "rgb": [
-            15,
-            15,
-            16
-          ],
-          "lab": [
-            4.34,
-            0.19,
-            -0.51
-          ]
-        },
-        "secondary": {
-          "hex": "c0ec9f",
-          "rgb": [
-            192,
-            236,
-            159
-          ],
-          "lab": [
-            88.78,
-            -27.56,
-            32.83
-          ]
-        },
-        "palette_distance": 0.9493
-      },
-      "metrics": {
-        "edge_density": 0.0216,
-        "entropy": 3.2981,
-        "texture": 1.1838,
-        "contrast": 0.9827,
-        "circularity": 0.8632,
-        "aspect_ratio": 1.016,
-        "edge_angle": 8.1398
-      },
-      "color_harmony": "triadic",
-      "mood": "mysterious",
-      "created_at": {
-        "date": "2026-01-30",
-        "time": "20:19:32"
       }
     },
     {
