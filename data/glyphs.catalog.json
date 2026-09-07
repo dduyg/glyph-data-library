@@ -1,5 +1,5 @@
 {
-  "total": 779,
+  "total": 778,
   "glyphs": [
     {
       "id": "625111a9",
@@ -37827,55 +37827,6 @@
       "created_at": {
         "date": "2026-09-07",
         "time": "08:59:16"
-      }
-    },
-    {
-      "id": "e0ac14f4",
-      "filename": "3a4c5f_677889_e0ac14f4.png",
-      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/3a4c5f_677889_e0ac14f4.png",
-      "color": {
-        "dominant": {
-          "hex": "3a4c5f",
-          "rgb": [
-            58,
-            76,
-            95
-          ],
-          "lab": [
-            31.57,
-            -1.66,
-            -13.4
-          ]
-        },
-        "secondary": {
-          "hex": "677889",
-          "rgb": [
-            103,
-            120,
-            137
-          ],
-          "lab": [
-            49.64,
-            -2.21,
-            -11.34
-          ]
-        },
-        "palette_distance": 0.182
-      },
-      "metrics": {
-        "edge_density": 0.1625,
-        "entropy": 15.6811,
-        "texture": 2.8273,
-        "contrast": 0.9777,
-        "circularity": 0.1559,
-        "aspect_ratio": 1.2749,
-        "edge_angle": 23.8483
-      },
-      "color_harmony": "analogous",
-      "mood": "mysterious",
-      "created_at": {
-        "date": "2026-09-07",
-        "time": "08:59:17"
       }
     },
     {
