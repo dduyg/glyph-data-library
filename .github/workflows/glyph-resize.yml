@@ -1,0 +1,63 @@
+name: 🪜 ℝ𝕒𝕨 → Glyph Feature Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "[◢◣]⎯⎯⎯⎯ SOURCE_FOLDER(S) :: 𝘳𝘦𝘱𝘰-𝘯𝘢𝘮𝘦:𝘧𝘰𝘭𝘥𝘦𝘳, 𝘤𝘰𝘮𝘮𝘢-𝘴𝘦𝘱𝘢𝘳𝘢𝘵𝘦𝘥 (𝒆.𝒈. 𝒔𝒌𝒆𝒕𝒄𝒉𝒆𝒔:𝒆𝒙𝒑𝒐𝒓𝒕𝒔/𝒑𝒏𝒈)"
+        type: string
+        required: true
+      target_width:
+        description: "Target width in px (aspect ratio preserved):"
+        type: number
+        default: 900
+      remove_originals:
+        description: "Delete .jpg/.webp/... originals after converting to .png?"
+        type: boolean
+        default: true
+      run_pipeline:
+        description: "⬢ RUN > 🪜💠 𝑮𝒍𝒚𝒑𝒉 𝑭𝒆𝒂𝒕𝒖𝒓𝒆 𝑷𝒊𝒑𝒆𝒍𝒊𝒏𝒆 with resized glyphs"
+        type: boolean
+        default: true
+      clear_source:
+        description: "Delete cache of resized glyphs (after cataloging)?"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # upper bound for the called pipeline
+
+jobs:
+  resize:
+    name: 🪜 ℝ𝕒𝕨 → Glyph Feature Pipeline
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: glyph-resize-${{ inputs.sources }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -q PyGithub Pillow
+
+      - name: Resize & overwrite
+        env:
+          GH_TOKEN: ${{ secrets.GLYPH_PAT }}
+          GLYPH_SOURCES: ${{ inputs.sources }}
+          GLYPH_TARGET_WIDTH: ${{ inputs.target_width }}
+          GLYPH_REMOVE_ORIGINALS: ${{ inputs.remove_originals }}
+        run: python glyph_resizer.py
+
+  pipeline:
+    needs: resize                      # only runs if resizing succeeded
+    if: inputs.run_pipeline
+    uses: ./.github/workflows/glyph-pipeline.yml
+    with:
+      sources: ${{ inputs.sources }}   # same repo-name:folder, now resized
+      clear_source: ${{ inputs.clear_source }}
+    secrets: inherit

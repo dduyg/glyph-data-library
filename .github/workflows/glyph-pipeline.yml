@@ -1,0 +1,78 @@
+#
+# Token: add a repository secret named GLYPH_PAT (classic PAT, `repo` scope)
+#   Settings → Secrets and variables → Actions → New repository secret
+#
+# Run directly: Actions → 💠  𝘎𝘭𝘺𝘱𝘩 𝘍𝘦𝘢𝘵𝘶𝘳𝘦 𝘗𝘪𝘱𝘦𝘭𝘪𝘯𝘦 → Run workflow
+# Or chained:   🪜 ℝ𝕒𝕨 → Glyph Feature Pipeline calls this after resizing (workflow_call)
+# 
+
+name: 💠 𝘎𝘭𝘺𝘱𝘩 𝘍𝘦𝘢𝘵𝘶𝘳𝘦 𝘗𝘪𝘱𝘦𝘭𝘪𝘯𝘦
+
+on:
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "━━━SOURCE_FOLDER(S)  [◆] 𝘳𝘦𝘱𝘰-𝘯𝘢𝘮𝘦:𝘧𝘰𝘭𝘥𝘦𝘳, 𝘤𝘰𝘮𝘮𝘢-𝘴𝘦𝘱𝘢𝘳𝘢𝘵𝘦𝘥 (𝒆.𝒈. 𝒔𝒌𝒆𝒕𝒄𝒉𝒆𝒔:𝒆𝒙𝒑𝒐𝒓𝒕𝒔/𝒑𝒏𝒈, 𝒐𝒍𝒅-𝒈𝒍𝒚𝒑𝒉𝒔:𝒑𝒆𝒏𝒅𝒊𝒏𝒈)"
+        type: string
+        required: true
+      clear_source:
+        description: "Delete cache of source glyphs (after cataloging)?"
+        type: boolean
+        default: false
+      max_workers:
+        description: "Parallel worker threads:"
+        type: number
+        default: 10
+      kmeans_k:
+        description: "K-means clusters for color extraction:"
+        type: number
+        default: 3
+
+  workflow_call:          # used by glyph-resize.yml
+    inputs:
+      sources:
+        type: string
+        required: true
+      clear_source:
+        type: boolean
+        default: false
+      max_workers:
+        type: number
+        default: 10
+      kmeans_k:
+        type: number
+        default: 3
+
+permissions:
+  contents: write
+
+jobs:
+  process:
+    name: 💠 𝘎𝘭𝘺𝘱𝘩 𝘍𝘦𝘢𝘵𝘶𝘳𝘦 𝘗𝘪𝘱𝘦𝘭𝘪𝘯𝘦
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    # Serialize runs per storage repo so two runs can't race on the catalog
+    concurrency:
+      group: glyph-pipeline-${{ github.repository }}
+      cancel-in-progress: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -q opencv-python-headless scikit-learn scikit-image PyGithub pillow numpy
+
+      - name: Run pipeline
+        env:
+          GH_TOKEN: ${{ secrets.GLYPH_PAT || github.token }}
+          GLYPH_SOURCES: ${{ inputs.sources }}
+          GLYPH_CLEAR_SOURCE: ${{ inputs.clear_source }}
+          GLYPH_MAX_WORKERS: ${{ inputs.max_workers || 10 }}
+          GLYPH_KMEANS_K: ${{ inputs.kmeans_k || 3 }}
+          GLYPH_MIN_CLUSTER_FRACTION: "0.05"
+        run: python glyph_feature_pipeline.py
